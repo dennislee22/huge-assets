@@ -1,6 +1,6 @@
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   ECS AI Ops — Sequential API Test   (73 queries)
-  Target: https://gpu-ecs-ai-ops5.ml-9df5bc51-1da.apps.cdppvc.ares.olympus.cloudera.com/api/ask
+  Target: https://gpu-ecs-ai-ops.xxx.apps.yyy.com/api/ask
   skip_synthesise: false
   Log file: gpu_test_api.log
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
