@@ -1,12 +1,20 @@
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-  ECS AI Ops — Sequential API Test   (73 queries)
-  Target: https://gpu-ecs-ai-ops.xxx.apps.yyy.com/api/ask
+  ECS AI Ops — Sequential API Test   (74 queries)
+  Target: https://gpu-ecs-ai-ops.xxxyyyzzz.com/api/ask
   skip_synthesise: false
   Log file: gpu_test_api.log
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 1/73] [30-Mar-2026 07:23:24] where is prometheus pod?
-       Answered — 10s elapsed
+[ 1/74] [30-Mar-2026 13:56:20] who is cmlwb1-user-1 in cmlwb1 ns?
+       Answered — 6s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: who is cmlwb1-user-1 in cmlwb1 ns?
+Answer:
+dennis
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 2/74] [30-Mar-2026 13:56:26] where is prometheus pod?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: where is prometheus pod?
 Answer:
@@ -14,33 +22,14 @@ Showing resources matching `prometheus` in all namespaces.
 | Resource Type | Namespace | Name | Status/Details |
 |---|---|---|---|
 | Pod | cdp | cdp-release-prometheus-alertmanager-0 | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | cdp | cdp-release-prometheus-alertmanager-1 | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | cdp | cdp-release-prometheus-kube-state-metrics-7967b78bf8-rrjtx | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | cdp | cdp-release-prometheus-server-86844db8-v8lkg | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | cmlwb1 | prometheus-postgres-exporter-796974d84d-jjp2q | Running on ecs-w-02.dlee155.cldr.example |
-| Pod | dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-alertmanager-0 | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-alertmanager-1 | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-kube-state-metrics-6ff77dd6f9-gxdhl | Running on ecs-w-02.dlee155.cldr.example |
-| Pod | dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-pushgateway-5b5c796f44-9thjv | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-server-cb8cd485b-z5bhs | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-alertmanager-0 | Running on ecs-w-01.dlee155.cldr.example |
-| Pod | dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-alertmanager-1 | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-kube-state-metrics-b4d44b59f-2rcm6 | Running on ecs-w-01.dlee155.cldr.example |
-| Pod | dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-pushgateway-5b5c796f44-dsbpb | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-server-cb8cd485b-fwrsq | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-1-1769898230-kube-state-metrics-tw28m | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-exp5dl7p | Running on ecs-w-02.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-exp5vhdj | Running on ecs-w-03.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-expm7m6d | Running on ecs-w-01.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-expvtx5m | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | infra-prometheus | infra-prometheus-operator-operator-5fdf97bcc7-kq2lk | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | infra-prometheus | prometheus-infra-prometheus-operator-prometheus-0 | Running on ecs-m-01.dlee155.cldr.example |
-| Pod | longhorn-system | prometheus-snapshot-cleanup-29579100-mvxcc | Succeeded on ecs-w-01.dlee155.cldr.example |
-| Pod | longhorn-system | prometheus-snapshot-delete-29579100-rqcbw | Succeeded on ecs-w-01.dlee155.cldr.example |
+...... truncated ......
+...... truncated ......
+...... truncated ......
+| Pod | longhorn-system | prometheus-snapshot-delete-29580540-dljgp | Succeeded on ecs-w-01.dlee155.cldr.example |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 2/73] [30-Mar-2026 07:23:34] find grafana
-       Answered — 7s elapsed
+[ 3/74] [30-Mar-2026 13:56:34] find grafana
+       Answered — 11s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: find grafana
 Answer:
@@ -48,14 +37,19 @@ Showing resources matching `grafana` in all namespaces.
 | Resource Type | Namespace | Name | Status/Details |
 |---|---|---|---|
 | Pod | cdp | cdp-release-grafana-77dcc66787-h45tr | Running on ecs-w-01.dlee155.cldr.example |
+...... truncated ......
+...... truncated ......
+...... truncated ......
+| ConfigMap | cdp | cdp-release-monitoring-app-grafana-datasources | 1 key(s) |
+| Secret | cdp | cdp-release-grafana | Opaque |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 3/73] [30-Mar-2026 07:23:41] what’s the resources requested for each node?
-       Answered — 21s elapsed
+[ 4/74] [30-Mar-2026 13:56:45] what’s the resources requested for each node?
+       Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what’s the resources requested for each node?
 Answer:
-The table below shows the resource allocation and availability for each node in the cluster:
+The table below shows the CPU and memory allocation and availability across all nodes:
 | NODE | CPU ALLOC | CPU REQ | CPU AVAIL | RAM ALLOC (Gi) | RAM REQ (Gi) | RAM AVAIL (Gi) | GPU |
 |---|---|---|---|---|---|---|---|
 | ecs-m-01.dlee155.cldr.example | 32.0 | 13.76 (43.0%) | 18.24 (57.0%) | 125.64 | 27.1 (21.6%) | 98.54 (78.4%) | 0 |
@@ -64,7 +58,7 @@ The table below shows the resource allocation and availability for each node in 
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 4/73] [30-Mar-2026 07:24:02] calculate CPU and RAM requests for longhorn-system namespace
+[ 5/74] [30-Mar-2026 13:57:07] calculate CPU and RAM requests for longhorn-system namespace
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: calculate CPU and RAM requests for longhorn-system namespace
@@ -78,48 +72,18 @@ Answer:
 | POD | CPU REQ | RAM REQ | CPU LIM | RAM LIM |
 |---|---|---|---|---|
 | csi-attacher-5f56765cb-5rbdn | 0m | 0Mi | 0m | 0Mi |
-| csi-attacher-5f56765cb-q2zfn | 0m | 0Mi | 0m | 0Mi |
-| csi-attacher-5f56765cb-qgpwj | 0m | 0Mi | 0m | 0Mi |
-| csi-provisioner-7948db7756-b5cwg | 0m | 0Mi | 0m | 0Mi |
-| csi-provisioner-7948db7756-hcp9r | 0m | 0Mi | 0m | 0Mi |
-| csi-provisioner-7948db7756-kptwn | 0m | 0Mi | 0m | 0Mi |
-| csi-resizer-849468dfd-8cmn8 | 0m | 0Mi | 0m | 0Mi |
-| csi-resizer-849468dfd-bmh29 | 0m | 0Mi | 0m | 0Mi |
-| csi-resizer-849468dfd-vdxb6 | 0m | 0Mi | 0m | 0Mi |
-| csi-snapshotter-7c846f57c4-c9n5q | 0m | 0Mi | 0m | 0Mi |
-| csi-snapshotter-7c846f57c4-dwxfg | 0m | 0Mi | 0m | 0Mi |
-| csi-snapshotter-7c846f57c4-hxfj8 | 0m | 0Mi | 0m | 0Mi |
-| engine-image-ei-3de3c622-58mfw | 0m | 0Mi | 0m | 0Mi |
-| engine-image-ei-3de3c622-df4gj | 0m | 0Mi | 0m | 0Mi |
-| engine-image-ei-3de3c622-l94t2 | 0m | 0Mi | 0m | 0Mi |
-| engine-image-ei-3de3c622-tnc6g | 0m | 0Mi | 0m | 0Mi |
-| instance-manager-29f5296d6a9a0d60968ca2defbcdd049 | 3840m | 0Mi | 0m | 0Mi |
-| instance-manager-33a43f81c3f124c14f66720467c76e99 | 3840m | 0Mi | 0m | 0Mi |
-| instance-manager-6fae5f8efe21ee12b7a95edb06f777b1 | 3840m | 0Mi | 0m | 0Mi |
-| instance-manager-e6c8122522226ea2c007788f0cdcc383 | 3840m | 0Mi | 0m | 0Mi |
-| longhorn-csi-plugin-2w89j | 0m | 0Mi | 0m | 0Mi |
-| longhorn-csi-plugin-cdtwv | 0m | 0Mi | 0m | 0Mi |
-| longhorn-csi-plugin-ktjbm | 0m | 0Mi | 0m | 0Mi |
-| longhorn-csi-plugin-nf4cd | 0m | 0Mi | 0m | 0Mi |
-| longhorn-driver-deployer-7dcc47d788-9n4sp | 0m | 0Mi | 0m | 0Mi |
-| longhorn-manager-6wvlk | 0m | 0Mi | 0m | 0Mi |
-| longhorn-manager-jjth8 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-manager-s6hdd | 0m | 0Mi | 0m | 0Mi |
-| longhorn-manager-z4tzn | 0m | 0Mi | 0m | 0Mi |
-| longhorn-support-bundle-manager-support-bundle-2026-03-29t66s8k | 0m | 0Mi | 0m | 0Mi |
-| longhorn-ui-6bbb75b4dd-s52qs | 0m | 0Mi | 0m | 0Mi |
-| longhorn-ui-6bbb75b4dd-t47lz | 0m | 0Mi | 0m | 0Mi |
-| prometheus-snapshot-cleanup-29579100-mvxcc | 0m | 0Mi | 0m | 0Mi |
-| prometheus-snapshot-delete-29579100-rqcbw | 0m | 0Mi | 0m | 0Mi |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83 | 0m | 0Mi | 0m | 0Mi |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 5/73] [30-Mar-2026 07:24:05] Show cpu and ram requests for all namespaces
+[ 6/74] [30-Mar-2026 13:57:11] Show cpu and ram requests for all namespaces
        Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show cpu and ram requests for all namespaces
 Answer:
-## Resource summary for all namespaces (345 pods)
+## Resource summary for all namespaces (343 pods)
 - **Total CPU Requested**: 71408m (71.408 cores)
 - **Total CPU Limit**: 62800m (62.800 cores)
 - **Total RAM Requested**: 147322Mi (143.87Gi)
@@ -128,354 +92,14 @@ Answer:
 | NAMESPACE | POD | CPU REQ | RAM REQ | CPU LIM | RAM LIM |
 |---|---|---|---|---|---|
 | awx | awx-demo-postgres-13-0 | 10m | 64Mi | 0m | 0Mi |
-| awx | awx-demo-task-5798945ff5-mkbvt | 350m | 384Mi | 0m | 0Mi |
-| awx | awx-demo-web-764f5bcb8f-vd45z | 250m | 320Mi | 0m | 0Mi |
-| awx | awx-operator-controller-manager-d96c7bbb4-9jgrv | 55m | 96Mi | 2000m | 1088Mi |
-| cdp-drs | automatic-backup-29580300-nvvrk | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | automatic-backup-29580330-gr5m9 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | automatic-backup-29580360-7sx65 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | automatic-backup-29580390-4f2fx | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | automatic-backup-29580420-sx7r8 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-41064967-d945-471e-8e09-596ce6c4320d-55ht9 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-628a0537-462f-4be4-a7fb-d61dffd36f53-rbxlm | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-70fa90e7-a054-436a-a298-0fa9b11ffa59-xxfvq | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-74478c41-97a3-4806-81a8-56bc752c6de8-5fqnh | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-777aa0bc-4d4f-4455-b54f-d7f5af877948-t5258 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-832b9e89-44db-491d-8f58-71b8166b018e-fsfbl | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-e39b6c38-e989-4c13-83a8-1ae2272f05ea-pkjgg | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-ece4fbdf-6793-4d69-809c-122c22d4960d-l7gfl | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | backup-job-f0904f7f-522e-4f36-9bb9-afb0e24c4126-97psn | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | cdp-release-thunderhead-drsprovider-cbb684579-dqzsp | 50m | 500Mi | 500m | 4096Mi |
-| cdp-drs | delete-backup-job-0195a0fc-a368-4ab4-9993-96374ae95640-sdlkl | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-06b0ec24-fe1a-45bb-9cc1-717f235524c4-hnfqd | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-09b0ccce-72ee-4997-af28-664e2b3bd77b-7zf79 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-2ef9f0f0-2e8e-4294-95ad-0963cd213423-ncdbr | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-301702ed-53c5-4d5c-bfe6-37ed43e2723e-lb7nw | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-68352f40-ba2b-4fd4-89ab-9db227cdde19-xklfd | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-69989731-d691-46df-b904-da4b98340592-m2ctg | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-871413a6-987b-4af6-bb6d-c756451c8b63-7gfzn | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-89ea0293-116a-4dba-8e17-28404c9a5c26-cdlg4 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-9b4b83fd-5a7e-40af-866c-839feadaf492-rcmbt | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-ae1994b3-3fc2-4818-aa05-e2f0a516d198-2pdbr | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-c2167497-58cb-4e3a-a5b4-a1b09d0b37fb-w6wmn | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-cf5e25cf-537a-4e1b-bdb3-6c5cc91e79e0-9h6gh | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-e25f6f76-667d-48fd-a37e-9f7d0aa6dcfc-lzsfq | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | delete-backup-job-ffc97dba-0c9d-4d2f-bf72-62c639304821-hzkv8 | 0m | 0Mi | 0m | 0Mi |
-| cdp-drs | kopiaui-config-controller-7fc9f754f9-sc6jk | 0m | 0Mi | 0m | 0Mi |
-| cdp-keda | keda-admission-webhooks-5d78f9594b-gkb84 | 100m | 100Mi | 1000m | 1000Mi |
-| cdp-keda | keda-operator-74db756666-nsb47 | 100m | 100Mi | 1000m | 1000Mi |
-| cdp-keda | keda-operator-metrics-apiserver-7f7d6ffd8b-m5wp5 | 100m | 100Mi | 1000m | 1000Mi |
-| cdp | cdp-embedded-db-0 | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-alert-admin-service-78d5798f4b-d4z9z | 1m | 1024Mi | 0m | 0Mi |
-| cdp | cdp-release-cdc-profiler-launcher-67db4bd58f-vtrzt | 50m | 512Mi | 100m | 1024Mi |
-| cdp | cdp-release-cdp-cadence-frontend-7879cbb449-f9vnj | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-frontend-7879cbb449-w927l | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-history-85c87bbd9c-55mzh | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-history-85c87bbd9c-hfpfr | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-matching-79bd4ff876-gj4zf | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-matching-79bd4ff876-s2qql | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-worker-6b6f9c9867-jwf4f | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cdp-cadence-worker-6b6f9c9867-x2tfz | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-classic-clusters-685f4c65bf-bbzvv | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-cluster-access-manager-8dc7b7b6c-5xfph | 500m | 512Mi | 1000m | 1500Mi |
-| cdp | cdp-release-cluster-proxy-1.0.0-546fd555bb-6s5k2 | 250m | 1024Mi | 0m | 2048Mi |
-| cdp | cdp-release-cpx-liftie-6d96d48db8-2h5pg | 25m | 300Mi | 100m | 1024Mi |
-| cdp | cdp-release-dex-cp-bfc587b5d-mn89l | 50m | 500Mi | 0m | 2048Mi |
-| cdp | cdp-release-dmx-85cdf968b6-j6kfq | 50m | 1024Mi | 1200m | 10240Mi |
-| cdp | cdp-release-dps-gateway-1.0-dcd9cccff-4wsjt | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-dps-gateway-1.0-dcd9cccff-pp4p8 | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-dssapp-64b7f687fc-cwzxk | 1000m | 1024Mi | 1000m | 2048Mi |
-| cdp | cdp-release-dssapp-64b7f687fc-h7q2v | 1000m | 1024Mi | 1000m | 2048Mi |
-| cdp | cdp-release-dwx-server-597569b498-jrl5l | 500m | 4096Mi | 0m | 8192Mi |
-| cdp | cdp-release-dwx-ui-757b96d85b-b8m8f | 100m | 64Mi | 0m | 128Mi |
-| cdp | cdp-release-dwx-ui-757b96d85b-dzkx5 | 100m | 64Mi | 0m | 128Mi |
-| cdp | cdp-release-dwx-worker-5bd649946d-8s6qk | 250m | 512Mi | 0m | 2048Mi |
-| cdp | cdp-release-dwx-worker-5bd649946d-mrrcz | 250m | 512Mi | 0m | 2048Mi |
-| cdp | cdp-release-grafana-77dcc66787-h45tr | 100m | 128Mi | 0m | 0Mi |
-| cdp | cdp-release-jumpgate-admin-1.0.0-7d6c785579-4hcgm | 250m | 100Mi | 0m | 100Mi |
-| cdp | cdp-release-jumpgate-proxy-1.0.0-fff64b86b-x4wpv | 250m | 100Mi | 0m | 250Mi |
-| cdp | cdp-release-logger-alert-receiver-85947fd5df-kggz8 | 2m | 160Mi | 0m | 0Mi |
-| cdp | cdp-release-metrics-server-exporter-76ffb6cbd5-8fgb9 | 100m | 128Mi | 0m | 0Mi |
-| cdp | cdp-release-monitoring-app-596bf8d598-86kt7 | 25m | 105Mi | 0m | 0Mi |
-| cdp | cdp-release-monitoring-controller-manager-5ff9584d7b-ffqw4 | 100m | 20Mi | 0m | 0Mi |
-| cdp | cdp-release-monitoring-metricproxy-f7fd8588d-qctxh | 25m | 105Mi | 0m | 0Mi |
-| cdp | cdp-release-monitoring-metricproxy-f7fd8588d-vd6tk | 25m | 105Mi | 0m | 0Mi |
-| cdp | cdp-release-monitoring-pvcservice-6dd677cfbc-j5rb6 | 25m | 105Mi | 0m | 0Mi |
-| cdp | cdp-release-opentelemetry-collector-58f78c4544-v4qzs | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-prometheus-alertmanager-0 | 5m | 220Mi | 0m | 0Mi |
-| cdp | cdp-release-prometheus-alertmanager-1 | 5m | 220Mi | 0m | 0Mi |
-| cdp | cdp-release-prometheus-kube-state-metrics-7967b78bf8-rrjtx | 10m | 85Mi | 0m | 0Mi |
-| cdp | cdp-release-prometheus-server-86844db8-v8lkg | 27m | 3092Mi | 0m | 0Mi |
-| cdp | cdp-release-reflector-75f959d8c9-2v6gp | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-reloader-b66dc9f9c-cnh59 | 0m | 0Mi | 0m | 0Mi |
-| cdp | cdp-release-resource-pool-manager-55774696fb-xft97 | 500m | 512Mi | 1000m | 1024Mi |
-| cdp | cdp-release-thunderhead-audit-private-585d9fcbbb-7px24 | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-cdp-private-authentication-consolend9b5 | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-cdp-private-commonconsole-5cfc4b95k7p6f | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-cdp-private-environments-console-7ftqxq | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-compute-api-8486576b4b-v7g7s | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-consoleauthenticationcdp-588f74d99f4r78 | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-de-api-55d4fd4b95-zxgkv | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-drscp-api-68d6fd7696-w6zqd | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-dw-api-6f9f8b4c57-p2wdg | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-environment-f94f5cfdd-x2g2m | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-environments2-api-676665947f-c6f6b | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-iam-api-5859fc9fcf-qf94n | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-iam-api-5859fc9fcf-t9mnf | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-iam-console-7bcd7657fc-2mbzh | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-iam-console-7bcd7657fc-hqptx | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-kerberosmgmt-api-f5669c8d8-trchv | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-ml-api-579c9b9b67-2bsns | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-onpremises-api-9bff5d44c-zvtn9 | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-remotecluster-594cf87659-xgpkw | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-resource-management-console-749558sgnbr | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-sdx2-api-5d77fd798-7c5s4 | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-servicediscovery-api-7d6555f5bb-dd5g7 | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cdp-release-thunderhead-servicediscoverysimple-67b9547656-5cbhc | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-usermanagement-private-78f7c5c87-gwsgd | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-usermanagement-private-78f7c5c87-zqrdb | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-userpreference-54d8b58d74-xh4h8 | 50m | 500Mi | 500m | 4096Mi |
-| cdp | cdp-release-thunderhead-userpreference-api-594959b796-8l9pw | 20m | 250Mi | 250m | 2048Mi |
-| cdp | cli-f9c8z | 0m | 0Mi | 0m | 0Mi |
-| cdp | dp-cadence-worker-77fc5bbbbf-f5fdp | 50m | 512Mi | 200m | 1536Mi |
-| cdp | dp-health-poller-658fbc9c78-zxv59 | 50m | 1024Mi | 100m | 1536Mi |
-| cdp | dp-mlx-control-plane-app-79f6978c8f-phnpz | 50m | 1536Mi | 200m | 4096Mi |
-| cdp | echoserver-86b89975d9-frmvx | 0m | 0Mi | 0m | 0Mi |
-| cdp | fluentd-aggregator-0 | 0m | 250Mi | 0m | 1024Mi |
-| cdp | snmp-notifier-7dbb859b8d-dhcml | 1m | 135Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-c85946fc6-dgcdf | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-c85946fc6-qwrqv | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-cainjector-798fb8b487-67k5t | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-cainjector-798fb8b487-t4qv6 | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-webhook-75b6ff775-4xkgb | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-webhook-75b6ff775-bzwzs | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-cert-manager-webhook-75b6ff775-qs2lt | 0m | 0Mi | 0m | 0Mi |
-| cert-manager | cdp-release-thunderhead-certrevoke-7d7d84b94b-b52kw | 50m | 500Mi | 500m | 4096Mi |
-| cert-manager | cdp-release-thunderhead-certwebhook-55dd9bfbcf-v9xxq | 50m | 500Mi | 500m | 4096Mi |
-| cloudera-gateway | cloudera-gateway-mwlhv | 100m | 128Mi | 0m | 0Mi |
-| cml-serving | api-567d57cc5b-vgs26 | 200m | 256Mi | 2000m | 1536Mi |
-| cml-serving | archiver-59cfd954f7-bvt9f | 200m | 228Mi | 2000m | 3072Mi |
-| cml-serving | fluentd-forwarder-69d5d697b5-4fj8b | 600m | 378Mi | 3000m | 2048Mi |
-| cml-serving | usage-reporter-7b678b9b7c-f8ctd | 210m | 238Mi | 2000m | 1224Mi |
-| cmlwb1 | api-57f7f457bc-crg5v | 100m | 512Mi | 0m | 2048Mi |
-| cmlwb1 | buildkitd-5jlpn | 10m | 50Mi | 100m | 200Mi |
-| cmlwb1 | buildkitd-6zcbp | 10m | 50Mi | 100m | 200Mi |
-| cmlwb1 | buildkitd-twm79 | 10m | 50Mi | 100m | 200Mi |
-| cmlwb1 | cron-697c8f889b-xt9md | 50m | 100Mi | 0m | 100Mi |
-| cmlwb1 | db-0 | 3000m | 4096Mi | 0m | 0Mi |
-| cmlwb1 | db-migrate-2.0.51-h2000-b100-0758-d8ck8 | 50m | 200Mi | 0m | 0Mi |
-| cmlwb1 | db-refresh-29576165-8f84g | 200m | 200Mi | 0m | 1024Mi |
-| cmlwb1 | db-refresh-29577605-7xqc4 | 200m | 200Mi | 0m | 1024Mi |
-| cmlwb1 | db-refresh-29579045-f6p7r | 200m | 200Mi | 0m | 1024Mi |
-| cmlwb1 | ds-cdh-client-5d457c7649-5l9x5 | 125m | 450Mi | 0m | 200Mi |
-| cmlwb1 | ds-operator-94b889cff-zgxgw | 200m | 1000Mi | 0m | 2000Mi |
-| cmlwb1 | ds-reconciler-5ddf99d99-vn9k7 | 550m | 550Mi | 0m | 1024Mi |
-| cmlwb1 | ds-vfs-759587f99c-rm7m4 | 500m | 250Mi | 0m | 4096Mi |
-| cmlwb1 | fluentd-forwarder-5cfd7bdf99-dccgl | 500m | 250Mi | 1000m | 1024Mi |
-| cmlwb1 | governance-6989c74fff-x5chz | 125m | 700Mi | 0m | 2048Mi |
-| cmlwb1 | hadoop-cli-7.1.9.1064-1-or3kng-jhl6b | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | hadoop-cli-7.3.1.600-337-s6zzio-dv7lk | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | livelog-0 | 200m | 1024Mi | 0m | 0Mi |
-| cmlwb1 | livelog-cleaner-29576160-hqv28 | 100m | 100Mi | 0m | 200Mi |
-| cmlwb1 | livelog-cleaner-29577600-6mww4 | 100m | 100Mi | 0m | 200Mi |
-| cmlwb1 | livelog-cleaner-29579040-x9jll | 100m | 100Mi | 0m | 200Mi |
-| cmlwb1 | livelog-publisher-dd9qm | 200m | 200Mi | 0m | 500Mi |
-| cmlwb1 | livelog-publisher-fftwx | 200m | 200Mi | 0m | 500Mi |
-| cmlwb1 | livelog-publisher-sjzcb | 200m | 200Mi | 0m | 500Mi |
-| cmlwb1 | metrics-collector-7654bdc976-lhbgg | 500m | 500Mi | 0m | 2048Mi |
-| cmlwb1 | model-metrics-74d85d5d98-jpkhw | 100m | 100Mi | 100m | 1024Mi |
-| cmlwb1 | model-metrics-db-0 | 200m | 2048Mi | 0m | 0Mi |
-| cmlwb1 | model-proxy-7bb48b57cd-dxfz8 | 100m | 250Mi | 200m | 1024Mi |
-| cmlwb1 | ozone-731.1.0-b2-asfreg-zdh5v | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | pod-evaluator-v2-5779b69584-6xvx8 | 30m | 64Mi | 1000m | 256Mi |
-| cmlwb1 | prometheus-postgres-exporter-796974d84d-jjp2q | 100m | 128Mi | 100m | 128Mi |
-| cmlwb1 | runtime-addon-trigger-2.0.51-h2000-b100-b5kxp | 50m | 200Mi | 0m | 0Mi |
-| cmlwb1 | runtime-initial-repo-inserter-2.0.51-h2000-b100-45g8w | 50m | 200Mi | 0m | 0Mi |
-| cmlwb1 | runtime-manager-848797bd84-pb2lg | 0m | 0Mi | 0m | 0Mi |
-| cmlwb1 | s2i-builder-696f84f4c-bfgrr | 100m | 1024Mi | 0m | 0Mi |
-| cmlwb1 | s2i-builder-696f84f4c-bm75l | 100m | 1024Mi | 0m | 0Mi |
-| cmlwb1 | s2i-builder-696f84f4c-lfsf5 | 100m | 1024Mi | 0m | 0Mi |
-| cmlwb1 | s2i-client-5974488f4b-l4q4v | 100m | 250Mi | 0m | 2048Mi |
-| cmlwb1 | s2i-git-server-0 | 100m | 250Mi | 0m | 2048Mi |
-| cmlwb1 | s2i-queue-0 | 100m | 250Mi | 0m | 2048Mi |
-| cmlwb1 | s2i-server-5db8cc96c9-pc2qs | 100m | 250Mi | 0m | 2048Mi |
-| cmlwb1 | secret-generator-0 | 0m | 100Mi | 0m | 0Mi |
-| cmlwb1 | spark248-7191064-1251-b245-2wy3n-crmrv | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | spark332-7191064-1251-b245-iie3gf-26vfd | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | spark354-7191064-1251-b245-8nps2h-xhgjp | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | spark354-731600-1251-b245-bpkv7m-rxc4t | 10m | 32Mi | 0m | 0Mi |
-| cmlwb1 | tcp-ingress-controller-b5fb5bc97-qwh9w | 100m | 250Mi | 0m | 2048Mi |
-| cmlwb1 | usage-reporter-6b7c4c79f4-46mrs | 100m | 100Mi | 0m | 100Mi |
-| cmlwb1 | user-management-85c445cbf5-gp4bt | 500m | 500Mi | 0m | 2048Mi |
-| cmlwb1 | web-8996c7c99-b7slp | 3400m | 600Mi | 0m | 2048Mi |
-| cmlwb1 | web-8996c7c99-qvmb6 | 3400m | 600Mi | 0m | 2048Mi |
-| cmlwb1 | web-8996c7c99-ttfr8 | 3400m | 600Mi | 0m | 2048Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-cm-health-exporter-54f8c6884b-hts86 | 6m | 1224Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-logger-alert-receiver-df59556b8-jj97q | 3m | 260Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-metrics-server-exporter-7d6d54b99c-t5mfw | 101m | 228Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-platform-proxy-6c6488d645-x4jh4 | 2m | 260Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-alertmanager-0 | 6m | 320Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-alertmanager-1 | 6m | 320Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-kube-state-metrics-6ff77dd6f9-gxdhl | 5m | 300Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-pushgateway-5b5c796f44-9thjv | 2m | 230Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | monitoring-prometheus-server-cb8cd485b-z5bhs | 2003m | 16524Mi | 0m | 0Mi |
-| dlee-2-3a4f51ad-monitoring-platform | snmp-notifier-57db5b448c-j9j5q | 2m | 235Mi | 0m | 0Mi |
-| dlee155-dcd569b3-log-router | log-router-mjcmf | 1100m | 3072Mi | 0m | 3072Mi |
-| dlee155-dcd569b3-log-router | log-router-rtnpg | 1100m | 3072Mi | 0m | 3072Mi |
-| dlee155-dcd569b3-log-router | log-router-whwcg | 1100m | 3072Mi | 0m | 3072Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-cm-health-exporter-5c77c4cfbb-g6jfb | 6m | 1224Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-logger-alert-receiver-df59556b8-ct7c7 | 3m | 260Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-metrics-server-exporter-7d6d54b99c-bf8mm | 101m | 228Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-platform-proxy-6c6488d645-nl84w | 2m | 260Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-alertmanager-0 | 6m | 320Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-alertmanager-1 | 6m | 320Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-kube-state-metrics-b4d44b59f-2rcm6 | 5m | 300Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-pushgateway-5b5c796f44-dsbpb | 2m | 230Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | monitoring-prometheus-server-cb8cd485b-fwrsq | 2003m | 16524Mi | 0m | 0Mi |
-| dlee155-dcd569b3-monitoring-platform | snmp-notifier-57db5b448c-dkd8p | 2m | 235Mi | 0m | 0Mi |
-| ecs-webhooks | ecs-tolerations-webhook-64587f8d69-769mj | 0m | 0Mi | 0m | 0Mi |
-| ecs-webhooks | ecs-tolerations-webhook-64587f8d69-rnq2g | 0m | 0Mi | 0m | 0Mi |
-| gpu-operator | device-plugin-tn6br | 100m | 100Mi | 200m | 200Mi |
-| gpu-operator | kwok-gpu-device-plugin-84cdf656d8-bh5jk | 100m | 200Mi | 200m | 400Mi |
-| gpu-operator | nvidia-dcgm-exporter-jcn8f | 100m | 100Mi | 200m | 200Mi |
-| gpu-operator | nvidia-dcgm-exporter-kwok-5df8ff5f58-7kwh6 | 50m | 100Mi | 500m | 256Mi |
-| gpu-operator | status-updater-577cdbb8f7-lw2vt | 200m | 200Mi | 400m | 400Mi |
-| gpu-operator | topology-server-7796cc6c9d-sv6pv | 100m | 100Mi | 200m | 200Mi |
-| infra-prometheus | infra-prometheus-operator-1-1769898230-kube-state-metrics-tw28m | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-exp5dl7p | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-exp5vhdj | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-expm7m6d | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | infra-prometheus-operator-1-1769898230-prometheus-node-expvtx5m | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | infra-prometheus-operator-operator-5fdf97bcc7-kq2lk | 0m | 0Mi | 0m | 0Mi |
-| infra-prometheus | prometheus-infra-prometheus-operator-prometheus-0 | 270m | 1074Mi | 200m | 50Mi |
-| istio-ingress | istio-ingressgateway-5d7bf9c777-tzgxr | 100m | 128Mi | 2000m | 1024Mi |
-| istio-system | istio-cni-node-c57pn | 100m | 100Mi | 0m | 0Mi |
-| istio-system | istio-cni-node-m7vw9 | 100m | 100Mi | 0m | 0Mi |
-| istio-system | istio-cni-node-q9lgc | 100m | 100Mi | 0m | 0Mi |
-| istio-system | istio-cni-node-wr2j6 | 100m | 100Mi | 0m | 0Mi |
-| istio-system | istiod-9df4b667f-g4jl6 | 500m | 2048Mi | 0m | 0Mi |
-| istio-system | ztunnel-785rk | 200m | 512Mi | 0m | 0Mi |
-| istio-system | ztunnel-cvs5d | 200m | 512Mi | 0m | 0Mi |
-| istio-system | ztunnel-dvtz5 | 200m | 512Mi | 0m | 0Mi |
-| istio-system | ztunnel-hs2fw | 200m | 512Mi | 0m | 0Mi |
-| k8tz | k8tz-6dcbffb766-bt89k | 100m | 128Mi | 500m | 1024Mi |
-| k8tz | k8tz-6dcbffb766-hdtth | 100m | 128Mi | 500m | 1024Mi |
-| k8tz | k8tz-6dcbffb766-vfdcb | 100m | 128Mi | 500m | 1024Mi |
-| knative-serving | activator-7d57dc5794-pw8cp | 400m | 188Mi | 3000m | 1624Mi |
-| knative-serving | autoscaler-6f49c4dc95-z6952 | 200m | 228Mi | 3000m | 2024Mi |
-| knative-serving | controller-57b9759b87-7lscn | 200m | 228Mi | 3000m | 2024Mi |
-| knative-serving | net-istio-controller-84ddcf5b85-xtd6c | 30m | 40Mi | 300m | 400Mi |
-| knative-serving | net-istio-webhook-5969c8bcd6-qhvxp | 120m | 148Mi | 2200m | 1224Mi |
-| knative-serving | webhook-67b5b77db6-m29v7 | 200m | 228Mi | 2500m | 1524Mi |
-| knox-caii | knox-6cf7468c78-db7ch | 250m | 1024Mi | 0m | 0Mi |
-| knox-mr | knox-8dcc94556-zr9lw | 250m | 1024Mi | 0m | 0Mi |
-| kserve | kserve-controller-manager-6f6fcd89bb-t2hjr | 200m | 600Mi | 200m | 600Mi |
-| kube-system | etcd-ecs-m-01.dlee155.cldr.example | 200m | 512Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-canal-tk725 | 0m | 0Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-coredns-fpgdx | 0m | 0Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-metrics-server-cj2gd | 0m | 0Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-runtimeclasses-jr2wj | 0m | 0Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-snapshot-controller-crd-ngqhq | 0m | 0Mi | 0m | 0Mi |
-| kube-system | helm-install-rke2-snapshot-controller-mbt85 | 0m | 0Mi | 0m | 0Mi |
-| kube-system | kube-apiserver-ecs-m-01.dlee155.cldr.example | 250m | 1024Mi | 0m | 0Mi |
-| kube-system | kube-controller-manager-ecs-m-01.dlee155.cldr.example | 200m | 256Mi | 0m | 0Mi |
-| kube-system | kube-proxy-ecs-m-01.dlee155.cldr.example | 250m | 128Mi | 0m | 0Mi |
-| kube-system | kube-proxy-ecs-w-01.dlee155.cldr.example | 250m | 128Mi | 0m | 0Mi |
-| kube-system | kube-proxy-ecs-w-02.dlee155.cldr.example | 250m | 128Mi | 0m | 0Mi |
-| kube-system | kube-proxy-ecs-w-03.dlee155.cldr.example | 250m | 128Mi | 0m | 0Mi |
-| kube-system | kube-scheduler-ecs-m-01.dlee155.cldr.example | 100m | 128Mi | 0m | 0Mi |
-| kube-system | nvgfd-gpu-feature-discovery-j985t | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvgfd-node-feature-discovery-master-588d8954cf-9kn65 | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvgfd-node-feature-discovery-worker-5pdxc | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvgfd-node-feature-discovery-worker-ns4wr | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvgfd-node-feature-discovery-worker-x8bkh | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvgfd-node-feature-discovery-worker-xmt55 | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvidia-device-plugin-daemonset-7mczk | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvidia-device-plugin-daemonset-fdpmg | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvidia-device-plugin-daemonset-v4pr7 | 0m | 0Mi | 0m | 0Mi |
-| kube-system | nvidia-device-plugin-daemonset-vcmtt | 0m | 0Mi | 0m | 0Mi |
-| kube-system | rke2-canal-bj5bl | 250m | 0Mi | 0m | 0Mi |
-| kube-system | rke2-canal-hkx4w | 250m | 0Mi | 0m | 0Mi |
-| kube-system | rke2-canal-n5ggv | 250m | 0Mi | 0m | 0Mi |
-| kube-system | rke2-canal-rs6vg | 250m | 0Mi | 0m | 0Mi |
-| kube-system | rke2-coredns-rke2-coredns-6464f98784-mnlv9 | 100m | 128Mi | 100m | 128Mi |
-| kube-system | rke2-coredns-rke2-coredns-6464f98784-rpmdw | 100m | 128Mi | 100m | 128Mi |
-| kube-system | rke2-coredns-rke2-coredns-autoscaler-67bb49dff-xb8hb | 25m | 16Mi | 100m | 64Mi |
-| kube-system | rke2-ingress-nginx-controller-xczrg | 100m | 90Mi | 0m | 0Mi |
-| kube-system | rke2-metrics-server-75d485c65b-z5w56 | 100m | 200Mi | 0m | 0Mi |
-| kube-system | rke2-snapshot-controller-696989ffdd-hlx98 | 0m | 0Mi | 0m | 0Mi |
-| kubernetes-dashboard | kubernetes-dashboard-api-874bc7c5c-dmpbz | 100m | 200Mi | 250m | 400Mi |
-| kubernetes-dashboard | kubernetes-dashboard-auth-6b6476f6bf-6c9j6 | 100m | 200Mi | 250m | 400Mi |
-| kubernetes-dashboard | kubernetes-dashboard-kong-d75f545-jz8pg | 0m | 0Mi | 0m | 0Mi |
-| kubernetes-dashboard | kubernetes-dashboard-metrics-scraper-5c878d7ff4-thqz8 | 100m | 200Mi | 250m | 400Mi |
-| kubernetes-dashboard | kubernetes-dashboard-web-f66dc56f9-jk8h6 | 100m | 200Mi | 250m | 400Mi |
-| local-path-storage | local-path-provisioner-54764cf57c-vst7h | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-attacher-5f56765cb-5rbdn | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-attacher-5f56765cb-q2zfn | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-attacher-5f56765cb-qgpwj | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-provisioner-7948db7756-b5cwg | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-provisioner-7948db7756-hcp9r | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-provisioner-7948db7756-kptwn | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-resizer-849468dfd-8cmn8 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-resizer-849468dfd-bmh29 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-resizer-849468dfd-vdxb6 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-snapshotter-7c846f57c4-c9n5q | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-snapshotter-7c846f57c4-dwxfg | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | csi-snapshotter-7c846f57c4-hxfj8 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | engine-image-ei-3de3c622-58mfw | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | engine-image-ei-3de3c622-df4gj | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | engine-image-ei-3de3c622-l94t2 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | engine-image-ei-3de3c622-tnc6g | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | instance-manager-29f5296d6a9a0d60968ca2defbcdd049 | 3840m | 0Mi | 0m | 0Mi |
-| longhorn-system | instance-manager-33a43f81c3f124c14f66720467c76e99 | 3840m | 0Mi | 0m | 0Mi |
-| longhorn-system | instance-manager-6fae5f8efe21ee12b7a95edb06f777b1 | 3840m | 0Mi | 0m | 0Mi |
-| longhorn-system | instance-manager-e6c8122522226ea2c007788f0cdcc383 | 3840m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-csi-plugin-2w89j | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-csi-plugin-cdtwv | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-csi-plugin-ktjbm | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-csi-plugin-nf4cd | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-driver-deployer-7dcc47d788-9n4sp | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-manager-6wvlk | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-manager-jjth8 | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-manager-s6hdd | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-manager-z4tzn | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-support-bundle-manager-support-bundle-2026-03-29t66s8k | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-ui-6bbb75b4dd-s52qs | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | longhorn-ui-6bbb75b4dd-t47lz | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | prometheus-snapshot-cleanup-29579100-mvxcc | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | prometheus-snapshot-delete-29579100-rqcbw | 0m | 0Mi | 0m | 0Mi |
-| longhorn-system | share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83 | 0m | 0Mi | 0m | 0Mi |
-| model-registryc62e4e6e-13a | fluentd-forwarder-76b795794f-ppxsd | 500m | 250Mi | 1000m | 1024Mi |
-| model-registryc62e4e6e-13a | model-registry-db-0 | 200m | 2048Mi | 0m | 0Mi |
-| model-registryc62e4e6e-13a | model-registry-v1-854fb75657-t8vjj | 100m | 200Mi | 100m | 200Mi |
-| model-registryc62e4e6e-13a | model-registry-v2-55d8d65fd4-qmj9z | 200m | 628Mi | 2000m | 1024Mi |
-| pod-reaper | pod-reaper-29580350-nxmrx | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580360-r8sjt | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580370-jmkhb | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580380-c2q6v | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580390-grgjg | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580400-m8c5p | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580410-97gsk | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580420-7wdbq | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580430-v8tlf | 0m | 0Mi | 0m | 0Mi |
-| pod-reaper | pod-reaper-29580440-qzf9s | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-bad-command | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-dependency | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-exit | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-liveness | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-missing-config | 0m | 0Mi | 0m | 0Mi |
-| testme | crash-oom | 0m | 50Mi | 0m | 50Mi |
-| vault-system | vault-0 | 0m | 0Mi | 0m | 0Mi |
-| vault-system | vault-exporter-669cfddf5b-gdt9j | 0m | 0Mi | 0m | 0Mi |
-| warehouse-dlee155 | hue-query-processor-0 | 2000m | 8192Mi | 0m | 8192Mi |
-| warehouse-dlee155 | metastore-0 | 4000m | 8192Mi | 0m | 8192Mi |
-| warehouse-dlee155 | metastore-1 | 4000m | 8192Mi | 0m | 8192Mi |
-| yunikorn | yunikorn-admission-controller-66679f99f6-v8g2m | 100m | 500Mi | 2000m | 2048Mi |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | yunikorn | yunikorn-scheduler-586bb95546-wgr8w | 300m | 1124Mi | 4200m | 4596Mi |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 6/73] [30-Mar-2026 07:24:12] List all pods hosted in ecs-m-01.dlee155.cldr.example?
-       Answered — 4s elapsed
+[ 7/74] [30-Mar-2026 13:57:18] List all pods hosted in ecs-m-01.dlee155.cldr.example?
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all pods hosted in ecs-m-01.dlee155.cldr.example?
 Answer:
@@ -484,127 +108,16 @@ Answer:
 |---|---|---|---|
 | `cdp` | `cdp-embedded-db-0` | Running | 1/1 |
 | `cdp` | `cdp-release-alert-admin-service-78d5798f4b-d4z9z` | Running | 2/2 |
-| `cdp` | `cdp-release-cdc-profiler-launcher-67db4bd58f-vtrzt` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-frontend-7879cbb449-f9vnj` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-frontend-7879cbb449-w927l` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-history-85c87bbd9c-55mzh` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-history-85c87bbd9c-hfpfr` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-matching-79bd4ff876-gj4zf` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-matching-79bd4ff876-s2qql` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-worker-6b6f9c9867-jwf4f` | Running | 2/2 |
-| `cdp` | `cdp-release-cdp-cadence-worker-6b6f9c9867-x2tfz` | Running | 2/2 |
-| `cdp` | `cdp-release-classic-clusters-685f4c65bf-bbzvv` | Running | 2/2 |
-| `cdp` | `cdp-release-cluster-access-manager-8dc7b7b6c-5xfph` | Running | 2/2 |
-| `cdp` | `cdp-release-cluster-proxy-1.0.0-546fd555bb-6s5k2` | Running | 2/2 |
-| `cdp` | `cdp-release-cpx-liftie-6d96d48db8-2h5pg` | Running | 2/2 |
-| `cdp` | `cdp-release-dex-cp-bfc587b5d-mn89l` | Running | 2/2 |
-| `cdp` | `cdp-release-dmx-85cdf968b6-j6kfq` | Running | 2/2 |
-| `cdp` | `cdp-release-dps-gateway-1.0-dcd9cccff-4wsjt` | Running | 3/3 |
-| `cdp` | `cdp-release-dps-gateway-1.0-dcd9cccff-pp4p8` | Running | 3/3 |
-| `cdp` | `cdp-release-dssapp-64b7f687fc-cwzxk` | Running | 1/1 |
-| `cdp` | `cdp-release-dssapp-64b7f687fc-h7q2v` | Running | 1/1 |
-| `cdp` | `cdp-release-dwx-server-597569b498-jrl5l` | Running | 2/2 |
-| `cdp` | `cdp-release-dwx-ui-757b96d85b-b8m8f` | Running | 2/2 |
-| `cdp` | `cdp-release-dwx-ui-757b96d85b-dzkx5` | Running | 2/2 |
-| `cdp` | `cdp-release-dwx-worker-5bd649946d-8s6qk` | Running | 2/2 |
-| `cdp` | `cdp-release-dwx-worker-5bd649946d-mrrcz` | Running | 2/2 |
-| `cdp` | `cdp-release-jumpgate-admin-1.0.0-7d6c785579-4hcgm` | Running | 2/2 |
-| `cdp` | `cdp-release-jumpgate-proxy-1.0.0-fff64b86b-x4wpv` | Running | 2/2 |
-| `cdp` | `cdp-release-logger-alert-receiver-85947fd5df-kggz8` | Running | 2/2 |
-| `cdp` | `cdp-release-metrics-server-exporter-76ffb6cbd5-8fgb9` | Running | 2/2 |
-| `cdp` | `cdp-release-monitoring-app-596bf8d598-86kt7` | Running | 2/2 |
-| `cdp` | `cdp-release-monitoring-controller-manager-5ff9584d7b-ffqw4` | Running | 2/2 |
-| `cdp` | `cdp-release-monitoring-metricproxy-f7fd8588d-qctxh` | Running | 2/2 |
-| `cdp` | `cdp-release-monitoring-metricproxy-f7fd8588d-vd6tk` | Running | 2/2 |
-| `cdp` | `cdp-release-monitoring-pvcservice-6dd677cfbc-j5rb6` | Running | 2/2 |
-| `cdp` | `cdp-release-opentelemetry-collector-58f78c4544-v4qzs` | Running | 2/2 |
-| `cdp` | `cdp-release-prometheus-alertmanager-0` | Running | 3/3 |
-| `cdp` | `cdp-release-prometheus-alertmanager-1` | Running | 3/3 |
-| `cdp` | `cdp-release-prometheus-kube-state-metrics-7967b78bf8-rrjtx` | Running | 2/2 |
-| `cdp` | `cdp-release-prometheus-server-86844db8-v8lkg` | Running | 3/3 |
-| `cdp` | `cdp-release-reflector-75f959d8c9-2v6gp` | Running | 2/2 |
-| `cdp` | `cdp-release-reloader-b66dc9f9c-cnh59` | Running | 1/1 |
-| `cdp` | `cdp-release-resource-pool-manager-55774696fb-xft97` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-audit-private-585d9fcbbb-7px24` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-cdp-private-authentication-consolend9b5` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-cdp-private-commonconsole-5cfc4b95k7p6f` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-cdp-private-environments-console-7ftqxq` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-compute-api-8486576b4b-v7g7s` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-consoleauthenticationcdp-588f74d99f4r78` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-de-api-55d4fd4b95-zxgkv` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-drscp-api-68d6fd7696-w6zqd` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-dw-api-6f9f8b4c57-p2wdg` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-environment-f94f5cfdd-x2g2m` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-environments2-api-676665947f-c6f6b` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-iam-api-5859fc9fcf-qf94n` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-iam-api-5859fc9fcf-t9mnf` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-iam-console-7bcd7657fc-2mbzh` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-iam-console-7bcd7657fc-hqptx` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-kerberosmgmt-api-f5669c8d8-trchv` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-ml-api-579c9b9b67-2bsns` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-onpremises-api-9bff5d44c-zvtn9` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-remotecluster-594cf87659-xgpkw` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-resource-management-console-749558sgnbr` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-sdx2-api-5d77fd798-7c5s4` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-servicediscovery-api-7d6555f5bb-dd5g7` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-servicediscoverysimple-67b9547656-5cbhc` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-usermanagement-private-78f7c5c87-gwsgd` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-usermanagement-private-78f7c5c87-zqrdb` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-userpreference-54d8b58d74-xh4h8` | Running | 2/2 |
-| `cdp` | `cdp-release-thunderhead-userpreference-api-594959b796-8l9pw` | Running | 2/2 |
-| `cdp` | `cli-f9c8z` | Succeeded | 0/1 |
-| `cdp` | `dp-cadence-worker-77fc5bbbbf-f5fdp` | Running | 2/2 |
-| `cdp` | `dp-health-poller-658fbc9c78-zxv59` | Running | 2/2 |
-| `cdp` | `dp-mlx-control-plane-app-79f6978c8f-phnpz` | Running | 2/2 |
-| `cdp` | `echoserver-86b89975d9-frmvx` | Running | 1/1 |
-| `cdp` | `fluentd-aggregator-0` | Running | 2/2 |
-| `cdp` | `snmp-notifier-7dbb859b8d-dhcml` | Running | 2/2 |
-| `cloudera-gateway` | `cloudera-gateway-mwlhv` | Running | 1/1 |
-| `ecs-webhooks` | `ecs-tolerations-webhook-64587f8d69-769mj` | Running | 1/1 |
-| `ecs-webhooks` | `ecs-tolerations-webhook-64587f8d69-rnq2g` | Running | 1/1 |
-| `infra-prometheus` | `infra-prometheus-operator-1-1769898230-kube-state-metrics-tw28m` | Running | 1/1 |
-| `infra-prometheus` | `infra-prometheus-operator-1-1769898230-prometheus-node-expvtx5m` | Running | 1/1 |
-| `infra-prometheus` | `infra-prometheus-operator-operator-5fdf97bcc7-kq2lk` | Running | 1/1 |
-| `infra-prometheus` | `prometheus-infra-prometheus-operator-prometheus-0` | Running | 2/2 |
-| `istio-ingress` | `istio-ingressgateway-5d7bf9c777-tzgxr` | Running | 1/1 |
-| `istio-system` | `istio-cni-node-c57pn` | Running | 1/1 |
-| `istio-system` | `istiod-9df4b667f-g4jl6` | Running | 1/1 |
-| `istio-system` | `ztunnel-785rk` | Running | 1/1 |
-| `kube-system` | `etcd-ecs-m-01.dlee155.cldr.example` | Running | 1/1 |
-| `kube-system` | `helm-install-rke2-canal-tk725` | Succeeded | 0/1 |
-| `kube-system` | `helm-install-rke2-coredns-fpgdx` | Succeeded | 0/1 |
-| `kube-system` | `helm-install-rke2-metrics-server-cj2gd` | Succeeded | 0/1 |
-| `kube-system` | `helm-install-rke2-runtimeclasses-jr2wj` | Succeeded | 0/1 |
-| `kube-system` | `helm-install-rke2-snapshot-controller-crd-ngqhq` | Succeeded | 0/1 |
-| `kube-system` | `helm-install-rke2-snapshot-controller-mbt85` | Succeeded | 0/1 |
-| `kube-system` | `kube-apiserver-ecs-m-01.dlee155.cldr.example` | Running | 1/1 |
-| `kube-system` | `kube-controller-manager-ecs-m-01.dlee155.cldr.example` | Running | 1/1 |
-| `kube-system` | `kube-proxy-ecs-m-01.dlee155.cldr.example` | Running | 1/1 |
-| `kube-system` | `kube-scheduler-ecs-m-01.dlee155.cldr.example` | Running | 1/1 |
-| `kube-system` | `nvgfd-node-feature-discovery-worker-x8bkh` | Running | 1/1 |
-| `kube-system` | `nvidia-device-plugin-daemonset-7mczk` | Running | 1/1 |
-| `kube-system` | `rke2-canal-hkx4w` | Running | 2/2 |
-| `kube-system` | `rke2-coredns-rke2-coredns-6464f98784-rpmdw` | Running | 1/1 |
-| `kube-system` | `rke2-coredns-rke2-coredns-autoscaler-67bb49dff-xb8hb` | Running | 1/1 |
-| `kube-system` | `rke2-ingress-nginx-controller-xczrg` | Running | 1/1 |
-| `kube-system` | `rke2-metrics-server-75d485c65b-z5w56` | Running | 1/1 |
-| `kube-system` | `rke2-snapshot-controller-696989ffdd-hlx98` | Running | 1/1 |
-| `kubernetes-dashboard` | `kubernetes-dashboard-auth-6b6476f6bf-6c9j6` | Running | 1/1 |
-| `kubernetes-dashboard` | `kubernetes-dashboard-kong-d75f545-jz8pg` | Running | 1/1 |
-| `kubernetes-dashboard` | `kubernetes-dashboard-metrics-scraper-5c878d7ff4-thqz8` | Running | 1/1 |
-| `kubernetes-dashboard` | `kubernetes-dashboard-web-f66dc56f9-jk8h6` | Running | 1/1 |
-| `local-path-storage` | `local-path-provisioner-54764cf57c-vst7h` | Running | 1/1 |
-| `longhorn-system` | `engine-image-ei-3de3c622-df4gj` | Running | 1/1 |
-| `longhorn-system` | `instance-manager-6fae5f8efe21ee12b7a95edb06f777b1` | Running | 1/1 |
-| `longhorn-system` | `longhorn-csi-plugin-ktjbm` | Running | 3/3 |
-| `longhorn-system` | `longhorn-manager-6wvlk` | Running | 2/2 |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | `vault-system` | `vault-0` | Running | 1/1 |
 | `vault-system` | `vault-exporter-669cfddf5b-gdt9j` | Running | 1/1 |
 | `yunikorn` | `yunikorn-admission-controller-66679f99f6-v8g2m` | Running | 1/1 |
 | `yunikorn` | `yunikorn-scheduler-586bb95546-wgr8w` | Running | 2/2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 7/73] [30-Mar-2026 07:24:17] List crds that contain longhorn in their name
+[ 8/74] [30-Mar-2026 13:57:23] List crds that contain longhorn in their name
        Answered — 27s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List crds that contain longhorn in their name
@@ -613,30 +126,15 @@ Answer:
 |---|---|---|---|
 | `backingimagedatasources.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
 | `backingimagemanagers.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `backingimages.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `backupbackingimages.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
-| `backups.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `backuptargets.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `backupvolumes.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `engineimages.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `engines.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `instancemanagers.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `nodes.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `orphans.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
-| `recurringjobs.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `replicas.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `settings.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `sharemanagers.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `snapshots.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
-| `supportbundles.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
-| `systembackups.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
-| `systemrestores.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | `volumeattachments.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
 | `volumes.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 8/73] [30-Mar-2026 07:24:44] Show me longhorn settings
-       Answered — 58s elapsed
+[ 9/74] [30-Mar-2026 13:57:51] Show me longhorn settings
+       Answered — 61s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show me longhorn settings
 Answer:
@@ -644,97 +142,13 @@ Answer:
 | NAME | VALUE |
 |---|---|
 | `allow-collecting-longhorn-usage-metrics` | `true` |
-| `allow-empty-disk-selector-volume` | `true` |
-| `allow-empty-node-selector-volume` | `true` |
-| `allow-recurring-job-while-volume-detached` | `false` |
-| `allow-volume-creation-with-degraded-availability` | `true` |
-| `auto-cleanup-recurring-job-backup-snapshot` | `true` |
-| `auto-cleanup-system-generated-snapshot` | `true` |
-| `auto-cleanup-when-delete-backup` | `false` |
-| `auto-delete-pod-when-volume-detached-unexpectedly` | `true` |
-| `auto-salvage` | `true` |
-| `backing-image-cleanup-wait-interval` | `60` |
-| `backing-image-recovery-wait-interval` | `300` |
-| `backup-compression-method` | `lz4` |
-| `backup-concurrent-limit` | `2` |
-| `backup-execution-timeout` | `1` |
-| `concurrent-automatic-engine-upgrade-per-node-limit` | `3` |
-| `concurrent-backing-image-replenish-per-node-limit` | `5` |
-| `concurrent-replica-rebuild-per-node-limit` | `5` |
-| `concurrent-volume-backup-restore-per-node-limit` | `5` |
-| `crd-api-version` | `longhorn.io/v1beta2` |
-| `create-default-disk-labeled-nodes` | `false` |
-| `current-longhorn-version` | `v1.8.2` |
-| `default-backing-image-manager-image` | `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/backing-image-manager:v1.8.2` |
-| `default-data-locality` | `disabled` |
-| `default-data-path` | `/ecs/longhorn-storage` |
-| `default-engine-image` | `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-engine:v1.8.2` |
-| `default-instance-manager-image` | `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-instance-manager:v1.8.2` |
-| `default-longhorn-static-storage-class` | `longhorn-static` |
-| `default-min-number-of-backing-image-copies` | `3` |
-| `default-replica-count` | `3` |
-| `deleting-confirmation-flag` | `false` |
-| `detach-manually-attached-volumes-when-cordoned` | `false` |
-| `disable-revision-counter` | `true` |
-| `disable-scheduling-on-cordoned-node` | `true` |
-| `disable-snapshot-purge` | `false` |
-| `engine-replica-timeout` | `8` |
-| `failed-backup-ttl` | `1440` |
-| `fast-replica-rebuild-enabled` | `true` |
-| `freeze-filesystem-for-snapshot` | `false` |
-| `guaranteed-instance-manager-cpu` | `12` |
-| `kubernetes-cluster-autoscaler-enabled` | `false` |
-| `latest-longhorn-version` | `v1.11.0` |
-| `log-level` | `Info` |
-| `long-grpc-timeout` | `86400` |
-| `node-down-pod-deletion-policy` | `delete-both-statefulset-and-deployment-pod` |
-| `node-drain-policy` | `block-if-contains-last-replica` |
-| `orphan-auto-deletion` | `false` |
-| `priority-class` | `system-node-critical` |
-| `recurring-failed-jobs-history-limit` | `1` |
-| `recurring-job-max-retention` | `100` |
-| `recurring-successful-jobs-history-limit` | `1` |
-| `registry-secret` | `` |
-| `remove-snapshots-during-filesystem-trim` | `false` |
-| `replica-auto-balance` | `least-effort` |
-| `replica-auto-balance-disk-pressure-percentage` | `90` |
-| `replica-disk-soft-anti-affinity` | `true` |
-| `replica-file-sync-http-client-timeout` | `30` |
-| `replica-replenishment-wait-interval` | `600` |
-| `replica-soft-anti-affinity` | `false` |
-| `replica-zone-soft-anti-affinity` | `true` |
-| `restore-concurrent-limit` | `2` |
-| `restore-volume-recurring-jobs` | `false` |
-| `rwx-volume-fast-failover` | `false` |
-| `snapshot-data-integrity` | `fast-check` |
-| `snapshot-data-integrity-cronjob` | `0 0 */7 * *` |
-| `snapshot-data-integrity-immediate-check-after-snapshot-creation` | `false` |
-| `snapshot-max-count` | `12` |
-| `stable-longhorn-versions` | `v1.10.2,v1.3.3,v1.4.4,v1.5.5,v1.6.4,v1.7.3,v1.8.2,v1.9.2` |
-| `storage-minimal-available-percentage` | `25` |
-| `storage-network` | `` |
-| `storage-network-for-rwx-volume-enabled` | `false` |
-| `storage-over-provisioning-percentage` | `800` |
-| `storage-reserved-percentage-for-default-disk` | `30` |
-| `support-bundle-failed-history-limit` | `1` |
-| `support-bundle-manager-image` | `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/support-bundle-kit:v0.0.56` |
-| `support-bundle-node-collection-timeout` | `30` |
-| `system-managed-components-node-selector` | `` |
-| `system-managed-pods-image-pull-policy` | `if-not-present` |
-| `taint-toleration` | `` |
-| `upgrade-checker` | `true` |
-| `upgrade-responder-url` | `https://longhorn-upgrade-responder.rancher.io/v1/checkupgrade` |
-| `v1-data-engine` | `true` |
-| `v2-data-engine` | `false` |
-| `v2-data-engine-cpu-mask` | `0x1` |
-| `v2-data-engine-fast-replica-rebuilding` | `false` |
-| `v2-data-engine-guaranteed-instance-manager-cpu` | `1250` |
-| `v2-data-engine-hugepage-limit` | `2048` |
-| `v2-data-engine-log-flags` | `` |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | `v2-data-engine-log-level` | `Notice` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 9/73] [30-Mar-2026 07:25:42] Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
+[10/74] [30-Mar-2026 13:58:52] Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
@@ -742,109 +156,42 @@ Answer:
 ### Longhorn Node Status
 | NODE | READY | SCHEDULABLE | DISK PRESSURE | STORAGE MAX (GiB) | AVAIL (GiB) | SCHEDULED (GiB) | OVERCOMMIT % |
 |---|---|---|---|---|---|---|---|
-| `ecs-w-02.dlee155.cldr.example` | ✅ | ⚠️ Cordoned | ✅ No | 199.9 | 191.0 | 100.4 | ✅ 50% |
+| `ecs-w-02.dlee155.cldr.example` | ✅ | ⚠️ Cordoned | ✅ No | 199.9 | 190.9 | 100.4 | ✅ 50% |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[10/73] [30-Mar-2026 07:25:50] Show schema for table users in db-0 pod in cmlwb1
-       Answered — 34s elapsed
+[11/74] [30-Mar-2026 13:59:00] Show schema for table users in db-0 pod in cmlwb1
+       Answered — 33s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show schema for table users in db-0 pod in cmlwb1
 Answer:
-|column_name|data_type|is_nullable|column_default|
-|---|---|---|---|
-|id|integer|NO|nextval('users_id_seq'::regclass)|
-|username|character varying|NO||
-|creator_id|integer|YES||
-|email|character varying|YES||
-|password|character|YES||
-|type|USER-DEFINED|NO|'user'::user_type|
-|api_key|character|YES||
-|name|character varying|YES||
-|location|character varying|YES||
-|bio|text|YES||
-|public_email|character varying|YES||
-|gravatar_email|character varying|YES||
-|gravatar|character|YES||
-|website|character varying|YES||
-|company|character varying|YES||
-|hireable|boolean|NO|false|
-|last_login_at|timestamp with time zone|YES||
-|created_at|timestamp with time zone|NO|(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)|
-|admin|boolean|NO|false|
-|github|character varying|YES||
-|linkedin|character varying|YES||
-|twitter|character varying|YES||
-|facebook|character varying|YES||
-|invite_id|integer|YES||
-|credit_card_last4|character|YES||
-|stripe_customer_id|character varying|YES||
-|last_usage_billing_at|timestamp without time zone|YES||
-|plan|character varying|NO|'free'::character varying|
-|stripe_subscription_id|character varying|YES||
-|stripe_card_id|character varying|YES||
-|trial_started_at|timestamp without time zone|YES||
-|github_pubkey_id|integer|YES||
-|github_oauth_token|text|YES||
-|github_oauth_completed|boolean|YES||
-|usage_credits|numeric|YES|0.00|
-|outstanding_balance|numeric|YES|0.00|
-|email_jobs|boolean|NO|true|
-|email_follows|boolean|NO|true|
-|email_mentions|boolean|NO|true|
-|email_comments|boolean|NO|true|
-|email_stars|boolean|NO|false|
-|email_bills|boolean|NO|true|
-|email_news|boolean|NO|true|
-|billing_email|character varying|YES||
-|phone|character varying|YES||
-|onboarding_complete|boolean|NO|false|
-|onboarding_step|integer|NO|0|
-|org_trial_started_at|timestamp without time zone|YES||
-|usage_cap|numeric|YES|NULL::numeric|
-|custom_payment|boolean|NO|false|
-|override_workbench_memory|integer|YES||
-|override_workbench_cores|integer|YES||
-|override_private_projects|integer|YES||
-|override_total_projects|integer|YES||
-|override_max_console_cores|integer|YES||
-|override_max_total_cores|integer|YES||
-|override_max_usage_spend|integer|YES||
-|override_schedule|boolean|YES||
-|override_models|boolean|YES||
-|stripe_status|character varying|YES||
-|last_context_id|integer|YES||
-|banned|boolean|NO|false|
-|deactivated|boolean|NO|false|
-|last_seen_at|timestamp with time zone|YES||
-|hadoop_username|character varying|YES||
-|username_hash|character varying|YES||
-|last_logout_at_tz|timestamp with time zone|YES||
-|namespace|character varying|NO||
-|password_updated_at|timestamp with time zone|NO|(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)|
-|ldap_dn|character varying|YES||
-|business_user|boolean|NO|false|
-|environment|text|NO|'{}'::text|
-|api_key_hash|text|YES||
-|api_key_expiry_date|timestamp without time zone|YES||
-|machine_user|boolean|YES|false|
-|api_key_comments|text|YES||
-|observability_user|boolean|YES|false|
-|crn|character varying|YES|
+column_name|data_type|is_nullable|column_default
+-----------|---------|-----------|--------------
+id|integer|NO|nextval('users_id_seq'::regclass)
+...... truncated ......
+...... truncated ......
+...... truncated ......
+crn|character varying|YES|
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[11/73] [30-Mar-2026 07:26:24] which secret is attached to db-0 in cmlwb1 namespace?
-       Answered — 9s elapsed
+[12/74] [30-Mar-2026 13:59:33] which secret is attached to db-0 in cmlwb1 namespace?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which secret is attached to db-0 in cmlwb1 namespace?
 Answer:
-I mapped the keyword in your question and scoped this check to the `cmlwb1` namespace.
-The secret attached to db-0 in the cmlwb1 namespace is not explicitly listed in the provided tool results. The describe_pod output shows the pod's configuration, including volumes and mounts, but it does not directly indicate which secret is attached. To determine the specific secret, we need to check the pod's volume mounts and identify the secret referenced in the mount configuration. 
-However, based on the information given, the secret name is not clearly specified. To proceed, we should examine the pod's volume mounts to identify the secret. 
-If you need the exact secret name, please provide additional details or confirm if there is a specific secret you are referring to.
+```
+Name:             db-0
+Namespace:        cmlwb1
+...... truncated ......
+...... truncated ......
+...... truncated ......
+ 'toleration_seconds': 300,
+ 'value': None}
+Events:          <none>
+```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[12/73] [30-Mar-2026 07:26:33] Describe storageclass longhorn
-       Answered — 3s elapsed
+[13/74] [30-Mar-2026 13:59:42] Describe storageclass longhorn
+       Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe storageclass longhorn
 Answer:
@@ -852,37 +199,15 @@ Answer:
 Name:                  longhorn
 IsDefaultClass:        Yes
 Annotations:           longhorn.io/last-applied-configmap=kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: longhorn
-  annotations:
-    storageclass.kubernetes.io/is-default-class: "true"
-provisioner: driver.longhorn.io
-allowVolumeExpansion: true
-reclaimPolicy: "Delete"
-volumeBindingMode: Immediate
-parameters:
-  numberOfReplicas: "2"
-  staleReplicaTimeout: "30"
-  fromBackup: ""
-  fsType: "ext4"
-  dataLocality: "disabled"
-  unmapMarkSnapChainRemoved: "ignored"
-  disableRevisionCounter: "true"
-  dataEngine: "v1"
-  backupTargetName: "default"
-                 storageclass.kubernetes.io/is-default-class=true
-Provisioner:           driver.longhorn.io
-Parameters:            backupTargetName=default,dataEngine=v1,dataLocality=disabled,disableRevisionCounter=true,fromBackup=,fsType=ext4,numberOfReplicas=2,staleReplicaTimeout=30,unmapMarkSnapChainRemoved=ignored
-AllowVolumeExpansion:  True
-MountOptions:          <none>
-ReclaimPolicy:         Delete
+...... truncated ......
+...... truncated ......
+...... truncated ......
 VolumeBindingMode:     Immediate
 Events:                <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[13/73] [30-Mar-2026 07:26:36] List all quotas
+[14/74] [30-Mar-2026 13:59:44] List all quotas
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all quotas
@@ -894,8 +219,8 @@ As no namespace was mentioned, I checked across all namespaces.
 | `cmlwb1-user-2` | `cdsw-object-quota` | count/pods | 0 | 50 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[14/73] [30-Mar-2026 07:26:42] which pods are associated with secret cdp-release-grafana in cdp ns?
-       Answered — 7s elapsed
+[15/74] [30-Mar-2026 13:59:50] which pods are associated with secret cdp-release-grafana in cdp ns?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which pods are associated with secret cdp-release-grafana in cdp ns?
 Answer:
@@ -906,15 +231,14 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | `cdp` | `cdp-release-monitoring-pvcservice-6dd677cfbc-j5rb6` | Running |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[15/73] [30-Mar-2026 07:26:49] I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
-       Answered — 16s elapsed
+[16/74] [30-Mar-2026 13:59:58] I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
+       Answered — 15s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
 Answer:
-The user's question contains specific numbers for a new pod's size (800CPU & 12GB memory).
 Node: ecs-m-01.dlee155.cldr.example
 CPU: 18.24 >= 800 -> FALSE
-RAM: 98.54 >= 12 -> TRUE
+RAM: 98.54 >= 12 -> FALSE
 Available on node?: NO
 Node: ecs-w-01.dlee155.cldr.example
 CPU: 13.76 >= 800 -> FALSE
@@ -931,8 +255,8 @@ Available on node?: NO
 Overall: NO — 0 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[16/73] [30-Mar-2026 07:27:05] show me the limit range of the cluster
-       Answered — 4s elapsed
+[17/74] [30-Mar-2026 14:00:13] show me the limit range of the cluster
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show me the limit range of the cluster
 Answer:
@@ -940,8 +264,8 @@ As no namespace was mentioned, I checked across all namespaces.
 The cluster does not have any LimitRanges configured.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[17/73] [30-Mar-2026 07:27:09] how much capacity is available to be requested for each node?
-       Answered — 21s elapsed
+[18/74] [30-Mar-2026 14:00:16] how much capacity is available to be requested for each node?
+       Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: how much capacity is available to be requested for each node?
 Answer:
@@ -954,33 +278,32 @@ The table below shows the available capacity for each node:
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[18/73] [30-Mar-2026 07:27:30] I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
-       Answered — 17s elapsed
+[19/74] [30-Mar-2026 14:00:38] I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
+       Answered — 15s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
 Answer:
-The user's question contains specific numbers for a new pod's size (8CPU & 1256GB memory). Let's evaluate each node:
-- Node: ecs-m-01.dlee155.cldr.example
-  CPU: 18.24 >= 8 -> TRUE
-  RAM: 98.54 >= 1256 -> FALSE
-  Available on node?: NO
-- Node: ecs-w-01.dlee155.cldr.example
-  CPU: 13.76 >= 8 -> TRUE
-  RAM: 117.7 >= 1256 -> FALSE
-  Available on node?: NO
-- Node: ecs-w-02.dlee155.cldr.example
-  CPU: 14.84 >= 8 -> TRUE
-  RAM: 108.35 >= 1256 -> FALSE
-  Available on node?: NO
-- Node: ecs-w-03.dlee155.cldr.example
-  CPU: 9.75 >= 8 -> TRUE
-  RAM: 111.03 >= 1256 -> FALSE
-  Available on node?: NO
+Node: ecs-m-01.dlee155.cldr.example
+CPU: 18.24 >= 8 -> TRUE
+RAM: 98.54 >= 1256 -> FALSE
+Available on node?: NO
+Node: ecs-w-01.dlee155.cldr.example
+CPU: 13.76 >= 8 -> TRUE
+RAM: 117.7 >= 1256 -> FALSE
+Available on node?: NO
+Node: ecs-w-02.dlee155.cldr.example
+CPU: 14.84 >= 8 -> TRUE
+RAM: 108.35 >= 1256 -> FALSE
+Available on node?: NO
+Node: ecs-w-03.dlee155.cldr.example
+CPU: 9.75 >= 8 -> TRUE
+RAM: 111.03 >= 1256 -> FALSE
+Available on node?: NO
 Overall: NO — 0 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[19/73] [30-Mar-2026 07:27:47] Show CPU and memory capacity for each node
-       Answered — 21s elapsed
+[20/74] [30-Mar-2026 14:00:53] Show CPU and memory capacity for each node
+       Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show CPU and memory capacity for each node
 Answer:
@@ -992,8 +315,8 @@ Answer:
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[20/73] [30-Mar-2026 07:28:09] I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
-       Answered — 14s elapsed
+[21/74] [30-Mar-2026 14:01:15] I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
+       Answered — 15s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
 Answer:
@@ -1016,8 +339,8 @@ Available on node?: YES
 Overall: YES — 4 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[21/73] [30-Mar-2026 07:28:23] Which nodes have taints?
-       Answered — 6s elapsed
+[22/74] [30-Mar-2026 14:01:30] Which nodes have taints?
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which nodes have taints?
 Answer:
@@ -1027,34 +350,34 @@ Answer:
 | `ecs-w-02.dlee155.cldr.example` | node.kubernetes.io/unschedulable | - | NoSchedule |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[22/73] [30-Mar-2026 07:28:29] Which node is currently cordoned?
+[23/74] [30-Mar-2026 14:01:37] Which node is currently cordoned?
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which node is currently cordoned?
 Answer:
-The node currently cordoned is `ecs-w-02.dlee155.cldr.example`.
+The node currently cordoned is `ecs-w-02.dlee155.cldr.example`. It has SchedulingDisabled set, which means no new pods can be scheduled on it. Existing pods will continue to run normally.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[23/73] [30-Mar-2026 07:28:33] list all nodes with GPU
+[24/74] [30-Mar-2026 14:01:41] list all nodes with GPU
        Answered — 10s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all nodes with GPU
 Answer:
 The following nodes have GPUs:
 | NODE | PRODUCT | COUNT | VRAM/GRAM | ALLOCATABLE | ATTACHED PODS |
-|---|---|---|---|---|---|
+|------|---------|-------|-----------|-------------|---------------|
 | ecs-w-03.dlee155.cldr.example | Tesla-K80 | 2 | 11441Mi | 2 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[24/73] [30-Mar-2026 07:28:43] which node has a GPU available and in use?
-       Answered — 9s elapsed
+[25/74] [30-Mar-2026 14:01:51] which node has a GPU available and in use?
+       Answered — 11s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which node has a GPU available and in use?
 Answer:
-The node `ecs-w-03.dlee155.cldr.example` has a GPU available, but it is not in use as indicated by the "-" in the ATTACHED PODS column.
+The node `ecs-w-03.dlee155.cldr.example` has a GPU available, specifically two Tesla-K80 GPUs with 11441Mi VRAM/GRAM each. However, the "ATTACHED PODS" column shows "-", indicating that no pod is currently using the GPU. Therefore, the GPU is available and not in use.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[25/73] [30-Mar-2026 07:28:52] Show all replicaset in cdp-keda ns
+[26/74] [30-Mar-2026 14:02:02] Show all replicaset in cdp-keda ns
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show all replicaset in cdp-keda ns
@@ -1067,22 +390,22 @@ I mapped the keyword in your question and scoped this check to the `cdp-keda` na
 | cdp-keda | keda-operator-metrics-apiserver-7f7d6ffd8b | ✓ Healthy | 1 | 1 | 1 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[26/73] [30-Mar-2026 07:29:00] show the last 4 lines of log for cdp-embedded-db-0
+[27/74] [30-Mar-2026 14:02:10] show the last 4 lines of log for cdp-embedded-db-0
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show the last 4 lines of log for cdp-embedded-db-0
 Answer:
 ### `cdp/cdp-embedded-db-0` [cdp-cdp-embedded-db]
 ```
-2026-03-29T23:19:24.161404457Z 2026-03-29 23:19:24.160 UTC [15] LOG:  checkpoint starting: time
-2026-03-29T23:19:58.378873024Z 2026-03-29 23:19:58.378 UTC [15] LOG:  checkpoint complete: wrote 341 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=34.129 s, sync=0.014 s, total=34.218 s; sync files=49, longest=0.013 s, average=0.001 s; distance=2446 kB, estimate=5138 kB; lsn=8/85F9D080, redo lsn=8/85F17228
-2026-03-29T23:24:24.479123968Z 2026-03-29 23:24:24.478 UTC [15] LOG:  checkpoint starting: time
-2026-03-29T23:24:59.290690192Z 2026-03-29 23:24:59.290 UTC [15] LOG:  checkpoint complete: wrote 347 buffers (0.3%); 0 WAL file(s) added, 0 removed, 1 recycled; write=34.706 s, sync=0.016 s, total=34.812 s; sync files=44, longest=0.015 s, average=0.001 s; distance=2445 kB, estimate=4869 kB; lsn=8/861F0090, redo lsn=8/8617A658
+2026-03-30T05:54:33.024586705Z 2026-03-30 05:54:33.024 UTC [15] LOG:  checkpoint starting: time
+2026-03-30T05:55:04.144402216Z 2026-03-30 05:55:04.143 UTC [15] LOG:  checkpoint complete: wrote 310 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=31.037 s, sync=0.019 s, total=31.120 s; sync files=42, longest=0.018 s, average=0.001 s; distance=2165 kB, estimate=2276 kB; lsn=8/90A102A8, redo lsn=8/90926668
+2026-03-30T05:59:33.242842780Z 2026-03-30 05:59:33.242 UTC [15] LOG:  checkpoint starting: time
+2026-03-30T06:00:01.348177408Z 2026-03-30 06:00:01.347 UTC [15] LOG:  checkpoint complete: wrote 279 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=27.987 s, sync=0.056 s, total=28.105 s; sync files=38, longest=0.019 s, average=0.002 s; distance=2134 kB, estimate=2262 kB; lsn=8/90C82180, redo lsn=8/90B3C260
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[27/73] [30-Mar-2026 07:29:04] I want to know all statefulset in cdp namespace
-       Answered — 6s elapsed
+[28/74] [30-Mar-2026 14:02:14] I want to know all statefulset in cdp namespace
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to know all statefulset in cdp namespace
 Answer:
@@ -1094,8 +417,8 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | cdp | fluentd-aggregator | ✓ Healthy | 1 | 1 | 1 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[28/73] [30-Mar-2026 07:29:10] List any resource named with vault in its name
-       Answered — 2s elapsed
+[29/74] [30-Mar-2026 14:02:21] List any resource named with vault in its name
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List any resource named with vault in its name
 Answer:
@@ -1119,7 +442,7 @@ Showing resources matching `vault` in namespace `vault-system`.
 | Secret | vault-system | vault-server-tls | Opaque |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[29/73] [30-Mar-2026 07:29:13] Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
+[30/74] [30-Mar-2026 14:02:24] Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
@@ -1127,193 +450,45 @@ Answer:
 ```
 Name:             cdp-release-prometheus-alertmanager-0
 Namespace:        cdp
-Priority:         0
-Service Account:  cdp-release-prometheus-alertmanager
-Node:             ecs-m-01.dlee155.cldr.example
-Start Time:       2026-02-26 06:18:18+00:00
-Labels:           app=prometheus
-                 apps.kubernetes.io/pod-index=0
-                 chart=prometheus-1.0.0
-                 component=alertmanager
-                 controller-revision-hash=cdp-release-prometheus-alertmanager-669c9c5cf6
-                 heritage=Helm
-                 release=cdp-release
-                 statefulset.kubernetes.io/pod-name=cdp-release-prometheus-alertmanager-0
-Annotations:      cni.projectcalico.org/containerID: 3262915d36d0a8831451864cdccb9711f0386e0bc3e03233d5a36b001032e12d
-                 cni.projectcalico.org/podIP: 10.42.0.138/32
-                 cni.projectcalico.org/podIPs: 10.42.0.138/32
-                 k8tz.io/injected: true
-                 k8tz.io/timezone: UTC
-                 prometheus.io/port: 9093
-                 prometheus.io/scrape: true
-                 yunikorn.apache.org/ignore-application: true
-Status:           Running
-IP:               10.42.0.138
-Controlled By:  StatefulSet/cdp-release-prometheus-alertmanager
-Init Containers:
-  k8tz:
-    Image:        registry.ecs.internal/cloudera_thirdparty/k8tz:0.17.1-cldr
-    Resources:    limits={'cpu': '500m', 'memory': '1Gi'}, requests={'cpu': '100m', 'memory': '128Mi'}
-    Mounts:       /mnt/zoneinfo, /var/run/secrets/kubernetes.io/serviceaccount
-    State:        Terminated (Exit: 0, Reason: Completed)
-    Ready:        True
-    Restart Count: 0
-Containers:
-  prometheus-alertmanager:
-    Image:        container.repository.cloudera.com/cdp-private/cloudera_thirdparty/hardened/prometheus-alertmanager:0.28.1-r10-202509051806
-    State:        Running (Started: 2026-02-26 06:19:09+00:00)
-    Ready:        True
-    Restart Count: 0
-    Requests:     {'cpu': '4m', 'memory': '200Mi'}
-    Limits:       {}
-    Mounts:       /etc/config, /data, /var/log, /etc/config-templates, /etc/cdp, /var/run/secrets/kubernetes.io/serviceaccount, /etc/localtime, /usr/share/zoneinfo
-  prometheus-alertmanager-configmap-reload:
-    Image:        container.repository.cloudera.com/cdp-private/cloudera_thirdparty/hardened/configmap-reload:0.15.0-r3-202509051806
-    State:        Running (Started: 2026-02-26 06:19:11+00:00)
-    Ready:        True
-    Restart Count: 0
-    Requests:     {'cpu': '1m', 'memory': '20Mi'}
-    Limits:       {}
-    Mounts:       /etc/config, /var/log, /etc/cdp, /var/run/secrets/kubernetes.io/serviceaccount, /etc/localtime, /usr/share/zoneinfo
-  fluentbit:
-    Image:        container.repository.cloudera.com/cdp-private/cloudera_thirdparty/hardened/fluent-bit:3.1.9-r1-202411041952
-    State:        Running (Started: 2026-02-26 06:19:16+00:00)
-    Ready:        True
-    Restart Count: 0
-    Requests:     {}
-    Limits:       {}
-    Mounts:       /etc/cdp, /var/log, /var/run/secrets/kubernetes.io/serviceaccount, /etc/localtime, /usr/share/zoneinfo
-Conditions:
-  Type: PodReadyToStartContainers Status: True
-  Type: Initialized               Status: True
-  Type: Ready                     Status: True
-  Type: ContainersReady           Status: True
-  Type: PodScheduled              Status: True
-Volumes:
-  storage-volume: persistent_volume_claim — PVC: storage-volume-cdp-release-prometheus-alertmanager-0
-  config-volume: secret — Secret: prometheus-alertmanager
-  logs: empty_dir — EmptyDir
-  config-templates: config_map — ConfigMap: alertmanager-config-templates
-  cdp-fluentbit-config: secret — Secret: cdp-fluentbit-config
-  kube-api-access-h9scz: projected — Projected
-  k8tz: empty_dir — EmptyDir
-QoS Class:       Burstable
-Tolerations:     {'effect': 'NoExecute',
- 'key': 'node.kubernetes.io/not-ready',
- 'operator': 'Exists',
- 'toleration_seconds': 300,
- 'value': None}, {'effect': 'NoExecute',
- 'key': 'node.kubernetes.io/unreachable',
- 'operator': 'Exists',
- 'toleration_seconds': 300,
- 'value': None}, {'effect': 'NoSchedule',
- 'key': 'node-role.kubernetes.io/control-plane',
- 'operator': 'Equal',
- 'toleration_seconds': None,
+...... truncated ......
+...... truncated ......
+...... truncated ......
  'value': 'true'}
 Events:          <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[30/73] [30-Mar-2026 07:29:17] Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
+[31/74] [30-Mar-2026 14:02:28] Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
        Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
 Answer:
 ```
 Name:            pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
-Labels:           <none>
-Annotations:      longhorn.io/volume-scheduling-error: 
-                 pv.kubernetes.io/provisioned-by: driver.longhorn.io
-                 volume.kubernetes.io/provisioner-deletion-secret-name: 
-                 volume.kubernetes.io/provisioner-deletion-secret-namespace: 
-Finalizers:      ['external-provisioner.volume.kubernetes.io/finalizer', 'kubernetes.io/pv-protection', 'external-attacher/driver-longhorn-io']
-StorageClass:    longhorn
-Status:          Bound
-Claim:           cdp/cdp-release-prometheus-server
-Reclaim Policy:  Delete
-Access Modes:    ReadWriteOnce
-VolumeMode:      Filesystem
-Capacity:        20Gi
-Node Affinity:   <none>
-Message:         
-Source:
-    Type:              CSI
-    Driver:            driver.longhorn.io
-    FSType:            ext4
-    VolumeHandle:      pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
-    ReadOnly:          None
-    VolumeAttributes:  backupTargetName=default
-                       dataEngine=v1
-                       dataLocality=disabled
-                       disableRevisionCounter=true
-                       fromBackup=
-                       fsType=ext4
-                       numberOfReplicas=2
-                       staleReplicaTimeout=30
-                       storage.kubernetes.io/csiProvisionerIdentity=1769898074344-2164-driver.longhorn.io
-                       unmapMarkSnapChainRemoved=ignored
+...... truncated ......
+...... truncated ......
+...... truncated ......
 Events:          <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[31/73] [30-Mar-2026 07:29:22] List all events in cdp namespace
+[32/74] [30-Mar-2026 14:02:33] List all events in cdp namespace
        Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all events in cdp namespace
 Answer:
-Showing Events in namespace `cdp`.
-```
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b is ready to use. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 is ready to use. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 is ready to use. (x1)
-2026-03-29 22:36:00+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Waiting for a snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b to be created by the CSI driver. (x1)
-2026-03-29 22:35:59+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Waiting for a snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd to be created by the CSI driver. (x1)
-2026-03-29 22:35:58+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Waiting for a snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Waiting for a snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Waiting for a snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Waiting for a snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 to be created by the CSI driver. (x1)
-```
+`No such events in 'cdp'.`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[32/73] [30-Mar-2026 07:29:24] show all normal events in cdp namespace
+[33/74] [30-Mar-2026 14:02:35] show all normal events in cdp namespace
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show all normal events in cdp namespace
 Answer:
-Showing Events in namespace `cdp`.
-```
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a is ready to use. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:05+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b is ready to use. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 is ready to use. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 was successfully created by the CSI driver. (x1)
-2026-03-29 22:36:04+00:00  Normal   SnapshotReady       cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 is ready to use. (x1)
-2026-03-29 22:36:00+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/83c47cec-ecad-46c7-a432-0ae5b9e19b4b  Waiting for a snapshot cdp/83c47cec-ecad-46c7-a432-0ae5b9e19b4b to be created by the CSI driver. (x1)
-2026-03-29 22:35:59+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/5164c388-feec-4bdb-ad00-ef27d5b01dbd  Waiting for a snapshot cdp/5164c388-feec-4bdb-ad00-ef27d5b01dbd to be created by the CSI driver. (x1)
-2026-03-29 22:35:58+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b  Waiting for a snapshot cdp/d691d1ed-755d-4ff3-b754-8c46ad4e5f1b to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/64180abf-9b9b-4d98-b609-3096b1750d28  Waiting for a snapshot cdp/64180abf-9b9b-4d98-b609-3096b1750d28 to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/939ee5ad-1b73-4606-abea-3038cda29a0a  Waiting for a snapshot cdp/939ee5ad-1b73-4606-abea-3038cda29a0a to be created by the CSI driver. (x1)
-2026-03-29 22:35:57+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/c98aae88-adc6-4971-bc39-ed2313d88c07  Waiting for a snapshot cdp/c98aae88-adc6-4971-bc39-ed2313d88c07 to be created by the CSI driver. (x1)
-```
+`No such events in 'cdp'.`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[33/73] [30-Mar-2026 07:29:27] show all warning events in cdp namespace
+[34/74] [30-Mar-2026 14:02:38] show all warning events in cdp namespace
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show all warning events in cdp namespace
@@ -1321,47 +496,30 @@ Answer:
 `No such events in 'cdp'.`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[34/73] [30-Mar-2026 07:29:30] Describe pvc cdp-release-prometheus-server
-       Answered — 3s elapsed
+[35/74] [30-Mar-2026 14:02:41] Describe pvc cdp-release-prometheus-server
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pvc cdp-release-prometheus-server
 Answer:
 ```
 Name:          cdp-release-prometheus-server
 Namespace:     cdp
-StorageClass:  longhorn
-Status:        Bound
-Volume:        pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
-Labels:           app=prometheus
-                 chart=prometheus-1.0.0
-                 component=server
-                 heritage=Helm
-                 recurring-job-group.longhorn.io/prometheus-group=enabled
-                 recurring-job.longhorn.io/source=enabled
-                 release=cdp-release
-Annotations:      kubectl.kubernetes.io/last-applied-configuration: {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app":"prometheus","chart":"prometheus-1.0.0","component":"server","heritage":"Helm","recurring-job-group.longhorn.io/prometheus-group":"enabled","recurring-job.longhorn.io/source":"enabled","release":"cdp-release"},"name":"cdp-release-prometheus-server","namespace":"cdp"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"20Gi"}},"storageClassName":"longhorn"}}
-                 pv.kubernetes.io/bind-completed: yes
-                 pv.kubernetes.io/bound-by-controller: yes
-                 volume.beta.kubernetes.io/storage-provisioner: driver.longhorn.io
-                 volume.kubernetes.io/storage-provisioner: driver.longhorn.io
-Finalizers:    ['kubernetes.io/pvc-protection']
-Capacity:      20Gi
-Access Modes:  ReadWriteOnce
-VolumeMode:    Filesystem
-Used By:       cdp-release-prometheus-server-86844db8-v8lkg
+...... truncated ......
+...... truncated ......
+...... truncated ......
 Events:        <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[35/73] [30-Mar-2026 07:29:33] get tables in cdp-embedded-db-0 of cdp namespace
-       Answered — 7s elapsed
+[36/74] [30-Mar-2026 14:02:45] get tables in cdp-embedded-db-0 of cdp namespace
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get tables in cdp-embedded-db-0 of cdp namespace
 Answer:
-The error indicates that the database credentials could not be retrieved from the pod 'cdp-embedded-db-0'. This might be due to the absence of credentials in the pod's environment, Secrets, or ConfigMaps. To proceed, we need to check the Secrets and ConfigMaps associated with the pod to locate the credentials. Let's check the Secrets first.
+[ERROR] Could not retrieve DB credentials from pod 'cdp-embedded-db-0'.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[36/73] [30-Mar-2026 07:29:40] decode cdp-private-installer-db-root-cert certificate in cdp ns
+[37/74] [30-Mar-2026 14:02:53] decode cdp-private-installer-db-root-cert certificate in cdp ns
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: decode cdp-private-installer-db-root-cert certificate in cdp ns
@@ -1370,8 +528,8 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 The secret `cdp-private-installer-db-root-cert` in the `cdp` namespace contains the certificate data, but it is currently hidden. To decode the certificate, you need to enable the 'Show Secret Values' option in the ⚙ Settings → Security section. Once enabled, the certificate content will be visible.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[37/73] [30-Mar-2026 07:29:47] Show me the first 10 endpoints in cdp namespace?
-       Answered — 15s elapsed
+[38/74] [30-Mar-2026 14:03:00] Show me the first 10 endpoints in cdp namespace?
+       Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show me the first 10 endpoints in cdp namespace?
 Answer:
@@ -1390,7 +548,7 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | `cdp-release-cdp-cadence-frontend-headless` | `10.42.0.105:7832` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[38/73] [30-Mar-2026 07:30:02] List all svc in cdp namespace?
+[39/74] [30-Mar-2026 14:03:16] List all svc in cdp namespace?
        Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all svc in cdp namespace?
@@ -1400,78 +558,15 @@ Showing Services in namespace `cdp`.
 |---|---|---|---|
 | `cadence-worker` | ClusterIP | 9367/TCP | ✓ Present |
 | `cdp-embedded-db` | ClusterIP | 5432/TCP | ✓ Present |
-| `cdp-release-alert-admin-service` | ClusterIP | 9109/TCP | ✓ Present |
-| `cdp-release-cdc-profiler-launcher` | ClusterIP | 8090/TCP | ✓ Present |
-| `cdp-release-cdp-cadence-frontend` | ClusterIP | 7933/TCP, 7833/TCP | ✓ Present |
-| `cdp-release-cdp-cadence-frontend-headless` | ClusterIP | 7932/TCP, 7832/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-cdp-cadence-history-headless` | ClusterIP | 7934/TCP, 7834/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-cdp-cadence-matching-headless` | ClusterIP | 7935/TCP, 7835/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-cdp-cadence-worker-headless` | ClusterIP | 7939/TCP, 7839/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-classic-clusters` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-cluster-access-manager` | ClusterIP | 9010/TCP, 9091/TCP | ✓ Present |
-| `cdp-release-cluster-proxy` | ClusterIP | 10080/TCP, 80/TCP, 443/TCP | ✓ Present |
-| `cdp-release-cpx-liftie` | ClusterIP | 9999/TCP | ✓ Present |
-| `cdp-release-dex-cp` | ClusterIP | 8080/TCP, 8081/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-dmx` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-dssapp` | ClusterIP | 9012/TCP | ✓ Present |
-| `cdp-release-dwx-server` | ClusterIP | 80/TCP, 50055/TCP, 9003/TCP | ✓ Present |
-| `cdp-release-grafana` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-grafana-77dcc66787-bb5jb` | NodePort | 80/TCP | ✓ Present |
-| `cdp-release-jumpgate-admin` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-jumpgate-proxy` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-management` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-metrics-server-exporter` | ClusterIP | 9104/TCP | ✓ Present |
-| `cdp-release-mlx-control-plane-app` | ClusterIP | 80/TCP, 5000/TCP | ✓ Present |
-| `cdp-release-monitoring-app` | ClusterIP | 8000/TCP | ✓ Present |
-| `cdp-release-monitoring-app-front` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-monitoring-metricproxy` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-monitoring-pvcservice` | ClusterIP | 8001/TCP | ✓ Present |
-| `cdp-release-monitoring-topologyservice` | ClusterIP | 9093/TCP | ✓ Present |
-| `cdp-release-opentelemetry-collector` | ClusterIP | 4317/TCP, 4318/TCP | ✓ Present |
-| `cdp-release-prometheus-alertmanager-headless` | ClusterIP | 80/TCP, 6783/TCP | ✓ Present |
-| `cdp-release-prometheus-kube-state-metrics` | ClusterIP | 80/TCP, 81/TCP | ✓ Present |
-| `cdp-release-prometheus-server` | ClusterIP | 80/TCP, 9533/TCP | ✓ Present |
-| `cdp-release-remote-storage-service` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-resource-pool-manager` | ClusterIP | 9009/TCP, 9090/TCP | ✓ Present |
-| `cdp-release-thunderhead-audit-private` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-cdp-private-authentication-console` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-cdp-private-commonconsole` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-cdp-private-environments-console` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-compute-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-consoleauthenticationcdp` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-de-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-diagnostics-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-drscp-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-dw-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-environment` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-environments2-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-iam-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-iam-console` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-kerberosmgmt-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-ml-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-onpremises-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-remotecluster` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-resource-management-console` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-sdx2-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-servicediscovery-api` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-servicediscoverysimple` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-usermanagement-private` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-userpreference` | ClusterIP | 80/TCP | ✓ Present |
-| `cdp-release-thunderhead-userpreference-api` | ClusterIP | 80/TCP | ✓ Present |
-| `dps-gateway` | ClusterIP | 3000/TCP | ✓ Present |
-| `dwx-ui-service` | ClusterIP | 80/TCP | ✓ Present |
-| `echoserver` | ClusterIP | 5678/TCP | ✓ Present |
-| `fluentd` | ClusterIP | 24231/TCP, 24220/TCP, 9880/TCP, 24224/TCP | ✓ Present |
-| `health-poller` | ClusterIP | 9366/TCP | ✓ Present |
-| `logger-alert-receiver` | ClusterIP | 80/TCP | ✓ Present |
-| `prometheus-alertmanager` | ClusterIP | 80/TCP, 6783/TCP | ✓ Present |
-| `proxy-management` | ClusterIP | 80/TCP | ✓ Present |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | `request-signer` | ClusterIP | 80/TCP | ✓ Present |
 | `snmp-notifier` | ClusterIP | 80/TCP | ✓ Present |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[39/73] [30-Mar-2026 07:30:04] Which endpoints using port 443?
-       Answered — 8s elapsed
+[40/74] [30-Mar-2026 14:03:18] Which endpoints using port 443?
+       Answered — 9s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which endpoints using port 443?
 Answer:
@@ -1483,32 +578,32 @@ As no namespace was mentioned, I checked across all namespaces.
 | `kube-system` | `rke2-ingress-nginx-controller` | `10.42.0.63:443` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[40/73] [30-Mar-2026 07:30:12] list node with taint cde
-       Answered — 4s elapsed
+[41/74] [30-Mar-2026 14:03:27] list node with taint cde
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list node with taint cde
 Answer:
 No nodes found with a taint matching `cde`.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[41/73] [30-Mar-2026 07:30:16] Are there any tainted nodes blocking scheduling?
-       Answered — 5s elapsed
+[42/74] [30-Mar-2026 14:03:30] Are there any tainted nodes blocking scheduling?
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any tainted nodes blocking scheduling?
 Answer:
-Yes, there are tainted nodes blocking scheduling. The nodes `ecs-m-01.dlee155.cldr.example` and `ecs-w-02.dlee155.cldr.example` have taints with the effect NoSchedule, which prevents pods from being scheduled on them.
+Yes, there are tainted nodes blocking scheduling. The nodes `ecs-m-01.dlee155.cldr.example` and `ecs-w-02.dlee155.cldr.example` have taints with the effect NoSchedule, which prevents pods from being scheduled on them unless they have matching tolerations.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[42/73] [30-Mar-2026 07:30:21] which node has gpu and currently locked by pod
+[43/74] [30-Mar-2026 14:03:36] which node has gpu and currently locked by pod
        Answered — 10s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which node has gpu and currently locked by pod
 Answer:
-The node `ecs-w-03.dlee155.cldr.example` has GPUs and currently has 2 GPUs allocated. However, the "ATTACHED PODS" column shows "-", which indicates that no pods are currently using the GPUs on this node. Therefore, the GPUs are available and not locked by any pod.
+The node `ecs-w-03.dlee155.cldr.example` has GPUs and currently has 2 GPUs allocated. However, the "ATTACHED PODS" column shows "-", which indicates that no pod is currently using the GPU. Therefore, the GPU is available and not locked by any pod.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[43/73] [30-Mar-2026 07:30:31] list all pods in cdp-keda
-       Answered — 2s elapsed
+[44/74] [30-Mar-2026 14:03:46] list all pods in cdp-keda
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all pods in cdp-keda
 Answer:
@@ -1520,17 +615,17 @@ Showing Pods in namespace `cdp-keda`.
 | `keda-operator-metrics-apiserver-7f7d6ffd8b-m5wp5` | Running | 1/1 | 0 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[44/73] [30-Mar-2026 07:30:33] is the vault pod doing ok?
+[45/74] [30-Mar-2026 14:03:49] is the vault pod doing ok?
        Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: is the vault pod doing ok?
 Answer:
 I mapped the keyword in your question and scoped this check to the `vault-system` namespace.
-Yes, the Vault pod `vault-0` is running and ready with 0 restarts. The `vault-exporter` pod is also running and ready, though it has had 2 restarts. Overall, the Vault components appear to be functioning normally.
+Yes, the vault pod is doing ok. All pods in the `vault-system` namespace are Running, and there are no Pending, Failed, or Unknown pods found.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[45/73] [30-Mar-2026 07:30:38] Check all namespaces, which pvc is not bound?
-       Answered — 5s elapsed
+[46/74] [30-Mar-2026 14:03:54] Check all namespaces, which pvc is not bound?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Check all namespaces, which pvc is not bound?
 Answer:
@@ -1538,7 +633,7 @@ As no namespace was mentioned, I checked across all namespaces.
 There are no PVCs that are not bound across all namespaces. All PVCs listed are in the "Bound" phase.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[46/73] [30-Mar-2026 07:30:43] What storage class is Vault using?
+[47/74] [30-Mar-2026 14:03:58] What storage class is Vault using?
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: What storage class is Vault using?
@@ -1549,16 +644,16 @@ Showing resources matching `vault` in namespace `vault-system`.
 | PVC | vault-system | data-vault-0 | Bound 10Gi |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[47/73] [30-Mar-2026 07:30:46] which namespace has the least pods?
-       Answered — 9s elapsed
+[48/74] [30-Mar-2026 14:04:01] which namespace has the least pods?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which namespace has the least pods?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-cdp-obs has the least pods with 0 pods.
+cdp-obs
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[48/73] [30-Mar-2026 07:30:55] list all namespaces with total pods
+[49/74] [30-Mar-2026 14:04:10] list all namespaces with total pods
        Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all namespaces with total pods
@@ -1566,244 +661,117 @@ Answer:
 Showing all Namespace Status in all namespaces.
 | Namespace | Total Pods | Running | Other State |
 |-----------|------------|---------|--------------|
-| awx | 4 | 4 | - |
 | cdp | 78 | 77 | Succeeded: 1 |
-| cdp-drs | 32 | 3 | Succeeded: 29 |
-| cdp-keda | 3 | 3 | - |
-| cdp-obs | 0 | 0 | - |
-| cdp-services | 0 | 0 | - |
-| cert-manager | 9 | 9 | - |
-| cloudera-gateway | 1 | 1 | - |
-| cml-serving | 4 | 4 | - |
 | cmlwb1 | 53 | 37 | Succeeded: 16 |
-| cmlwb1-user-1 | 0 | 0 | - |
-| cmlwb1-user-2 | 0 | 0 | - |
-| default | 0 | 0 | - |
-| dlee-2-3a4f51ad-monitoring-platform | 10 | 10 | - |
-| dlee155-dcd569b3-log-router | 3 | 3 | - |
-| dlee155-dcd569b3-monitoring-platform | 10 | 10 | - |
-| ecs-webhooks | 2 | 2 | - |
-| gpu-operator | 6 | 6 | - |
-| infra-prometheus | 7 | 7 | - |
-| istio-ingress | 1 | 1 | - |
-| istio-system | 9 | 9 | - |
-| k8tz | 3 | 3 | - |
-| knative-serving | 6 | 6 | - |
-| knox-caii | 1 | 1 | - |
-| knox-mr | 1 | 1 | - |
-| kserve | 1 | 1 | - |
-| kube-node-lease | 0 | 0 | - |
-| kube-public | 0 | 0 | - |
-| kube-system | 34 | 28 | Succeeded: 6 |
-| kubernetes-dashboard | 5 | 5 | - |
-| liftie-k260gqn8-ns | 0 | 0 | - |
-| liftie-zyby98ck-ns | 0 | 0 | - |
-| local-path-storage | 1 | 1 | - |
-| longhorn-system | 35 | 33 | Succeeded: 2 |
-| model-registryc62e4e6e-13a | 4 | 4 | - |
-| monitor-env-dlee155 | 0 | 0 | - |
-| pod-reaper | 10 | 0 | Succeeded: 10 |
-| runai | 0 | 0 | - |
-| runai-reservation | 0 | 0 | - |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | serving-default | 0 | 0 | - |
-| testme | 6 | 5 | Pending: 1 |
-| vault-system | 2 | 2 | - |
-| warehouse-dlee155 | 3 | 3 | - |
-| yunikorn | 2 | 2 | - |
 _Namespace with the least pods: cdp-obs (0 pods)_
 _Namespace with the most pods: cdp (78 pods)_
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[49/73] [30-Mar-2026 07:31:02] List all storage types (RWO/RWX) used by pods in cdp namespace
-       Answered — 13s elapsed
+[50/74] [30-Mar-2026 14:04:17] List all storage types (RWO/RWX) used by pods in cdp namespace
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all storage types (RWO/RWX) used by pods in cdp namespace
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-| NAMESPACE | POD | PVC | ACCESS MODE | STORAGE CLASS |
-|---|---|---|---|---|
-| `cdp` | `cdp-embedded-db-0` | `cdp-embedded-db-backend` | ReadWriteOnce | longhorn |
-| `cdp` | `cdp-embedded-db-0` | `cdp-embedded-db-backend-v17` | ReadWriteOnce | longhorn |
-| `cdp` | `cdp-release-prometheus-alertmanager-0` | `storage-volume-cdp-release-prometheus-alertmanager-0` | ReadWriteOnce | longhorn |
-| `cdp` | `cdp-release-prometheus-alertmanager-1` | `storage-volume-cdp-release-prometheus-alertmanager-1` | ReadWriteOnce | longhorn |
-| `cdp` | `cdp-release-prometheus-server-86844db8-v8lkg` | `cdp-release-prometheus-server` | ReadWriteOnce | longhorn |
-| `cdp` | `fluentd-aggregator-0` | `logs` | ReadWriteOnce | longhorn |
+The storage types (RWO/RWX) used by pods in the `cdp` namespace are:
+- **ReadWriteOnce** (RWO) for all listed PVCs.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[50/73] [30-Mar-2026 07:31:15] what storage type are pods in cdp namespace using?
+[51/74] [30-Mar-2026 14:04:23] what storage type are pods in cdp namespace using?
        Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what storage type are pods in cdp namespace using?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-The pods in the `cdp` namespace are using the **ReadWriteOnce** access mode with the **longhorn** storage class.
+All pods in the `cdp` namespace are using the **ReadWriteOnce** access mode with the **longhorn** storage class.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[51/73] [30-Mar-2026 07:31:20] what SSL certificates does the cdp namespace have?
+[52/74] [30-Mar-2026 14:04:28] what SSL certificates does the cdp namespace have?
        Answered — 11s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what SSL certificates does the cdp namespace have?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-The SSL certificates in the `cdp` namespace are stored in the following ConfigMaps:
-| CONFIGMAP | KEYS | TYPE |
-|---|---|---|
-| `cdp-release-cpx-rds-cert` | ['RDS_CERT'] | cert |
-| `cdp-release-dwx-cert` | ['cert'] | cert |
-| `cdp-release-rds-cm` | ['DB_SSL_CERT'] | cert |
-| `database-configmap` | ['DB_SSL_CERT'] | cert |
-| `vault` | ['VAULT_CACRT', 'VAULT_CAPATH', 'VAULT_SSL_TRUST_STORE_PASSWORD'] | cert |
-| `istio-ca-root-cert` | ['root-cert.pem'] | cert |
-| `istio-ca-crl` | ['ca-crl.pem'] | cert |
+The SSL certificates in the `cdp` namespace are as follows:
+| Secret Name                                      | Certificate Keys                     |
+|--------------------------------------------------|--------------------------------------|
+| cdp-private-installer-db-root-cert               | DB_SSL_CERT                          |
+...... truncated ......
+...... truncated ......
+...... truncated ......
+| vault                                           | vault.pem                            |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[52/73] [30-Mar-2026 07:31:31] what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
-       Answered — 5s elapsed
+[53/74] [30-Mar-2026 14:04:39] what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cmlwb1` namespace.
-The username and password for the SQL user for db-0 in the cmlwb1 namespace could not be retrieved. Please ensure that the necessary secrets or configurations are available and accessible in the specified namespace.
+The username is cdsw-user-config with the password being None.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[53/73] [30-Mar-2026 07:31:37] get tables in db-0 of cmlwb1 namespace
-       Answered — 24s elapsed
+[54/74] [30-Mar-2026 14:04:43] get tables in db-0 of cmlwb1 namespace
+       Answered — 34s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get tables in db-0 of cmlwb1 namespace
 Answer:
 The tables in the `db-0` pod of the `cmlwb1` namespace are as follows:
-public|access_keys
-public|apikeys
-public|applications
-public|authorized_keys
-public|batch_runs
-public|build_details
-public|catalog_entries
-public|catalog_sources
-public|clusters
-public|copilot_embedding_model
-public|copilot_model
-public|crons
-public|custom_quota
-public|dashboard_pods
-public|dashboards
-public|dashboards_archive
-public|dashboards_usage
-public|datasets
-public|default_copilot_embedding_model
-public|default_copilot_model
-public|default_quota
-public|default_runtime_variants
-public|docker_credentials
-public|engine_image_specs
-public|engine_images
-public|engine_images_editors
-public|engine_sizes
-public|engine_statuses
-public|experiments
-public|flow_upload_chunks
-public|flow_uploads
-public|followers
-public|group_members
-public|import_tasks
-public|import_tasks_runtime_addons
-public|inputs
-public|invitations
-public|job_notifications
-public|jobs
-public|kerberos
-public|ldap_team
-public|licenses
-public|migrations
-public|model_builds
-public|model_deployments
-public|model_registry_metadata
-public|model_versions
-public|models
-public|node_labels
-public|organization_invitations
-public|organization_members
-public|params
-public|password_resets
-public|plans
-public|project_data_connections
-public|project_editors
-public|project_invitations
-public|project_templates
-public|projects
-public|projects_editors
-public|projects_engine_images
-public|projects_runtimes
-public|projects_users
-public|prototype_details
-public|prototype_details_runtime_addons
-public|recommended_runtime_variants
-public|registered_models
-public|retry_workloads
-public|run_metrics
-public|runs
-public|runtime_addon_setting
-public|runtime_addon_usage
-public|runtime_addons
-public|runtime_repos
-public|runtime_specs
-public|runtimes
-public|session_metadata
-public|shared_job_run_acl
-public|shared_session_acl
-public|site_config
-public|site_mounts
-public|ssh_keys
-public|stars
-public|streams
-public|sync_details
-public|tags
-public|team_accelerator_quota
-public|thirdparty_editors
-public|toggles
-public|tunnels
-public|usageview
-public|user_accelerator_quota
-public|user_billing
-public|user_events
-public|users
-public|waiting
-public|watchers
-public|workspace_data_connections
+| schemaname | tablename                          |
+|------------|------------------------------------|
+| public     | access_keys                        |
+...... truncated ......
+...... truncated ......
+...... truncated ......
+| public     | workspace_data_connections         |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[54/73] [30-Mar-2026 07:32:01] explain how you access the database of a pod to get the table names, don't run it, just explain
-       Answered — 11s elapsed
+[55/74] [30-Mar-2026 14:05:18] explain how you access the database of a pod to get the table names, don't run it, just explain
+       Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: explain how you access the database of a pod to get the table names, don't run it, just explain
 Answer:
 To access the database of a pod and retrieve table names, you would typically follow these steps:
-1. **Identify the Pod**: First, determine which pod is running the database service. You can use tools like `kubectl get pods` to list all pods and identify the one that hosts the database.
-2. **Access the Pod's Container**: Once you have identified the pod, you need to access its container. This can be done using the `kubectl exec` command to open a shell session inside the container.
-3. **Check the Database Connection**: Inside the container, you need to establish a connection to the database. This usually involves using the appropriate client tool for the database (e.g., `psql` for PostgreSQL, `mysql` for MySQL).
-4. **Query the Database**: After establishing a connection, you can execute SQL queries to retrieve the list of tables. For example, in PostgreSQL, you can use the `\dt` command, and in MySQL, you can use `SHOW TABLES`.
-5. **Review the Results**: The results of the query will provide the list of table names available in the database.
-These steps allow you to interact with the database running inside a pod and retrieve the necessary information without executing any commands.
+1. **Identify the Pod**: First, determine which pod is running the database application. You can use tools like `kubectl get pods` to list all pods in the cluster and identify the relevant one.
+2. **Access the Pod's Container**: Once you have identified the pod, you can use `kubectl exec` to open a shell session inside the pod's container. This allows you to interact with the container's file system and processes.
+3. **Locate the Database Files**: Depending on the database type (e.g., PostgreSQL, MySQL, etc.), the database files and configuration might be located in specific directories within the container. Common locations include `/var/lib/postgresql`, `/var/lib/mysql`, or similar paths.
+4. **Check for Configuration Files**: Look for configuration files that specify the database schema or metadata. These files might contain information about the tables, such as `schema.sql`, `tables.sql`, or similar files.
+5. **Use Database Client Tools**: If the database is running inside the container, you can use a database client tool (like `psql` for PostgreSQL or `mysql` for MySQL) to connect to the database and list the tables. This involves using the appropriate command-line interface to execute SQL commands such as `SHOW TABLES` or `\dt` for PostgreSQL.
+6. **Check for Metadata Files**: Some databases store metadata in files or directories that can be accessed directly. For example, PostgreSQL stores metadata in the `pg_catalog` schema, which can be queried using SQL.
+7. **Review Application Code or Documentation**: If the database is part of an application, review the application's code or documentation to understand how the database is structured and how to access its tables.
+By following these steps, you can access the database of a pod and retrieve the table names without executing any commands.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[55/73] [30-Mar-2026 07:32:12] what can you do?
-       Answered — 5s elapsed
+[56/74] [30-Mar-2026 14:05:34] what can you do?
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what can you do?
 Answer:
-I am an ECS AI Ops Assistant designed to help manage and monitor your Cloudera ECS cluster. I can perform various tasks such as checking the health of your cluster, identifying issues with pods, retrieving information about resources, and providing guidance based on known issues and best practices. I can also assist with querying specific resources like pods, services, deployments, and more. Let me know what you need help with!
+I am an ECS AI Ops Assistant designed to help manage and monitor your Cloudera ECS cluster. I can perform various tasks such as:
+- Checking the health and status of your cluster.
+- Listing and describing Kubernetes resources like pods, deployments, services, etc.
+- Searching for specific resources or components within your cluster.
+- Providing insights into known issues, best practices, and troubleshooting guides.
+- Checking resource quotas and usage across namespaces.
+- Fetching and decoding secrets and configuration maps.
+- Identifying and diagnosing unhealthy or problematic pods.
+If you have a specific question or need assistance with a particular task, feel free to ask!
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[56/73] [30-Mar-2026 07:32:17] how are you?
-       Answered — 2s elapsed
+[57/74] [30-Mar-2026 14:05:40] how are you?
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: how are you?
 Answer:
-I am an AI assistant designed to help manage and monitor your Cloudera ECS cluster. How can I assist you today?
+I'm an AI assistant designed to help you with your Cloudera ECS cluster. How can I assist you today?
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[57/73] [30-Mar-2026 07:32:19] get the output of longhorn-system pods
-       Answered — 47s elapsed
+[58/74] [30-Mar-2026 14:05:43] get the output of longhorn-system pods
+       Answered — 48s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get the output of longhorn-system pods
 Answer:
@@ -1811,43 +779,13 @@ I mapped the keyword in your question and scoped this check to the `longhorn-sys
 | NAME | STATUS | READY | RESTARTS | CONDITIONS |
 |---|---|---|---|---|
 | `csi-attacher-5f56765cb-5rbdn` | Running | 1/1 | 0 | - |
-| `csi-attacher-5f56765cb-q2zfn` | Running | 1/1 | 0 | - |
-| `csi-attacher-5f56765cb-qgpwj` | Running | 1/1 | 0 | - |
-| `csi-provisioner-7948db7756-b5cwg` | Running | 1/1 | 0 | - |
-| `csi-provisioner-7948db7756-hcp9r` | Running | 1/1 | 0 | - |
-| `csi-provisioner-7948db7756-kptwn` | Running | 1/1 | 0 | - |
-| `csi-resizer-849468dfd-8cmn8` | Running | 1/1 | 0 | - |
-| `csi-resizer-849468dfd-bmh29` | Running | 1/1 | 0 | - |
-| `csi-resizer-849468dfd-vdxb6` | Running | 1/1 | 0 | - |
-| `csi-snapshotter-7c846f57c4-c9n5q` | Running | 1/1 | 0 | - |
-| `csi-snapshotter-7c846f57c4-dwxfg` | Running | 1/1 | 0 | - |
-| `csi-snapshotter-7c846f57c4-hxfj8` | Running | 1/1 | 0 | - |
-| `engine-image-ei-3de3c622-58mfw` | Running | 1/1 | 1 | - |
-| `engine-image-ei-3de3c622-df4gj` | Running | 1/1 | 3 | - |
-| `engine-image-ei-3de3c622-l94t2` | Running | 1/1 | 1 | - |
-| `engine-image-ei-3de3c622-tnc6g` | Running | 1/1 | 1 | - |
-| `instance-manager-29f5296d6a9a0d60968ca2defbcdd049` | Running | 1/1 | 0 | - |
-| `instance-manager-33a43f81c3f124c14f66720467c76e99` | Running | 1/1 | 0 | - |
-| `instance-manager-6fae5f8efe21ee12b7a95edb06f777b1` | Running | 1/1 | 0 | - |
-| `instance-manager-e6c8122522226ea2c007788f0cdcc383` | Running | 1/1 | 0 | - |
-| `longhorn-csi-plugin-2w89j` | Running | 3/3 | 6 | - |
-| `longhorn-csi-plugin-cdtwv` | Running | 3/3 | 6 | - |
-| `longhorn-csi-plugin-ktjbm` | Running | 3/3 | 23 | - |
-| `longhorn-csi-plugin-nf4cd` | Running | 3/3 | 6 | - |
-| `longhorn-driver-deployer-7dcc47d788-9n4sp` | Running | 1/1 | 0 | - |
-| `longhorn-manager-6wvlk` | Running | 2/2 | 10 | - |
-| `longhorn-manager-jjth8` | Running | 2/2 | 2 | - |
-| `longhorn-manager-s6hdd` | Running | 2/2 | 2 | - |
-| `longhorn-manager-z4tzn` | Running | 2/2 | 2 | - |
-| `longhorn-support-bundle-manager-support-bundle-2026-03-29t66s8k` | Running | 1/1 | 0 | - |
-| `longhorn-ui-6bbb75b4dd-s52qs` | Running | 1/1 | 0 | - |
-| `longhorn-ui-6bbb75b4dd-t47lz` | Running | 1/1 | 0 | - |
-| `prometheus-snapshot-cleanup-29579100-mvxcc` | Succeeded | 0/1 | 0 | PodReadyToStartContainers=False, Ready=False, ContainersReady=False |
-| `prometheus-snapshot-delete-29579100-rqcbw` | Succeeded | 0/1 | 0 | PodReadyToStartContainers=False, Ready=False, ContainersReady=False |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | `share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83` | Running | 1/1 | 0 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[58/73] [30-Mar-2026 07:33:06] Are there any pvcs stuck in a Pending or Lost state?
+[59/74] [30-Mar-2026 14:06:31] Are there any pvcs stuck in a Pending or Lost state?
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any pvcs stuck in a Pending or Lost state?
@@ -1856,291 +794,185 @@ As no namespace was mentioned, I checked across all namespaces.
 No PVCs are stuck in a Pending or Lost state. All PVCs listed are in the Bound phase.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[59/73] [30-Mar-2026 07:33:10] Who currently has cluster-admin privileges?
-       Answered — 7s elapsed
+[60/74] [30-Mar-2026 14:06:35] Who currently has cluster-admin privileges?
+       Answered — 11s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Who currently has cluster-admin privileges?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The ServiceAccounts in the `kube-system` namespace with `cluster-admin` ClusterRoles are:
-- `helm-rke2-canal`
-- `helm-rke2-coredns`
-- `helm-rke2-ingress-nginx`
-- `helm-rke2-metrics-server`
-- `helm-rke2-runtimeclasses`
-- `helm-rke2-snapshot-controller`
-- `helm-rke2-snapshot-controller-crd`
+Cluster-admin privileges are assigned to the following entities:
+- **Group/system:masters**
+...... truncated ......
+...... truncated ......
+...... truncated ......
+- **ServiceAccount/cluster-access-manager-service-account**
+These entities have been granted the `cluster-admin` role, allowing them to manage the entire cluster.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[60/73] [30-Mar-2026 07:33:17] which pod across the cluster has autoscaling capability?
+[61/74] [30-Mar-2026 14:06:46] which pod across the cluster has autoscaling capability?
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which pod across the cluster has autoscaling capability?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
 The pods with autoscaling capability are:
-- **api** in namespace **cmlwb1**
-- **web** in namespace **cmlwb1**
+- **api-hpa** in namespace **cmlwb1**
+- **web-hpa** in namespace **cmlwb1**
 - **istio-ingressgateway** in namespace **istio-ingress**
 - **istiod** in namespace **istio-system**
 - **activator** in namespace **knative-serving**
 - **webhook** in namespace **knative-serving**
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[61/73] [30-Mar-2026 07:33:23] Are there any failing CronJobs or Jobs that did not complete successfully?
-       Answered — 5s elapsed
+[62/74] [30-Mar-2026 14:06:52] Are there any failing CronJobs or Jobs that did not complete successfully?
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any failing CronJobs or Jobs that did not complete successfully?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-No failing CronJobs or Jobs that did not complete successfully were found across all namespaces.
+The tool results indicate that there are no failing CronJobs or Jobs that did not complete successfully. All listed CronJobs are either active or suspended, and there are no reported failures in the Jobs.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[62/73] [30-Mar-2026 07:33:28] Which pods have restarted more than 5 times in the last 24 hours?
-       Answered — 11s elapsed
+[63/74] [30-Mar-2026 14:06:58] Which pods have restarted more than 5 times in the last 24 hours?
+       Answered — 13s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which pods have restarted more than 5 times in the last 24 hours?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The pods that have restarted more than 5 times are:
-- `testme/crash-bad-command` with 4706 restarts
-- `testme/crash-dependency` with 4707 restarts
-- `testme/crash-exit` with 4680 restarts
-- `testme/crash-liveness` with 7181 restarts
-- `testme/crash-oom` with 4703 restarts
+| Namespace | Pod              | Phase  | Ready   | Restarts |
+|-----------|------------------|--------|---------|----------|
+| testme    | crash-bad-command| Running| 0/1     | 4782     |
+| testme    | crash-dependency | Running| 0/1     | 4783     |
+| testme    | crash-exit       | Running| 0/1     | 4756     |
+| testme    | crash-liveness   | Running| 0/1     | 7297     |
+| testme    | crash-oom        | Running| 0/1     | 4779     |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[63/73] [30-Mar-2026 07:33:39] Show image version of each pod in longhorn-system
-       Answered — 101s elapsed
+[64/74] [30-Mar-2026 14:07:11] Show image version of each pod in longhorn-system
+       Answered — 105s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show image version of each pod in longhorn-system
 Answer:
 I mapped the keyword in your question and scoped this check to the `longhorn-system` namespace.
 - `longhorn-system/csi-attacher-5f56765cb-5rbdn` [csi-attacher]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-attacher:v4.9.0`
-- `longhorn-system/csi-attacher-5f56765cb-q2zfn` [csi-attacher]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-attacher:v4.9.0`
-- `longhorn-system/csi-attacher-5f56765cb-qgpwj` [csi-attacher]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-attacher:v4.9.0`
-- `longhorn-system/csi-provisioner-7948db7756-b5cwg` [csi-provisioner]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-provisioner:v5.3.0`
-- `longhorn-system/csi-provisioner-7948db7756-hcp9r` [csi-provisioner]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-provisioner:v5.3.0`
-- `longhorn-system/csi-provisioner-7948db7756-kptwn` [csi-provisioner]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-provisioner:v5.3.0`
-- `longhorn-system/csi-resizer-849468dfd-8cmn8` [csi-resizer]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-resizer:v1.13.2`
-- `longhorn-system/csi-resizer-849468dfd-bmh29` [csi-resizer]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-resizer:v1.13.2`
-- `longhorn-system/csi-resizer-849468dfd-vdxb6` [csi-resizer]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-resizer:v1.13.2`
-- `longhorn-system/csi-snapshotter-7c846f57c4-c9n5q` [csi-snapshotter]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-snapshotter:v8.2.0`
-- `longhorn-system/csi-snapshotter-7c846f57c4-dwxfg` [csi-snapshotter]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-snapshotter:v8.2.0`
-- `longhorn-system/csi-snapshotter-7c846f57c4-hxfj8` [csi-snapshotter]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-snapshotter:v8.2.0`
-- `longhorn-system/engine-image-ei-3de3c622-58mfw` [engine-image-ei-3de3c622]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-engine:v1.8.2`
-- `longhorn-system/engine-image-ei-3de3c622-df4gj` [engine-image-ei-3de3c622]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-engine:v1.8.2`
-- `longhorn-system/engine-image-ei-3de3c622-l94t2` [engine-image-ei-3de3c622]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-engine:v1.8.2`
-- `longhorn-system/engine-image-ei-3de3c622-tnc6g` [engine-image-ei-3de3c622]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-engine:v1.8.2`
-- `longhorn-system/instance-manager-29f5296d6a9a0d60968ca2defbcdd049` [instance-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-instance-manager:v1.8.2`
-- `longhorn-system/instance-manager-33a43f81c3f124c14f66720467c76e99` [instance-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-instance-manager:v1.8.2`
-- `longhorn-system/instance-manager-6fae5f8efe21ee12b7a95edb06f777b1` [instance-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-instance-manager:v1.8.2`
-- `longhorn-system/instance-manager-e6c8122522226ea2c007788f0cdcc383` [instance-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-instance-manager:v1.8.2`
-- `longhorn-system/longhorn-csi-plugin-2w89j` [node-driver-registrar]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-node-driver-registrar:v2.14.0`
-- `longhorn-system/longhorn-csi-plugin-2w89j` [longhorn-liveness-probe]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/livenessprobe:v2.16.0`
-- `longhorn-system/longhorn-csi-plugin-2w89j` [longhorn-csi-plugin]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-csi-plugin-cdtwv` [node-driver-registrar]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-node-driver-registrar:v2.14.0`
-- `longhorn-system/longhorn-csi-plugin-cdtwv` [longhorn-liveness-probe]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/livenessprobe:v2.16.0`
-- `longhorn-system/longhorn-csi-plugin-cdtwv` [longhorn-csi-plugin]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-csi-plugin-ktjbm` [node-driver-registrar]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-node-driver-registrar:v2.14.0`
-- `longhorn-system/longhorn-csi-plugin-ktjbm` [longhorn-liveness-probe]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/livenessprobe:v2.16.0`
-- `longhorn-system/longhorn-csi-plugin-ktjbm` [longhorn-csi-plugin]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-csi-plugin-nf4cd` [node-driver-registrar]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-node-driver-registrar:v2.14.0`
-- `longhorn-system/longhorn-csi-plugin-nf4cd` [longhorn-liveness-probe]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/livenessprobe:v2.16.0`
-- `longhorn-system/longhorn-csi-plugin-nf4cd` [longhorn-csi-plugin]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-driver-deployer-7dcc47d788-9n4sp` [longhorn-driver-deployer]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-6wvlk` [longhorn-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-6wvlk` [pre-pull-share-manager-image]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-jjth8` [longhorn-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-jjth8` [pre-pull-share-manager-image]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-s6hdd` [longhorn-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-s6hdd` [pre-pull-share-manager-image]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-z4tzn` [longhorn-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/longhorn-manager-z4tzn` [pre-pull-share-manager-image]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
-- `longhorn-system/longhorn-support-bundle-manager-support-bundle-2026-03-29t66s8k` [manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/support-bundle-kit:v0.0.56`
-- `longhorn-system/longhorn-ui-6bbb75b4dd-s52qs` [longhorn-ui]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-ui:v1.8.2`
-- `longhorn-system/longhorn-ui-6bbb75b4dd-t47lz` [longhorn-ui]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-ui:v1.8.2`
-- `longhorn-system/prometheus-snapshot-cleanup-29579100-mvxcc` [prometheus-snapshot-cleanup]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
-- `longhorn-system/prometheus-snapshot-delete-29579100-rqcbw` [prometheus-snapshot-delete]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-manager:v1.8.2`
+...... truncated ......
+...... truncated ......
+...... truncated ......
 - `longhorn-system/share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83` [share-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[64/73] [30-Mar-2026 07:35:20] is coredns runnning properly?
-       Answered — 6s elapsed
+[65/74] [30-Mar-2026 14:08:56] is coredns runnning properly?
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: is coredns runnning properly?
 Answer:
-CoreDNS is running properly. All CoreDNS pods are in the Running state and are ready. The DNS resolution tests for several hostnames were successful, indicating that DNS resolution is functioning correctly within the cluster.
+CoreDNS is running properly. All CoreDNS pods are in the Running state with readiness 1/1, and there are no reported issues with DNS resolution tests.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[65/73] [30-Mar-2026 07:35:26] List all pv that consume more than 50% of the allocated disk capacity
-       Answered — 24s elapsed
+[66/74] [30-Mar-2026 14:09:03] List all pv that consume more than 50% of the allocated disk capacity
+       Answered — 25s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all pv that consume more than 50% of the allocated disk capacity
 Answer:
 ### ⚠️ Nearing or exceeding 50% capacity (3 PVCs)
 | Flag | Namespace / PVC | Usage | Used (GiB) | Total (GiB) | Free (GiB) |
 |---|---|---|---|---|---|
-| 🔴 | `cdp/logs` | **179.4%** | 35.89Gi (179.4%) | 20.0Gi | 0Gi (-79.4%) |
-| 🔴 | `cdp/cdp-release-prometheus-server` | **116.4%** | 23.29Gi (116.4%) | 20.0Gi | 0Gi (-16.4%) |
+| 🔴 | `cdp/logs` | **179.6%** | 35.91Gi (179.6%) | 20.0Gi | 0Gi (-79.6%) |
+| 🔴 | `cdp/cdp-release-prometheus-server` | **99.1%** | 19.82Gi (99.1%) | 20.0Gi | 0.18Gi (0.9%) |
 | 🔴 | `infra-prometheus/prometheus-infra-prometheus-operator-prometheus-db-prometheus-infra-prometheus-operator-prometheus-0` | **96.1%** | 28.83Gi (96.1%) | 30.0Gi | 1.17Gi (3.9%) |
 ### ✅ Within capacity (31 PVCs)
 | Flag | Namespace / PVC | Usage | Used (GiB) | Total (GiB) | Free (GiB) |
 |---|---|---|---|---|---|
 | 🟢 | `cmlwb1/persist-dir-secret-generator-0` | **47.4%** | 0.0Gi (47.4%) | 0.01Gi | 0.01Gi (52.6%) |
-| 🟢 | `dlee155-dcd569b3-monitoring-platform/monitoring-prometheus-server` | **17.3%** | 10.4Gi (17.3%) | 60.0Gi | 49.6Gi (82.7%) |
-| 🟢 | `cdp/storage-volume-cdp-release-prometheus-alertmanager-1` | **13.6%** | 0.27Gi (13.6%) | 2.0Gi | 1.73Gi (86.4%) |
-| 🟢 | `cdp/storage-volume-cdp-release-prometheus-alertmanager-0` | **13.3%** | 0.27Gi (13.3%) | 2.0Gi | 1.73Gi (86.7%) |
-| 🟢 | `cdp/cdp-embedded-db-backend-v17` | **12.7%** | 6.36Gi (12.7%) | 50.0Gi | 43.64Gi (87.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-41064967-d945-471e-8e09-596ce6c4320d` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-628a0537-462f-4be4-a7fb-d61dffd36f53` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-70fa90e7-a054-436a-a298-0fa9b11ffa59` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-74478c41-97a3-4806-81a8-56bc752c6de8` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-777aa0bc-4d4f-4455-b54f-d7f5af877948` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-832b9e89-44db-491d-8f58-71b8166b018e` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-e39b6c38-e989-4c13-83a8-1ae2272f05ea` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-ece4fbdf-6793-4d69-809c-122c22d4960d` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-f0904f7f-522e-4f36-9bb9-afb0e24c4126` | **11.7%** | 0.01Gi (11.7%) | 0.1Gi | 0.09Gi (88.3%) |
-| 🟢 | `cdp-drs/drs-k8s-object-storage-2120efc8-7e80-445a-965b-9868a49b9685` | **11.6%** | 0.01Gi (11.6%) | 0.1Gi | 0.09Gi (88.4%) |
-| 🟢 | `cmlwb1/projects-pvc` | **11.5%** | 11.46Gi (11.5%) | 100.0Gi | 88.54Gi (88.5%) |
-| 🟢 | `dlee155-dcd569b3-monitoring-platform/storage-volume-monitoring-prometheus-alertmanager-0` | **8.9%** | 0.18Gi (8.9%) | 2.0Gi | 1.82Gi (91.1%) |
-| 🟢 | `dlee155-dcd569b3-monitoring-platform/storage-volume-monitoring-prometheus-alertmanager-1` | **8.8%** | 0.18Gi (8.8%) | 2.0Gi | 1.82Gi (91.2%) |
-| 🟢 | `dlee-2-3a4f51ad-monitoring-platform/storage-volume-monitoring-prometheus-alertmanager-0` | **8.1%** | 0.16Gi (8.1%) | 2.0Gi | 1.84Gi (91.9%) |
-| 🟢 | `dlee-2-3a4f51ad-monitoring-platform/storage-volume-monitoring-prometheus-alertmanager-1` | **8.0%** | 0.16Gi (8.0%) | 2.0Gi | 1.84Gi (92.0%) |
-| 🟢 | `vault-system/data-vault-0` | **7.1%** | 0.71Gi (7.1%) | 10.0Gi | 9.29Gi (92.9%) |
-| 🟢 | `cmlwb1/s2i-queue-pvc-latest` | **4.8%** | 0.1Gi (4.8%) | 2.0Gi | 1.9Gi (95.2%) |
-| 🟢 | `cmlwb1/postgres-data-versioned-v17-db-0` | **2.8%** | 1.39Gi (2.8%) | 50.0Gi | 48.61Gi (97.2%) |
-| 🟢 | `dlee-2-3a4f51ad-monitoring-platform/monitoring-prometheus-server` | **2.8%** | 1.7Gi (2.8%) | 60.0Gi | 58.3Gi (97.2%) |
-| 🟢 | `model-registryc62e4e6e-13a/postgres-data-versioned-model-registry-db-0` | **2.7%** | 1.33Gi (2.7%) | 50.0Gi | 48.67Gi (97.3%) |
-| 🟢 | `cmlwb1/model-metrics-data-v17-model-metrics-db-0` | **2.2%** | 1.08Gi (2.2%) | 50.0Gi | 48.92Gi (97.8%) |
-| 🟢 | `cdp/cdp-embedded-db-backend` | **2.1%** | 1.04Gi (2.1%) | 50.0Gi | 48.96Gi (97.9%) |
-| 🟢 | `cmlwb1/s2i-git-server-repos-s2i-git-server-0` | **2.1%** | 2.07Gi (2.1%) | 100.0Gi | 97.93Gi (97.9%) |
-| 🟢 | `cmlwb1/livelog-data-livelog-0` | **1.9%** | 5.74Gi (1.9%) | 300.0Gi | 294.26Gi (98.1%) |
+| 🟢 | `dlee155-dcd569b3-monitoring-platform/monitoring-prometheus-server` | **17.4%** | 10.44Gi (17.4%) | 60.0Gi | 49.56Gi (82.6%) |
+...... truncated ......
+...... truncated ......
+...... truncated ......
 | 🟢 | `model-registryc62e4e6e-13a/model-registry-v2-55d8d65fd4-qmj9z-tmp` | **1.8%** | 8.82Gi (1.8%) | 500.0Gi | 491.18Gi (98.2%) |
 | 🟢 | `awx/postgres-13-awx-demo-postgres-13-0` | **1.0%** | 0.08Gi (1.0%) | 7.76Gi | 7.68Gi (99.0%) |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[66/73] [30-Mar-2026 07:35:50] Is there any pod struggle to start in the last 24 hours?
-       Answered — 15s elapsed
+[67/74] [30-Mar-2026 14:09:28] Is there any pod struggle to start in the last 24 hours?
+       Answered — 18s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Is there any pod struggle to start in the last 24 hours?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
 The pods struggling to start in the last 24 hours are:
-- `testme/crash-missing-config`: Pending due to a missing configmap "config-that-does-not-exist".
-- `testme/crash-bad-command`: Running but not ready with 4706 restarts due to a bad command "not-a-real-command".
-- `testme/crash-dependency`: Running but not ready with 4707 restarts due to a dependency issue with "nonexistent-db".
-- `testme/crash-exit`: Running but not ready with 4680 restarts due to an error causing it to crash.
-- `testme/crash-liveness`: Running but not ready with 7181 restarts due to an error causing it to crash.
-- `testme/crash-oom`: Running but not ready with 4703 restarts due to being OOMKilled.
+- `testme/crash-missing-config`: Phase: Pending, Ready: 0/1, Restarts: 0. Reason: Missing configmap "config-that-does-not-exist".
+- `testme/crash-bad-command`: Phase: Running, Ready: 0/1, Restarts: 4783. Reason: CrashLoopBackOff due to "not-a-real-command".
+- `testme/crash-dependency`: Phase: Running, Ready: 0/1, Restarts: 4784. Reason: CrashLoopBackOff due to "nonexistent-db".
+- `testme/crash-exit`: Phase: Running, Ready: 0/1, Restarts: 4757. Reason: CrashLoopBackOff due to "Error".
+- `testme/crash-liveness`: Phase: Running, Ready: 0/1, Restarts: 7299. Reason: CrashLoopBackOff due to "Error" and Liveness probe failure.
+- `testme/crash-oom`: Phase: Running, Ready: 0/1, Restarts: 4780. Reason: CrashLoopBackOff due to "OOMKilled".
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[67/73] [30-Mar-2026 07:36:05] list all pods that are not running
-       Answered — 2s elapsed
+[68/74] [30-Mar-2026 14:09:46] list all pods that are not running
+       Answered — 14s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all pods that are not running
 Answer:
-Showing all Non-Running Pods (Pending / Failed / Unknown) in all namespaces.
-| NAMESPACE | NAME | STATUS | READY | RESTARTS | REASON | CONDITIONS |
-|---|---|---|---|---|---|---|
-| `testme` | `crash-missing-config` | Pending | 0/1 | 0 | PodInitializing | PodReadyToStartContainers=False, Initialized=False, Ready=False, ContainersReady=False |
-1 non-running pod(s) found. Ask for details on a specific pod to see logs and events.
+As no namespace was mentioned, I checked across all namespaces.
+| Namespace | Pod                  | Phase  | Ready   | Restarts |
+|-----------|----------------------|--------|---------|----------|
+| testme    | crash-missing-config | Pending| 0/1     | 0        |
+| testme    | crash-bad-command    | Running| 0/1     | 4783     |
+| testme    | crash-dependency     | Running| 0/1     | 4784     |
+| testme    | crash-exit           | Running| 0/1     | 4757     |
+| testme    | crash-liveness       | Running| 0/1     | 7299     |
+| testme    | crash-oom            | Running| 0/1     | 4780     |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[68/73] [30-Mar-2026 07:36:07] Check all namespaces, which pvc is not bound?
-       Answered — 5s elapsed
+[69/74] [30-Mar-2026 14:10:00] Check all namespaces, which pvc is not bound?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Check all namespaces, which pvc is not bound?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-There are no PVCs that are not bound across all namespaces. All PVCs listed are in the "Bound" phase.
+No PVCs are not bound in any namespace. All PVCs listed are in the Bound phase.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[69/73] [30-Mar-2026 07:36:12] Which pods have restarted more than 5 times in the last 24 hours?
-       Answered — 11s elapsed
+[70/74] [30-Mar-2026 14:10:04] Which pods have restarted more than 5 times in the last 24 hours?
+       Answered — 13s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which pods have restarted more than 5 times in the last 24 hours?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-| Namespace | Pod                  | Restarts |
-|-----------|----------------------|----------|
-| testme    | crash-bad-command    | 4706     |
-| testme    | crash-dependency     | 4707     |
-| testme    | crash-exit           | 4681     |
-| testme    | crash-liveness       | 7181     |
-| testme    | crash-oom            | 4704     |
+The pods that have restarted more than 5 times are:
+- `testme/crash-bad-command` with 4783 restarts
+- `testme/crash-dependency` with 4784 restarts
+- `testme/crash-exit` with 4757 restarts
+- `testme/crash-liveness` with 7299 restarts
+- `testme/crash-oom` with 4780 restarts
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[70/73] [30-Mar-2026 07:36:23] Show all labels for node ecs-w-03
+[71/74] [30-Mar-2026 14:10:17] Show all labels for node ecs-w-03
        Answered — 30s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show all labels for node ecs-w-03
 Answer:
 **Node: ecs-w-03.dlee155.cldr.example**
   - beta.kubernetes.io/arch=amd64
-  - beta.kubernetes.io/os=linux
-  - feature.node.kubernetes.io/cpu-cpuid.AESNI=true
-  - feature.node.kubernetes.io/cpu-cpuid.AVX=true
-  - feature.node.kubernetes.io/cpu-cpuid.AVXSLOW=true
-  - feature.node.kubernetes.io/cpu-cpuid.CMPXCHG8=true
-  - feature.node.kubernetes.io/cpu-cpuid.FXSR=true
-  - feature.node.kubernetes.io/cpu-cpuid.FXSROPT=true
-  - feature.node.kubernetes.io/cpu-cpuid.HYPERVISOR=true
-  - feature.node.kubernetes.io/cpu-cpuid.IBPB=true
-  - feature.node.kubernetes.io/cpu-cpuid.LAHF=true
-  - feature.node.kubernetes.io/cpu-cpuid.OSXSAVE=true
-  - feature.node.kubernetes.io/cpu-cpuid.SYSCALL=true
-  - feature.node.kubernetes.io/cpu-cpuid.SYSEE=true
-  - feature.node.kubernetes.io/cpu-cpuid.X87=true
-  - feature.node.kubernetes.io/cpu-cpuid.XSAVE=true
-  - feature.node.kubernetes.io/cpu-cpuid.XSAVEOPT=true
-  - feature.node.kubernetes.io/cpu-hardware_multithreading=false
-  - feature.node.kubernetes.io/cpu-model.family=6
-  - feature.node.kubernetes.io/cpu-model.id=58
-  - feature.node.kubernetes.io/cpu-model.vendor_id=Intel
-  - feature.node.kubernetes.io/kernel-config.NO_HZ=true
-  - feature.node.kubernetes.io/kernel-config.NO_HZ_FULL=true
-  - feature.node.kubernetes.io/kernel-version.full=4.18.0-305.3.1.el8.x86_64
-  - feature.node.kubernetes.io/kernel-version.major=4
-  - feature.node.kubernetes.io/kernel-version.minor=18
-  - feature.node.kubernetes.io/kernel-version.revision=0
-  - feature.node.kubernetes.io/pci-1013.present=true
-  - feature.node.kubernetes.io/pci-1af4.present=true
-  - feature.node.kubernetes.io/system-os_release.ID=centos
-  - feature.node.kubernetes.io/system-os_release.VERSION_ID=8
-  - feature.node.kubernetes.io/system-os_release.VERSION_ID.major=8
-  - kubernetes.io/arch=amd64
-  - kubernetes.io/hostname=ecs-w-03.dlee155.cldr.example
-  - kubernetes.io/os=linux
-  - nvidia.com/gfd.timestamp=1772087299
-  - nvidia.com/gpu.count=2
-  - nvidia.com/gpu.deploy.compute-domain-dra-plugin=true
-  - nvidia.com/gpu.deploy.dcgm-exporter=true
-  - nvidia.com/gpu.deploy.device-plugin=true
-  - nvidia.com/gpu.deploy.dra-plugin-gpu=true
-  - nvidia.com/gpu.memory=11441
-  - nvidia.com/gpu.present=true
-  - nvidia.com/gpu.product=Tesla-K80
-  - nvidia.com/mig.strategy=mixed
+...... truncated ......
+...... truncated ......
+...... truncated ......
   - rack=default
-  - run.ai/fake.gpu=true
-  - run.ai/simulated-gpu-node-pool=default
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[71/73] [30-Mar-2026 07:36:53] Which nodes are ready and schedulable?
-       Answered — 6s elapsed
+[72/74] [30-Mar-2026 14:10:47] Which nodes are ready and schedulable?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which nodes are ready and schedulable?
 Answer:
-The nodes that are ready and schedulable are:
-- ecs-m-01.dlee155.cldr.example
-- ecs-w-01.dlee155.cldr.example
-- ecs-w-03.dlee155.cldr.example
-Note that ecs-w-02.dlee155.cldr.example is Ready but SchedulingDisabled (cordoned), meaning no new pods can be scheduled on it.
+| NODE | ROLES | STATUS | CPU | MEMORY | GPU |
+|---|---|---|---|---|---|
+| ecs-m-01.dlee155.cldr.example | control-plane,etcd,master | Ready | 32 | 131745540Ki | 0 |
+| ecs-w-01.dlee155.cldr.example | worker | Ready | 32 | 131745540Ki | 0 |
+| ecs-w-03.dlee155.cldr.example | worker | Ready | 32 | 131745540Ki | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[72/73] [30-Mar-2026 07:36:59] Show cluster version
-       Answered — 6s elapsed
+[73/74] [30-Mar-2026 14:10:55] Show cluster version
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show cluster version
 Answer:
@@ -2148,16 +980,17 @@ The Kubernetes cluster version is:
 Major: 1, Minor: 32, GitVersion: v1.32.9+rke2r1, GitCommit: cea7087b31eb788b75934d769a28f058ab309318, BuildDate: 2025-09-10T21:19:22Z
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[73/73] [30-Mar-2026 07:37:05] Which storage classes are available in the cluster?
+[74/74] [30-Mar-2026 14:11:02] Which storage classes are available in the cluster?
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which storage classes are available in the cluster?
 Answer:
-The available storage classes in the cluster are:
-- **local-path**: Provisioner `rancher.io/local-path`, Reclaim Policy `Delete`, Expansion `No`, Default `No`
-- **longhorn**: Provisioner `driver.longhorn.io`, Reclaim Policy `Delete`, Expansion `Yes`, Default `Yes`
-- **longhorn-static**: Provisioner `driver.longhorn.io`, Reclaim Policy `Delete`, Expansion `Yes`, Default `No`
+| NAME           | PROVISIONER         | RECLAIM POLICY | EXPANSION | DEFAULT |
+|----------------|---------------------|----------------|-----------|---------|
+| local-path     | rancher.io/local-path | Delete         | No        |         |
+| longhorn       | driver.longhorn.io  | Delete         | Yes       | Yes     |
+| longhorn-static| driver.longhorn.io  | Delete         | Yes       |         |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-  Results: 73 passed / 0 failed / 73 total
+  Results: 74 passed / 0 failed / 74 total
 
