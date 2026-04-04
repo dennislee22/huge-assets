@@ -1,20 +1,232 @@
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-  ECS AI Ops — Sequential API Test   (74 queries)
-  Target: https://gpu-ecs-ai-ops.xxxyyyzzz.com/api/ask
+  ECS AI Ops — Sequential API Test   (88 queries)
+  Target: https://localhost:8080/api/ask
   skip_synthesise: false
   Log file: gpu_test_api.log
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 1/74] [30-Mar-2026 13:56:20] who is cmlwb1-user-1 in cmlwb1 ns?
-       Answered — 6s elapsed
+[ 1/88] [04-Apr-2026 14:51:39] List all pods that are not fully running
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: who is cmlwb1-user-1 in cmlwb1 ns?
+Question: List all pods that are not fully running
 Answer:
-dennis
+Showing all Unhealthy / Non-Running Pods in all namespaces.
+| NAMESPACE | NAME | STATUS | READY | RESTARTS | REASON | CONDITIONS |
+|---|---|---|---|---|---|---|
+| `testme` | `crash-bad-command` | Running | 0/1 | 6193 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-dependency` | Running | 0/1 | 6194 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-exit` | Running | 0/1 | 6158 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-liveness` | Running | 0/1 | 9454 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-missing-config` | Pending | 0/1 | 0 | PodInitializing | PodReadyToStartContainers=False, Initialized=False, Ready=False, ContainersReady=False |
+| `testme` | `crash-oom` | Running | 0/1 | 6190 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+6 unhealthy pod(s) found. Ask for details on a specific pod to see logs and events.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 2/74] [30-Mar-2026 13:56:26] where is prometheus pod?
+[ 2/88] [04-Apr-2026 14:51:47] Show cpu and mem requested by user Dennis for the past 3 months
+       Answered — 5s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show cpu and mem requested by user Dennis for the past 3 months
+Answer:
+List of CPU and RAM requests session in `cmlwb1` matching user Dennis (cmlwb1-user-1) — last 90d.
+```
+NAMESPACE      USER    WORKLOAD             CPU    MEMORY  STATUS      CREATED AT
+---------------------------------------------------------------------------------
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-03-25 23:45:27
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-03 05:45:19
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-01 00:43:57
+```
+§GRAPH§{"title":"Dennis - CPU & RAM Requests (by CPU)","unit":"cores","duration":"90d","series":[{"label":"dennis","values":[[1774482327,2.0],[1775004237,2.0],[1775195119,2.0]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 3/88] [04-Apr-2026 14:51:52] Show all pods that have restarted more than 5 times in the last 24 hours and show the cause
+       Answered — 15s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show all pods that have restarted more than 5 times in the last 24 hours and show the cause
+Answer:
+As no namespace was mentioned, I checked across all namespaces.
+**testme/crash-bad-command**
+- Phase: Running | Ready: 0/1 | Restarts: 6193 | Cause: CrashLoopBackOff (failed to execute "not-a-real-command")
+  
+**testme/crash-dependency**
+- Phase: Running | Ready: 0/1 | Restarts: 6194 | Cause: CrashLoopBackOff (failed to connect to "nonexistent-db")
+**testme/crash-exit**
+- Phase: Running | Ready: 0/1 | Restarts: 6158 | Cause: CrashLoopBackOff (application crashed)
+**testme/crash-liveness**
+- Phase: Running | Ready: 0/1 | Restarts: 9454 | Cause: CrashLoopBackOff (liveness probe failed)
+**testme/crash-oom**
+- Phase: Running | Ready: 0/1 | Restarts: 6190 | Cause: CrashLoopBackOff (container was OOMKilled)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 4/88] [04-Apr-2026 14:52:07] List all sessions with cpu and mem requested by user Dennis in cmlwb1 workbench
+       Answered — 5s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: List all sessions with cpu and mem requested by user Dennis in cmlwb1 workbench
+Answer:
+List of CPU and RAM requests session in `cmlwb1` matching user Dennis (cmlwb1-user-1) — last 30d.
+```
+NAMESPACE      USER    WORKLOAD             CPU    MEMORY  STATUS      CREATED AT
+---------------------------------------------------------------------------------
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-03-25 23:45:27
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-03 05:45:19
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-01 00:43:57
+```
+§GRAPH§{"title":"Dennis - CPU & RAM Requests (by CPU)","unit":"cores","duration":"30d","series":[{"label":"dennis","values":[[1774482327,2.0],[1775004237,2.0],[1775195119,2.0]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 5/88] [04-Apr-2026 14:52:12] Show the RAM usage for user Manas in cmlwb1 workbench for the past 7 weeks
+       Answered — 11s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the RAM usage for user Manas in cmlwb1 workbench for the past 7 weeks
+Answer:
+Top 4 pods by peak memory in namespace `cmlwb1-user-2` — last 49d (Feb 14, 06:52–Apr 04, 06:52 UTC, 1h interval).
+```
+NAMESPACE              POD                     PEAK(Mi)      LOWEST(Mi)
+-----------------------------------------------------------------------
+cmlwb1-user-2 (manas)  fml6accnkpfrspts        1303.2Mi         189.1Mi
+cmlwb1-user-2 (manas)  x4pfvikwfjs49saf        1274.2Mi        1274.2Mi
+cmlwb1-user-2 (manas)  9pbboisv0p6talxj        1264.3Mi         214.5Mi
+cmlwb1-user-2 (manas)  f9cobjijg168b04w         178.4Mi         163.5Mi
+  ⚠️ Note: Historical queries are safely capped at 90d to protect Prometheus.
+```
+§GRAPH§{"title":"Top 4 pods \u2014 memory Usage (Feb 14, 06:52\u2013Apr 04, 06:52 UTC)","unit":"Mi","duration":"49d","series":[{"label":"cmlwb1-user-2 (manas)/fml6accnkpfrspts","values":[[1774421538.0,1303.16796875],[1774425138.0,189.06640625]]},{"label":"cmlwb1-user-2 (manas)/x4pfvikwfjs49saf","values":[[1774482738.0,1274.2421875]]},{"label":"cmlwb1-user-2 (manas)/9pbboisv0p6talxj","values":[[1774432338.0,1264.29296875],[1774435938.0,214.45703125]]},{"label":"cmlwb1-user-2 (manas)/f9cobjijg168b04w","values":[[1774425138.0,163.4921875],[1774428738.0,178.4375]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 6/88] [04-Apr-2026 14:52:23] Show the cpu or ram requested by user Dennis in cmlwb1 workspace for the past 1 day
+       Answered — 5s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the cpu or ram requested by user Dennis in cmlwb1 workspace for the past 1 day
+Answer:
+(Query returned no rows.)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 7/88] [04-Apr-2026 14:52:28] Show the mem usage for user Dennis in cmlwb1 workbench for the past 3 months
+       Answered — 13s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the mem usage for user Dennis in cmlwb1 workbench for the past 3 months
+Answer:
+Top 3 pods by peak memory in namespace `cmlwb1-user-1` — last 90d (Jan 04, 06:52–Apr 04, 06:52 UTC, 1h interval).
+```
+NAMESPACE               POD                     PEAK(Gi)      LOWEST(Gi)
+------------------------------------------------------------------------
+cmlwb1-user-1 (dennis)  ram38smionwd6fn2           2.2Gi           0.2Gi
+cmlwb1-user-1 (dennis)  4wiopfmjoii1uueh           1.3Gi           0.3Gi
+cmlwb1-user-1 (dennis)  3k9hm14ybaz819l8           1.2Gi           0.2Gi
+  ⚠️ Note: Historical queries are safely capped at 90d to protect Prometheus.
+```
+§GRAPH§{"title":"Top 3 pods \u2014 memory Usage (Jan 04, 06:52\u2013Apr 04, 06:52 UTC)","unit":"Gi","duration":"90d","series":[{"label":"cmlwb1-user-1 (dennis)/ram38smionwd6fn2","values":[[1775004755.0,2.2238807678222656],[1775008355.0,0.16886520385742188]]},{"label":"cmlwb1-user-1 (dennis)/4wiopfmjoii1uueh","values":[[1774482755.0,0.274658203125],[1774486355.0,1.2659492492675781]]},{"label":"cmlwb1-user-1 (dennis)/3k9hm14ybaz819l8","values":[[1775195555.0,1.2338066101074219],[1775199155.0,0.17128753662109375]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 8/88] [04-Apr-2026 14:52:41] Show the cpu and memory usage for user Dennis in cmlwb1 workbench for the past 3 months
+       Answered — 13s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the cpu and memory usage for user Dennis in cmlwb1 workbench for the past 3 months
+Answer:
+Top 3 pods by peak CPU in namespace `cmlwb1-user-1` — last 90d (Jan 04, 06:52–Apr 04, 06:52 UTC, 1h interval).
+```
+NAMESPACE               POD                   PEAK (m)    LOWEST (m)
+--------------------------------------------------------------------
+cmlwb1-user-1 (dennis)  4wiopfmjoii1uueh      1341.7m        24.7m
+cmlwb1-user-1 (dennis)  ram38smionwd6fn2      1328.0m      1328.0m
+cmlwb1-user-1 (dennis)  3k9hm14ybaz819l8      1317.1m        19.1m
+```
+Top 3 pods by peak memory in namespace `cmlwb1-user-1` — last 90d (Jan 04, 06:52–Apr 04, 06:52 UTC, 1h interval).
+```
+NAMESPACE               POD                   PEAK (Mi)    LOWEST (Mi)
+----------------------------------------------------------------------
+cmlwb1-user-1 (dennis)  ram38smionwd6fn2       2277.3Mi        172.9Mi
+cmlwb1-user-1 (dennis)  4wiopfmjoii1uueh       1296.3Mi        293.7Mi
+cmlwb1-user-1 (dennis)  3k9hm14ybaz819l8       1263.4Mi        175.4Mi
+  ⚠️ Note: Historical queries are safely capped at 90d to protect Prometheus.
+```
+§GRAPH§{"title":"Top 3 pods \u2014 CPU Usage (Jan 04, 06:52\u2013Apr 04, 06:52 
+...... truncated ......
+...... truncated ......
+dennis)/3k9hm14ybaz819l8","values":[[1775195568.0,1263.41796875],[1775199168.0,175.3984375]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[ 9/88] [04-Apr-2026 14:52:54] Show the resources usage for user Dennis in cmlwb1 workbench for the past 10 weeks
+       Answered — 12s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the resources usage for user Dennis in cmlwb1 workbench for the past 10 weeks
+Answer:
+Top 3 pods by peak CPU in namespace `cmlwb1-user-1` — last 70d (Jan 24, 06:53–Apr 04, 06:53 UTC, 1h interval).
+```
+NAMESPACE               POD                   PEAK (m)    LOWEST (m)
+--------------------------------------------------------------------
+cmlwb1-user-1 (dennis)  ram38smionwd6fn2      1360.4m      1360.4m
+cmlwb1-user-1 (dennis)  3k9hm14ybaz819l8      1353.0m        18.7m
+cmlwb1-user-1 (dennis)  4wiopfmjoii1uueh      1341.7m        25.4m
+```
+Top 3 pods by peak memory in namespace `cmlwb1-user-1` — last 70d (Jan 24, 06:53–Apr 04, 06:53 UTC, 1h interval).
+```
+NAMESPACE               POD                   PEAK (Mi)    LOWEST (Mi)
+----------------------------------------------------------------------
+cmlwb1-user-1 (dennis)  ram38smionwd6fn2       2277.3Mi        172.9Mi
+cmlwb1-user-1 (dennis)  4wiopfmjoii1uueh       1296.3Mi        293.7Mi
+cmlwb1-user-1 (dennis)  3k9hm14ybaz819l8       1263.4Mi        175.4Mi
+  ⚠️ Note: Historical queries are safely capped at 90d to protect Prometheus.
+```
+§GRAPH§{"title":"Top 3 pods \u2014 CPU Usage (Jan 24, 06:53\u2013Apr 04, 06:53 
+...... truncated ......
+...... truncated ......
+dennis)/3k9hm14ybaz819l8","values":[[1775195580.0,1263.41796875],[1775199180.0,175.3984375]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[10/88] [04-Apr-2026 14:53:06] Is user Dennis in cmlwb1 workspace hogging resources for the past 22 days?
        Answered — 8s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Is user Dennis in cmlwb1 workspace hogging resources for the past 22 days?
+Answer:
+List of CPU and RAM requests session in `cmlwb1` matching user Dennis (cmlwb1-user-1) — last 22d.
+```
+NAMESPACE      USER    WORKLOAD             CPU    MEMORY  STATUS      CREATED AT
+---------------------------------------------------------------------------------
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-03-25 23:45:27
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-03 05:45:19
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-01 00:43:57
+```
+§GRAPH§{"title":"Dennis - CPU & RAM Requests (by CPU)","unit":"cores","duration":"22d","series":[{"label":"dennis","values":[[1774482327,2.0],[1775004237,2.0],[1775195119,2.0]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[11/88] [04-Apr-2026 14:53:14] Show the resources requested by Dennis in cmlwb1 workbench for the past 10 weeks
+       Answered — 5s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show the resources requested by Dennis in cmlwb1 workbench for the past 10 weeks
+Answer:
+List of CPU and RAM requests session in `cmlwb1` matching user Dennis (cmlwb1-user-1) — last 10w.
+```
+NAMESPACE      USER    WORKLOAD             CPU    MEMORY  STATUS      CREATED AT
+---------------------------------------------------------------------------------
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-03-25 23:45:27
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-03 05:45:19
+cmlwb1-user-1  dennis  Untitled Session       2         4  timedout    2026-04-01 00:43:57
+```
+§GRAPH§{"title":"Dennis - CPU & RAM Requests (by CPU)","unit":"cores","duration":"10w","series":[{"label":"dennis","values":[[1774482327,2.0],[1775004237,2.0],[1775195119,2.0]]}]}§GRAPH§
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[12/88] [04-Apr-2026 14:53:19] Show schema for table users in db-0 pod in cmlwb1
+       Answered — 38s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Show schema for table users in db-0 pod in cmlwb1
+Answer:
+column_name|data_type|is_nullable|column_default
+-----------|---------|-----------|--------------
+id|integer|NO|nextval('users_id_seq'::regclass)
+...... truncated ......
+...... truncated ......
+crn|character varying|YES|
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[13/88] [04-Apr-2026 14:53:57] who is cmlwb1-user-2?
+       Answered — 6s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: who is cmlwb1-user-2?
+Answer:
+The username associated with the namespace `cmlwb1-user-2` is `manas`.
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[14/88] [04-Apr-2026 14:54:03] where is prometheus pod?
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: where is prometheus pod?
 Answer:
@@ -22,14 +234,28 @@ Showing resources matching `prometheus` in all namespaces.
 | Resource Type | Namespace | Name | Status/Details |
 |---|---|---|---|
 | Pod | cdp | cdp-release-prometheus-alertmanager-0 | Running on ecs-m-01.dlee155.cldr.example |
+| Pod | cdp | cdp-release-prometheus-alertmanager-1 | Running on ecs-m-01.dlee155.cldr.example |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| Pod | longhorn-system | prometheus-snapshot-delete-29580540-dljgp | Succeeded on ecs-w-01.dlee155.cldr.example |
+| Pod | longhorn-system | prometheus-snapshot-delete-29587740-stjrz | Succeeded on ecs-w-01.dlee155.cldr.example |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 3/74] [30-Mar-2026 13:56:34] find grafana
-       Answered — 11s elapsed
+[15/88] [04-Apr-2026 14:54:10] Which pods are currently crashing?
+       Answered — 17s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Which pods are currently crashing?
+Answer:
+As no namespace was mentioned, I checked across all namespaces.
+- `testme/crash-missing-config` | Phase: Pending | Ready: 0/1 | Restarts: 0 | Cause: Missing ConfigMap "config-that-does-not-exist"
+- `testme/crash-bad-command` | Phase: Running | Ready: 0/1 | Restarts: 6194 | Cause: CrashLoopBackOff due to "not-a-real-command"
+- `testme/crash-dependency` | Phase: Running | Ready: 0/1 | Restarts: 6195 | Cause: CrashLoopBackOff due to failed dependency "nonexistent-db"
+- `testme/crash-exit` | Phase: Running | Ready: 0/1 | Restarts: 6159 | Cause: CrashLoopBackOff with exit code 1
+- `testme/crash-liveness` | Phase: Running | Ready: 0/1 | Restarts: 9454 | Cause: CrashLoopBackOff due to liveness probe failure
+- `testme/crash-oom` | Phase: Running | Ready: 0/1 | Restarts: 6191 | Cause: CrashLoopBackOff due to OOMKilled (Out Of Memory)
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[16/88] [04-Apr-2026 14:54:27] find grafana
+       Answered — 10s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: find grafana
 Answer:
@@ -37,19 +263,19 @@ Showing resources matching `grafana` in all namespaces.
 | Resource Type | Namespace | Name | Status/Details |
 |---|---|---|---|
 | Pod | cdp | cdp-release-grafana-77dcc66787-h45tr | Running on ecs-w-01.dlee155.cldr.example |
-...... truncated ......
+| Deployment | cdp | cdp-release-grafana | 1/1 ready ✅ |
+| ReplicaSet | cdp | cdp-release-grafana-77dcc66787 | 1/1 ready ✅ |
+| Service | cdp | cdp-release-grafana | ClusterIP 10.43.158.255 |
 ...... truncated ......
 ...... truncated ......
 | ConfigMap | cdp | cdp-release-monitoring-app-grafana-datasources | 1 key(s) |
-| Secret | cdp | cdp-release-grafana | Opaque |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 4/74] [30-Mar-2026 13:56:45] what’s the resources requested for each node?
+[17/88] [04-Apr-2026 14:54:37] what’s the resources requested for each node?
        Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what’s the resources requested for each node?
 Answer:
-The table below shows the CPU and memory allocation and availability across all nodes:
 | NODE | CPU ALLOC | CPU REQ | CPU AVAIL | RAM ALLOC (Gi) | RAM REQ (Gi) | RAM AVAIL (Gi) | GPU |
 |---|---|---|---|---|---|---|---|
 | ecs-m-01.dlee155.cldr.example | 32.0 | 13.76 (43.0%) | 18.24 (57.0%) | 125.64 | 27.1 (21.6%) | 98.54 (78.4%) | 0 |
@@ -58,7 +284,7 @@ The table below shows the CPU and memory allocation and availability across all 
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 5/74] [30-Mar-2026 13:57:07] calculate CPU and RAM requests for longhorn-system namespace
+[18/88] [04-Apr-2026 14:54:59] calculate CPU and RAM requests for longhorn-system namespace
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: calculate CPU and RAM requests for longhorn-system namespace
@@ -74,16 +300,16 @@ Answer:
 | csi-attacher-5f56765cb-5rbdn | 0m | 0Mi | 0m | 0Mi |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
+| prometheus-snapshot-delete-29587740-stjrz | 0m | 0Mi | 0m | 0Mi |
 | share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83 | 0m | 0Mi | 0m | 0Mi |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 6/74] [30-Mar-2026 13:57:11] Show cpu and ram requests for all namespaces
+[19/88] [04-Apr-2026 14:55:02] Show cpu and ram requests for all namespaces
        Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show cpu and ram requests for all namespaces
 Answer:
-## Resource summary for all namespaces (343 pods)
+## Resource summary for all namespaces (344 pods)
 - **Total CPU Requested**: 71408m (71.408 cores)
 - **Total CPU Limit**: 62800m (62.800 cores)
 - **Total RAM Requested**: 147322Mi (143.87Gi)
@@ -94,11 +320,10 @@ Answer:
 | awx | awx-demo-postgres-13-0 | 10m | 64Mi | 0m | 0Mi |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
 | yunikorn | yunikorn-scheduler-586bb95546-wgr8w | 300m | 1124Mi | 4200m | 4596Mi |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 7/74] [30-Mar-2026 13:57:18] List all pods hosted in ecs-m-01.dlee155.cldr.example?
+[20/88] [04-Apr-2026 14:55:09] List all pods hosted in ecs-m-01.dlee155.cldr.example?
        Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all pods hosted in ecs-m-01.dlee155.cldr.example?
@@ -107,34 +332,27 @@ Answer:
 | NAMESPACE | POD NAME | STATUS | READY |
 |---|---|---|---|
 | `cdp` | `cdp-embedded-db-0` | Running | 1/1 |
-| `cdp` | `cdp-release-alert-admin-service-78d5798f4b-d4z9z` | Running | 2/2 |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| `vault-system` | `vault-0` | Running | 1/1 |
-| `vault-system` | `vault-exporter-669cfddf5b-gdt9j` | Running | 1/1 |
-| `yunikorn` | `yunikorn-admission-controller-66679f99f6-v8g2m` | Running | 1/1 |
 | `yunikorn` | `yunikorn-scheduler-586bb95546-wgr8w` | Running | 2/2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 8/74] [30-Mar-2026 13:57:23] List crds that contain longhorn in their name
-       Answered — 27s elapsed
+[21/88] [04-Apr-2026 14:55:14] List crds that contain longhorn in their name
+       Answered — 28s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List crds that contain longhorn in their name
 Answer:
+### CustomResourceDefinitions (CRDs) containing "longhorn" in their name
 | NAME | GROUP | SCOPE | VERSIONS |
 |---|---|---|---|
 | `backingimagedatasources.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
-| `backingimagemanagers.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| `volumeattachments.longhorn.io` | `longhorn.io` | Namespaced | v1beta2 |
 | `volumes.longhorn.io` | `longhorn.io` | Namespaced | v1beta1, v1beta2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[ 9/74] [30-Mar-2026 13:57:51] Show me longhorn settings
-       Answered — 61s elapsed
+[22/88] [04-Apr-2026 14:55:42] Show me longhorn settings
+       Answered — 58s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show me longhorn settings
 Answer:
@@ -144,11 +362,10 @@ Answer:
 | `allow-collecting-longhorn-usage-metrics` | `true` |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
 | `v2-data-engine-log-level` | `Notice` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[10/74] [30-Mar-2026 13:58:52] Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
+[23/88] [04-Apr-2026 14:56:40] Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Is longhorn node ecs-w-02.dlee155.cldr.example doing ok?
@@ -156,11 +373,11 @@ Answer:
 ### Longhorn Node Status
 | NODE | READY | SCHEDULABLE | DISK PRESSURE | STORAGE MAX (GiB) | AVAIL (GiB) | SCHEDULED (GiB) | OVERCOMMIT % |
 |---|---|---|---|---|---|---|---|
-| `ecs-w-02.dlee155.cldr.example` | ✅ | ⚠️ Cordoned | ✅ No | 199.9 | 190.9 | 100.4 | ✅ 50% |
+| `ecs-w-02.dlee155.cldr.example` | ✅ | ⚠️ Cordoned | ✅ No | 199.9 | 190.2 | 100.4 | ✅ 50% |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[11/74] [30-Mar-2026 13:59:00] Show schema for table users in db-0 pod in cmlwb1
-       Answered — 33s elapsed
+[24/88] [04-Apr-2026 14:56:48] Show schema for table users in db-0 pod in cmlwb1
+       Answered — 31s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show schema for table users in db-0 pod in cmlwb1
 Answer:
@@ -169,60 +386,13 @@ column_name|data_type|is_nullable|column_default
 id|integer|NO|nextval('users_id_seq'::regclass)
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
 crn|character varying|YES|
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[12/74] [30-Mar-2026 13:59:33] which secret is attached to db-0 in cmlwb1 namespace?
+[25/88] [04-Apr-2026 14:57:19] which pod is attached to cdp-release-grafana secret in cdp ns?
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: which secret is attached to db-0 in cmlwb1 namespace?
-Answer:
-```
-Name:             db-0
-Namespace:        cmlwb1
-...... truncated ......
-...... truncated ......
-...... truncated ......
- 'toleration_seconds': 300,
- 'value': None}
-Events:          <none>
-```
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-[13/74] [30-Mar-2026 13:59:42] Describe storageclass longhorn
-       Answered — 2s elapsed
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: Describe storageclass longhorn
-Answer:
-```
-Name:                  longhorn
-IsDefaultClass:        Yes
-Annotations:           longhorn.io/last-applied-configmap=kind: StorageClass
-...... truncated ......
-...... truncated ......
-...... truncated ......
-VolumeBindingMode:     Immediate
-Events:                <none>
-```
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-[14/74] [30-Mar-2026 13:59:44] List all quotas
-       Answered — 6s elapsed
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: List all quotas
-Answer:
-As no namespace was mentioned, I checked across all namespaces.
-| NAMESPACE | QUOTA | RESOURCE | USED | HARD |
-|---|---|---|---|---|
-| `cmlwb1-user-1` | `cdsw-object-quota` | count/pods | 0 | 50 |
-| `cmlwb1-user-2` | `cdsw-object-quota` | count/pods | 0 | 50 |
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-[15/74] [30-Mar-2026 13:59:50] which pods are associated with secret cdp-release-grafana in cdp ns?
-       Answered — 8s elapsed
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: which pods are associated with secret cdp-release-grafana in cdp ns?
+Question: which pod is attached to cdp-release-grafana secret in cdp ns?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
 | NAMESPACE | POD NAME | STATUS |
@@ -231,14 +401,52 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | `cdp` | `cdp-release-monitoring-pvcservice-6dd677cfbc-j5rb6` | Running |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[16/74] [30-Mar-2026 13:59:58] I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
-       Answered — 15s elapsed
+[26/88] [04-Apr-2026 14:57:27] what secret is attached to pod cdp-release-grafana-77dcc66787-h45tr?
+       Answered — 8s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: what secret is attached to pod cdp-release-grafana-77dcc66787-h45tr?
+Answer:
+I mapped the keyword in your question and scoped this check to the `cdp` namespace.
+| Namespace | Pod Name | Secret Name |
+|-----------|----------|-------------|
+| cdp       | cdp-release-grafana-77dcc66787-h45tr | No secrets found |
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[27/88] [04-Apr-2026 14:57:35] Describe storageclass longhorn
+       Answered — 2s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: Describe storageclass longhorn
+Answer:
+```
+Name:                  longhorn
+IsDefaultClass:        Yes
+...... truncated ......
+...... truncated ......
+VolumeBindingMode:     Immediate
+Events:                <none>
+```
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[28/88] [04-Apr-2026 14:57:37] List all quotas
+       Answered — 6s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: List all quotas
+Answer:
+As no namespace was mentioned, I checked across all namespaces.
+| NAMESPACE      | QUOTA                  | RESOURCE       | USED | HARD |
+|----------------|------------------------|----------------|------|------|
+| cmlwb1-user-1  | cdsw-object-quota      | count/pods     | 0    | 50   |
+| cmlwb1-user-2  | cdsw-object-quota      | count/pods     | 0    | 50   |
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[29/88] [04-Apr-2026 14:57:43] I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
+       Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 800CPU & 12GB memory, does the cluster have enough available capacity? If yes, which node?
 Answer:
 Node: ecs-m-01.dlee155.cldr.example
 CPU: 18.24 >= 800 -> FALSE
-RAM: 98.54 >= 12 -> FALSE
+RAM: 98.54 >= 12 -> TRUE
 Available on node?: NO
 Node: ecs-w-01.dlee155.cldr.example
 CPU: 13.76 >= 800 -> FALSE
@@ -255,16 +463,16 @@ Available on node?: NO
 Overall: NO — 0 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[17/74] [30-Mar-2026 14:00:13] show me the limit range of the cluster
+[30/88] [04-Apr-2026 14:57:59] show me the limit range of the cluster
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show me the limit range of the cluster
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The cluster does not have any LimitRanges configured.
+The LimitRanges for the cluster could not be found.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[18/74] [30-Mar-2026 14:00:16] how much capacity is available to be requested for each node?
+[31/88] [04-Apr-2026 14:58:02] how much capacity is available to be requested for each node?
        Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: how much capacity is available to be requested for each node?
@@ -278,8 +486,8 @@ The table below shows the available capacity for each node:
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[19/74] [30-Mar-2026 14:00:38] I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
-       Answered — 15s elapsed
+[32/88] [04-Apr-2026 14:58:24] I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
+       Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 8CPU & 1256GB memory, does the cluster have enough available capacity? If yes, which node?
 Answer:
@@ -302,7 +510,7 @@ Available on node?: NO
 Overall: NO — 0 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[20/74] [30-Mar-2026 14:00:53] Show CPU and memory capacity for each node
+[33/88] [04-Apr-2026 14:58:40] Show CPU and memory capacity for each node
        Answered — 22s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show CPU and memory capacity for each node
@@ -315,7 +523,7 @@ Answer:
 | ecs-w-03.dlee155.cldr.example | 32.0 | 22.25 (69.5%) | 9.75 (30.5%) | 125.64 | 14.62 (11.6%) | 111.03 (88.4%) | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[21/74] [30-Mar-2026 14:01:15] I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
+[34/88] [04-Apr-2026 14:59:02] I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
        Answered — 15s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to create a pod with 2 vCPU & 8 GB memory, does the cluster have enough available capacity?
@@ -339,8 +547,8 @@ Available on node?: YES
 Overall: YES — 4 node(s) have sufficient capacity.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[22/74] [30-Mar-2026 14:01:30] Which nodes have taints?
-       Answered — 7s elapsed
+[35/88] [04-Apr-2026 14:59:17] Which nodes have taints?
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which nodes have taints?
 Answer:
@@ -350,34 +558,35 @@ Answer:
 | `ecs-w-02.dlee155.cldr.example` | node.kubernetes.io/unschedulable | - | NoSchedule |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[23/74] [30-Mar-2026 14:01:37] Which node is currently cordoned?
-       Answered — 4s elapsed
+[36/88] [04-Apr-2026 14:59:24] Which node is currently cordoned?
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which node is currently cordoned?
 Answer:
-The node currently cordoned is `ecs-w-02.dlee155.cldr.example`. It has SchedulingDisabled set, which means no new pods can be scheduled on it. Existing pods will continue to run normally.
+The node currently cordoned is `ecs-w-02.dlee155.cldr.example`.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[24/74] [30-Mar-2026 14:01:41] list all nodes with GPU
-       Answered — 10s elapsed
+[37/88] [04-Apr-2026 14:59:28] list all nodes with GPU
+       Answered — 12s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all nodes with GPU
 Answer:
-The following nodes have GPUs:
+There is one node with GPU hardware in the cluster:
 | NODE | PRODUCT | COUNT | VRAM/GRAM | ALLOCATABLE | ATTACHED PODS |
-|------|---------|-------|-----------|-------------|---------------|
+|---|---|---|---|---|---|
 | ecs-w-03.dlee155.cldr.example | Tesla-K80 | 2 | 11441Mi | 2 | - |
+The node `ecs-w-03.dlee155.cldr.example` has 2 Tesla-K80 GPUs with a total of 11441Mi VRAM/GRAM. The GPUs are allocatable, and there are no pods currently attached to them.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[25/74] [30-Mar-2026 14:01:51] which node has a GPU available and in use?
-       Answered — 11s elapsed
+[38/88] [04-Apr-2026 14:59:40] which node has a GPU available and in use?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which node has a GPU available and in use?
 Answer:
-The node `ecs-w-03.dlee155.cldr.example` has a GPU available, specifically two Tesla-K80 GPUs with 11441Mi VRAM/GRAM each. However, the "ATTACHED PODS" column shows "-", indicating that no pod is currently using the GPU. Therefore, the GPU is available and not in use.
+The node `ecs-w-03.dlee155.cldr.example` has a GPU available, but it is not in use as indicated by the "-" in the ATTACHED PODS column.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[26/74] [30-Mar-2026 14:02:02] Show all replicaset in cdp-keda ns
+[39/88] [04-Apr-2026 14:59:48] Show all replicaset in cdp-keda ns
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show all replicaset in cdp-keda ns
@@ -390,21 +599,21 @@ I mapped the keyword in your question and scoped this check to the `cdp-keda` na
 | cdp-keda | keda-operator-metrics-apiserver-7f7d6ffd8b | ✓ Healthy | 1 | 1 | 1 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[27/74] [30-Mar-2026 14:02:10] show the last 4 lines of log for cdp-embedded-db-0
+[40/88] [04-Apr-2026 14:59:56] show the last 4 lines of log for cdp-embedded-db-0
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show the last 4 lines of log for cdp-embedded-db-0
 Answer:
 ### `cdp/cdp-embedded-db-0` [cdp-cdp-embedded-db]
 ```
-2026-03-30T05:54:33.024586705Z 2026-03-30 05:54:33.024 UTC [15] LOG:  checkpoint starting: time
-2026-03-30T05:55:04.144402216Z 2026-03-30 05:55:04.143 UTC [15] LOG:  checkpoint complete: wrote 310 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=31.037 s, sync=0.019 s, total=31.120 s; sync files=42, longest=0.018 s, average=0.001 s; distance=2165 kB, estimate=2276 kB; lsn=8/90A102A8, redo lsn=8/90926668
-2026-03-30T05:59:33.242842780Z 2026-03-30 05:59:33.242 UTC [15] LOG:  checkpoint starting: time
-2026-03-30T06:00:01.348177408Z 2026-03-30 06:00:01.347 UTC [15] LOG:  checkpoint complete: wrote 279 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=27.987 s, sync=0.056 s, total=28.105 s; sync files=38, longest=0.019 s, average=0.002 s; distance=2134 kB, estimate=2262 kB; lsn=8/90C82180, redo lsn=8/90B3C260
+2026-04-04T06:51:41.829257517Z 2026-04-04 06:51:41.828 UTC [15] LOG:  checkpoint starting: time
+2026-04-04T06:52:14.997610808Z 2026-04-04 06:52:14.997 UTC [15] LOG:  checkpoint complete: wrote 332 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=33.101 s, sync=0.012 s, total=33.169 s; sync files=43, longest=0.012 s, average=0.001 s; distance=2444 kB, estimate=2444 kB; lsn=9/6FE85888, redo lsn=9/6FDE3078
+2026-04-04T06:56:42.083945476Z 2026-04-04 06:56:42.083 UTC [15] LOG:  checkpoint starting: time
+2026-04-04T06:57:10.768809949Z 2026-04-04 06:57:10.768 UTC [15] LOG:  checkpoint complete: wrote 286 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=28.598 s, sync=0.017 s, total=28.686 s; sync files=44, longest=0.016 s, average=0.001 s; distance=2078 kB, estimate=2407 kB; lsn=9/7008ACB0, redo lsn=9/6FFEA978
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[28/74] [30-Mar-2026 14:02:14] I want to know all statefulset in cdp namespace
+[41/88] [04-Apr-2026 15:00:00] I want to know all statefulset in cdp namespace
        Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: I want to know all statefulset in cdp namespace
@@ -417,8 +626,8 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | cdp | fluentd-aggregator | ✓ Healthy | 1 | 1 | 1 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[29/74] [30-Mar-2026 14:02:21] List any resource named with vault in its name
-       Answered — 3s elapsed
+[42/88] [04-Apr-2026 15:00:07] List any resource named with vault in its name
+       Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List any resource named with vault in its name
 Answer:
@@ -428,22 +637,13 @@ Showing resources matching `vault` in namespace `vault-system`.
 | Pod | vault-system | vault-0 | Running on ecs-m-01.dlee155.cldr.example |
 | Pod | vault-system | vault-exporter-669cfddf5b-gdt9j | Running on ecs-m-01.dlee155.cldr.example |
 | Deployment | vault-system | vault-exporter | 1/1 ready ✅ |
-| StatefulSet | vault-system | vault | 1/1 ready ✅ |
-| ReplicaSet | vault-system | vault-exporter-669cfddf5b | 1/1 ready ✅ |
-| Service | vault-system | vault | ClusterIP 10.43.51.192 |
-| Service | vault-system | vault-exporter | ClusterIP 10.43.254.192 |
-| Service | vault-system | vault-internal | ClusterIP None |
-| Ingress | vault-system | vault-ingress | vault.localhost.localdomain |
-| PVC | vault-system | data-vault-0 | Bound 10Gi |
-| ConfigMap | vault-system | chart-content-vault | 1 key(s) |
-| ConfigMap | vault-system | vault-config | 1 key(s) |
-| Secret | vault-system | chart-values-vault | helmcharts.helm.cattle.io/values |
-| Secret | vault-system | sh.helm.release.v1.vault.v1 | helm.sh/release.v1 |
+...... truncated ......
+...... truncated ......
 | Secret | vault-system | vault-server-tls | Opaque |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[30/74] [30-Mar-2026 14:02:24] Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
-       Answered — 4s elapsed
+[43/88] [04-Apr-2026 15:00:09] Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pod cdp-release-prometheus-alertmanager-0 in cdp ns
 Answer:
@@ -452,43 +652,55 @@ Name:             cdp-release-prometheus-alertmanager-0
 Namespace:        cdp
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
+ 'toleration_seconds': None,
  'value': 'true'}
 Events:          <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[31/74] [30-Mar-2026 14:02:28] Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
-       Answered — 5s elapsed
+[44/88] [04-Apr-2026 15:00:14] Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pv pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
 Answer:
 ```
 Name:            pvc-f0c17612-2bbf-404f-8a4c-f039e25968f9
-...... truncated ......
+Labels:           <none>
 ...... truncated ......
 ...... truncated ......
 Events:          <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[32/74] [30-Mar-2026 14:02:33] List all events in cdp namespace
-       Answered — 2s elapsed
+[45/88] [04-Apr-2026 15:00:18] List all events in cdp namespace
+       Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all events in cdp namespace
 Answer:
-`No such events in 'cdp'.`
+Showing Events in namespace `cdp`.
+```
+2026-04-04 06:06:00+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/7f50264b-01b3-42b6-822a-ad72d638e64c  Snapshot cdp/7f50264b-01b3-42b6-822a-ad72d638e64c was successfully created by the CSI driver. (x1)
+...... truncated ......
+...... truncated ......
+2026-04-04 06:05:51+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/d512337f-7183-4516-9754-9f1541f00478  Waiting for a snapshot cdp/d512337f-7183-4516-9754-9f1541f00478 to be created by the CSI driver. (x1)
+```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[33/74] [30-Mar-2026 14:02:35] show all normal events in cdp namespace
-       Answered — 3s elapsed
+[46/88] [04-Apr-2026 15:00:21] show all normal events in cdp namespace
+       Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show all normal events in cdp namespace
 Answer:
-`No such events in 'cdp'.`
+Showing Events in namespace `cdp`.
+```
+2026-04-04 06:06:00+00:00  Normal   SnapshotCreated     cdp/VolumeSnapshot/7f50264b-01b3-42b6-822a-ad72d638e64c  Snapshot cdp/7f50264b-01b3-42b6-822a-ad72d638e64c was successfully created by the CSI driver. (x1)
+...... truncated ......
+...... truncated ......
+2026-04-04 06:05:51+00:00  Normal   CreatingSnapshot    cdp/VolumeSnapshot/d512337f-7183-4516-9754-9f1541f00478  Waiting for a snapshot cdp/d512337f-7183-4516-9754-9f1541f00478 to be created by the CSI driver. (x1)
+```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[34/74] [30-Mar-2026 14:02:38] show all warning events in cdp namespace
+[47/88] [04-Apr-2026 15:00:23] show all warning events in cdp namespace
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: show all warning events in cdp namespace
@@ -496,7 +708,7 @@ Answer:
 `No such events in 'cdp'.`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[35/74] [30-Mar-2026 14:02:41] Describe pvc cdp-release-prometheus-server
+[48/88] [04-Apr-2026 15:00:26] Describe pvc cdp-release-prometheus-server
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Describe pvc cdp-release-prometheus-server
@@ -506,29 +718,31 @@ Name:          cdp-release-prometheus-server
 Namespace:     cdp
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
+Used By:       cdp-release-prometheus-server-86844db8-v8lkg
 Events:        <none>
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[36/74] [30-Mar-2026 14:02:45] get tables in cdp-embedded-db-0 of cdp namespace
-       Answered — 8s elapsed
+[49/88] [04-Apr-2026 15:00:30] get tables in cdp-embedded-db-0 of cdp namespace
+       Answered — 12s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get tables in cdp-embedded-db-0 of cdp namespace
 Answer:
-[ERROR] Could not retrieve DB credentials from pod 'cdp-embedded-db-0'.
+I mapped the keyword in your question and scoped this check to the `cdp` namespace.
+The tool results indicate that the StatefulSet `cdp-embedded-db` is healthy in the `cdp` namespace. However, the second tool result shows an error retrieving DB credentials from the pod `cdp-embedded-db-0`, which suggests there might be an issue accessing the database directly.
+To fully address your question about the tables in `cdp-embedded-db-0`, we need to connect to the database and list the tables.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[37/74] [30-Mar-2026 14:02:53] decode cdp-private-installer-db-root-cert certificate in cdp ns
-       Answered — 6s elapsed
+[50/88] [04-Apr-2026 15:00:42] decode cdp-private-installer-db-root-cert certificate in cdp ns
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: decode cdp-private-installer-db-root-cert certificate in cdp ns
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-The secret `cdp-private-installer-db-root-cert` in the `cdp` namespace contains the certificate data, but it is currently hidden. To decode the certificate, you need to enable the 'Show Secret Values' option in the ⚙ Settings → Security section. Once enabled, the certificate content will be visible.
+The certificate data for the secret `cdp/cdp-private-installer-db-root-cert` is currently hidden. To decode and view the certificate content, enable the 'Show Secret Values' option in ⚙ Settings → Security.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[38/74] [30-Mar-2026 14:03:00] Show me the first 10 endpoints in cdp namespace?
+[51/88] [04-Apr-2026 15:00:47] Show me the first 10 endpoints in cdp namespace?
        Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show me the first 10 endpoints in cdp namespace?
@@ -537,18 +751,12 @@ I mapped the keyword in your question and scoped this check to the `cdp` namespa
 | NAME | ADDRESS |
 |---|---|
 | `cadence-worker` | `10.42.0.118:9367` |
-| `cdp-embedded-db` | `10.42.0.136:5432` |
-| `cdp-release-alert-admin-service` | `10.42.0.90:8000` |
-| `cdp-release-cdc-profiler-launcher` | `10.42.0.126:8090` |
-| `cdp-release-cdp-cadence-frontend` | `10.42.0.105:7932` |
-| `cdp-release-cdp-cadence-frontend` | `10.42.0.105:7832` |
-| `cdp-release-cdp-cadence-frontend` | `10.42.0.153:7932` |
-| `cdp-release-cdp-cadence-frontend` | `10.42.0.153:7832` |
-| `cdp-release-cdp-cadence-frontend-headless` | `10.42.0.105:7932` |
+...... truncated ......
+...... truncated ......
 | `cdp-release-cdp-cadence-frontend-headless` | `10.42.0.105:7832` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[39/74] [30-Mar-2026 14:03:16] List all svc in cdp namespace?
+[52/88] [04-Apr-2026 15:01:03] List all svc in cdp namespace?
        Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all svc in cdp namespace?
@@ -557,16 +765,13 @@ Showing Services in namespace `cdp`.
 | NAME | TYPE | PORTS | SELECTOR STATUS |
 |---|---|---|---|
 | `cadence-worker` | ClusterIP | 9367/TCP | ✓ Present |
-| `cdp-embedded-db` | ClusterIP | 5432/TCP | ✓ Present |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| `request-signer` | ClusterIP | 80/TCP | ✓ Present |
 | `snmp-notifier` | ClusterIP | 80/TCP | ✓ Present |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[40/74] [30-Mar-2026 14:03:18] Which endpoints using port 443?
-       Answered — 9s elapsed
+[53/88] [04-Apr-2026 15:01:05] Which endpoints using port 443?
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which endpoints using port 443?
 Answer:
@@ -578,32 +783,36 @@ As no namespace was mentioned, I checked across all namespaces.
 | `kube-system` | `rke2-ingress-nginx-controller` | `10.42.0.63:443` |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[41/74] [30-Mar-2026 14:03:27] list node with taint cde
-       Answered — 3s elapsed
+[54/88] [04-Apr-2026 15:01:13] list node with taint cde
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list node with taint cde
 Answer:
 No nodes found with a taint matching `cde`.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[42/74] [30-Mar-2026 14:03:30] Are there any tainted nodes blocking scheduling?
+[55/88] [04-Apr-2026 15:01:17] Are there any tainted nodes blocking scheduling?
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any tainted nodes blocking scheduling?
 Answer:
-Yes, there are tainted nodes blocking scheduling. The nodes `ecs-m-01.dlee155.cldr.example` and `ecs-w-02.dlee155.cldr.example` have taints with the effect NoSchedule, which prevents pods from being scheduled on them unless they have matching tolerations.
+Yes, there are tainted nodes blocking scheduling. The following nodes are tainted:
+- `ecs-m-01.dlee155.cldr.example` with taint `node-role.kubernetes.io/control-plane` (effect: NoSchedule)
+- `ecs-w-02.dlee155.cldr.example` with taint `node.kubernetes.io/unschedulable` (effect: NoSchedule)
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[43/74] [30-Mar-2026 14:03:36] which node has gpu and currently locked by pod
+[56/88] [04-Apr-2026 15:01:23] which node has gpu and currently locked by pod
        Answered — 10s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which node has gpu and currently locked by pod
 Answer:
-The node `ecs-w-03.dlee155.cldr.example` has GPUs and currently has 2 GPUs allocated. However, the "ATTACHED PODS" column shows "-", which indicates that no pod is currently using the GPU. Therefore, the GPU is available and not locked by any pod.
+| NODE | PRODUCT | COUNT | VRAM/GRAM | ALLOCATABLE | ATTACHED PODS |
+|---|---|---|---|---|---|
+| ecs-w-03.dlee155.cldr.example | Tesla-K80 | 2 | 11441Mi | 2 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[44/74] [30-Mar-2026 14:03:46] list all pods in cdp-keda
-       Answered — 3s elapsed
+[57/88] [04-Apr-2026 15:01:33] list all pods in cdp-keda
+       Answered — 2s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all pods in cdp-keda
 Answer:
@@ -615,17 +824,43 @@ Showing Pods in namespace `cdp-keda`.
 | `keda-operator-metrics-apiserver-7f7d6ffd8b-m5wp5` | Running | 1/1 | 0 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[45/74] [30-Mar-2026 14:03:49] is the vault pod doing ok?
-       Answered — 5s elapsed
+[58/88] [04-Apr-2026 15:01:35] list all pods in cdp-keda ns
+       Answered — 3s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: list all pods in cdp-keda ns
+Answer:
+Showing Pods in namespace `cdp-keda`.
+| NAME | STATUS | READY | RESTARTS | CONDITIONS |
+|---|---|---|---|---|
+| `keda-admission-webhooks-5d78f9594b-gkb84` | Running | 1/1 | 0 | - |
+| `keda-operator-74db756666-nsb47` | Running | 1/1 | 0 | - |
+| `keda-operator-metrics-apiserver-7f7d6ffd8b-m5wp5` | Running | 1/1 | 0 | - |
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[59/88] [04-Apr-2026 15:01:38] list all pods in cdp-keda namespace
+       Answered — 3s elapsed
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Question: list all pods in cdp-keda namespace
+Answer:
+Showing Pods in namespace `cdp-keda`.
+| NAME | STATUS | READY | RESTARTS | CONDITIONS |
+|---|---|---|---|---|
+| `keda-admission-webhooks-5d78f9594b-gkb84` | Running | 1/1 | 0 | - |
+| `keda-operator-74db756666-nsb47` | Running | 1/1 | 0 | - |
+| `keda-operator-metrics-apiserver-7f7d6ffd8b-m5wp5` | Running | 1/1 | 0 | - |
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[60/88] [04-Apr-2026 15:01:41] is the vault pod doing ok?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: is the vault pod doing ok?
 Answer:
 I mapped the keyword in your question and scoped this check to the `vault-system` namespace.
-Yes, the vault pod is doing ok. All pods in the `vault-system` namespace are Running, and there are no Pending, Failed, or Unknown pods found.
+The Vault pod is doing okay as all pods in the `vault-system` namespace are healthy with no Pending/Failed/Unknown or unready pods found.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[46/74] [30-Mar-2026 14:03:54] Check all namespaces, which pvc is not bound?
-       Answered — 4s elapsed
+[61/88] [04-Apr-2026 15:01:45] Check all namespaces, which pvc is not bound?
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Check all namespaces, which pvc is not bound?
 Answer:
@@ -633,18 +868,16 @@ As no namespace was mentioned, I checked across all namespaces.
 There are no PVCs that are not bound across all namespaces. All PVCs listed are in the "Bound" phase.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[47/74] [30-Mar-2026 14:03:58] What storage class is Vault using?
-       Answered — 3s elapsed
+[62/88] [04-Apr-2026 15:01:50] What storage class is Vault pod using in vault-system ns?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: What storage class is Vault using?
+Question: What storage class is Vault pod using in vault-system ns?
 Answer:
-Showing resources matching `vault` in namespace `vault-system`.
-| Resource Type | Namespace | Name | Status/Details |
-|---|---|---|---|
-| PVC | vault-system | data-vault-0 | Bound 10Gi |
+I mapped the keyword in your question and scoped this check to the `vault-system` namespace.
+The Vault pod in the `vault-system` namespace is using the `longhorn` storage class.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[48/74] [30-Mar-2026 14:04:01] which namespace has the least pods?
+[63/88] [04-Apr-2026 15:01:54] which namespace has the least pods?
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which namespace has the least pods?
@@ -653,125 +886,105 @@ As no namespace was mentioned, I checked across all namespaces.
 cdp-obs
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[49/74] [30-Mar-2026 14:04:10] list all namespaces with total pods
-       Answered — 7s elapsed
+[64/88] [04-Apr-2026 15:02:02] list all namespaces with total pods
+       Answered — 9s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all namespaces with total pods
 Answer:
 Showing all Namespace Status in all namespaces.
 | Namespace | Total Pods | Running | Other State |
 |-----------|------------|---------|--------------|
-| cdp | 78 | 77 | Succeeded: 1 |
-| cmlwb1 | 53 | 37 | Succeeded: 16 |
+| awx | 4 | 4 | - |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| serving-default | 0 | 0 | - |
+| yunikorn | 2 | 2 | - |
 _Namespace with the least pods: cdp-obs (0 pods)_
 _Namespace with the most pods: cdp (78 pods)_
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[50/74] [30-Mar-2026 14:04:17] List all storage types (RWO/RWX) used by pods in cdp namespace
-       Answered — 6s elapsed
+[65/88] [04-Apr-2026 15:02:11] List all storage types (RWO/RWX) used by pods in cdp namespace
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all storage types (RWO/RWX) used by pods in cdp namespace
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-The storage types (RWO/RWX) used by pods in the `cdp` namespace are:
-- **ReadWriteOnce** (RWO) for all listed PVCs.
+| ACCESS MODE | COUNT |
+|---|---|
+| ReadWriteOnce | 7 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[51/74] [30-Mar-2026 14:04:23] what storage type are pods in cdp namespace using?
+[66/88] [04-Apr-2026 15:02:18] what storage type are pods in cdp namespace using?
        Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what storage type are pods in cdp namespace using?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-All pods in the `cdp` namespace are using the **ReadWriteOnce** access mode with the **longhorn** storage class.
+All pods in the `cdp` namespace are using the **ReadWriteOnce** storage type.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[52/74] [30-Mar-2026 14:04:28] what SSL certificates does the cdp namespace have?
-       Answered — 11s elapsed
+[67/88] [04-Apr-2026 15:02:23] what SSL certificates does the cdp namespace have?
+       Answered — 12s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what SSL certificates does the cdp namespace have?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cdp` namespace.
-The SSL certificates in the `cdp` namespace are as follows:
-| Secret Name                                      | Certificate Keys                     |
-|--------------------------------------------------|--------------------------------------|
-| cdp-private-installer-db-root-cert               | DB_SSL_CERT                          |
-...... truncated ......
-...... truncated ......
-...... truncated ......
-| vault                                           | vault.pem                            |
+| Secret Name                                      | Keys                                                                 | Cert/TLS |
+|--------------------------------------------------|----------------------------------------------------------------------|----------|
+| cdp-private-installer-db-root-cert               | DB_SSL_CERT                                                         | ...... truncated ......
+...... truncated ......                                                    | cert/TLS |
+| cm.creds                                        | cdp_keys.json, kubeconfig                                           | cert/TLS |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[53/74] [30-Mar-2026 14:04:39] what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
-       Answered — 4s elapsed
+[68/88] [04-Apr-2026 15:02:35] what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
+       Answered — 7s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what is the username and password for the SQL user for db-0 in cmlwb1 namespace?
 Answer:
 I mapped the keyword in your question and scoped this check to the `cmlwb1` namespace.
-The username is cdsw-user-config with the password being None.
+The username for the SQL user in the `cmlwb1` namespace is `cdsw-user-config`, but the password is not provided in the secret keys listed. The secret contains keys for user UID, GID, and username, but not the password. To retrieve the password, you would need to inspect the secret's value directly or check if it is stored elsewhere in the cluster.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[54/74] [30-Mar-2026 14:04:43] get tables in db-0 of cmlwb1 namespace
-       Answered — 34s elapsed
+[69/88] [04-Apr-2026 15:02:42] get tables in db-0 of cmlwb1 namespace
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get tables in db-0 of cmlwb1 namespace
 Answer:
-The tables in the `db-0` pod of the `cmlwb1` namespace are as follows:
-| schemaname | tablename                          |
-|------------|------------------------------------|
-| public     | access_keys                        |
-...... truncated ......
-...... truncated ......
-...... truncated ......
-| public     | workspace_data_connections         |
+The error indicates that the parameter "tables" is not recognized in the PostgreSQL configuration. This suggests that the approach to retrieve tables directly via a configuration parameter might not be valid. To list tables in the `sense` database running in the `cmlwb1` namespace, you would typically use SQL commands such as `\dt` in the PostgreSQL interactive terminal or query system catalogs. However, since direct execution of such commands isn't supported through the current tool interface, please clarify if you'd like to explore another method or if there's additional context needed.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[55/74] [30-Mar-2026 14:05:18] explain how you access the database of a pod to get the table names, don't run it, just explain
+[70/88] [04-Apr-2026 15:02:50] explain how you access the database of a pod to get the table names, don't run it, just explain
        Answered — 16s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: explain how you access the database of a pod to get the table names, don't run it, just explain
 Answer:
 To access the database of a pod and retrieve table names, you would typically follow these steps:
-1. **Identify the Pod**: First, determine which pod is running the database application. You can use tools like `kubectl get pods` to list all pods in the cluster and identify the relevant one.
-2. **Access the Pod's Container**: Once you have identified the pod, you can use `kubectl exec` to open a shell session inside the pod's container. This allows you to interact with the container's file system and processes.
-3. **Locate the Database Files**: Depending on the database type (e.g., PostgreSQL, MySQL, etc.), the database files and configuration might be located in specific directories within the container. Common locations include `/var/lib/postgresql`, `/var/lib/mysql`, or similar paths.
-4. **Check for Configuration Files**: Look for configuration files that specify the database schema or metadata. These files might contain information about the tables, such as `schema.sql`, `tables.sql`, or similar files.
-5. **Use Database Client Tools**: If the database is running inside the container, you can use a database client tool (like `psql` for PostgreSQL or `mysql` for MySQL) to connect to the database and list the tables. This involves using the appropriate command-line interface to execute SQL commands such as `SHOW TABLES` or `\dt` for PostgreSQL.
-6. **Check for Metadata Files**: Some databases store metadata in files or directories that can be accessed directly. For example, PostgreSQL stores metadata in the `pg_catalog` schema, which can be queried using SQL.
-7. **Review Application Code or Documentation**: If the database is part of an application, review the application's code or documentation to understand how the database is structured and how to access its tables.
-By following these steps, you can access the database of a pod and retrieve the table names without executing any commands.
+1. **Identify the Pod**: First, determine the name of the pod that hosts the database. This can be done using tools like `kubectl get pods` or by querying the Kubernetes API.
+2. **Access the Pod**: Use `kubectl exec` to open a shell session inside the pod. This allows you to interact with the pod's internal processes.
+3. **Locate the Database**: Identify the database container within the pod. If the pod has multiple containers, you might need to specify the container name using the `-c` flag with `kubectl exec`.
+4. **Connect to the Database**: Use the appropriate client tool (e.g., `psql` for PostgreSQL, `mysql` for MySQL) to connect to the database. You will need the database credentials, which are usually stored in environment variables or secrets within the pod.
+5. **Query the Database**: Once connected, you can execute SQL commands to list the tables. For example, in PostgreSQL, you would use `psql -c "\dt"` to list all tables, and in MySQL, you would use `SHOW TABLES;`.
+6. **Retrieve Table Names**: The output of the SQL query will provide the list of table names in the database.
+These steps allow you to access and explore the database hosted within a Kubernetes pod without executing any commands.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[56/74] [30-Mar-2026 14:05:34] what can you do?
-       Answered — 6s elapsed
+[71/88] [04-Apr-2026 15:03:06] what can you do?
+       Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: what can you do?
 Answer:
-I am an ECS AI Ops Assistant designed to help manage and monitor your Cloudera ECS cluster. I can perform various tasks such as:
-- Checking the health and status of your cluster.
-- Listing and describing Kubernetes resources like pods, deployments, services, etc.
-- Searching for specific resources or components within your cluster.
-- Providing insights into known issues, best practices, and troubleshooting guides.
-- Checking resource quotas and usage across namespaces.
-- Fetching and decoding secrets and configuration maps.
-- Identifying and diagnosing unhealthy or problematic pods.
-If you have a specific question or need assistance with a particular task, feel free to ask!
+I am an ECS AI Ops Assistant designed to help manage and monitor your Cloudera ECS cluster. I can assist with various tasks such as checking cluster health, retrieving resource usage, inspecting pods, services, and other Kubernetes resources, querying databases, and managing secrets and configurations. Please let me know what specific task or information you need!
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[57/74] [30-Mar-2026 14:05:40] how are you?
+[72/88] [04-Apr-2026 15:03:10] how are you?
        Answered — 3s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: how are you?
 Answer:
-I'm an AI assistant designed to help you with your Cloudera ECS cluster. How can I assist you today?
+I'm an AI assistant designed to help manage and monitor your Cloudera ECS cluster. How can I assist you today?
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[58/74] [30-Mar-2026 14:05:43] get the output of longhorn-system pods
-       Answered — 48s elapsed
+[73/88] [04-Apr-2026 15:03:13] get the output of longhorn-system pods
+       Answered — 53s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: get the output of longhorn-system pods
 Answer:
@@ -781,75 +994,59 @@ I mapped the keyword in your question and scoped this check to the `longhorn-sys
 | `csi-attacher-5f56765cb-5rbdn` | Running | 1/1 | 0 | - |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
 | `share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83` | Running | 1/1 | 0 | - |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[59/74] [30-Mar-2026 14:06:31] Are there any pvcs stuck in a Pending or Lost state?
+[74/88] [04-Apr-2026 15:04:06] Are there any pvcs stuck in a Pending or Lost state?
        Answered — 4s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any pvcs stuck in a Pending or Lost state?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-No PVCs are stuck in a Pending or Lost state. All PVCs listed are in the Bound phase.
+No.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[60/74] [30-Mar-2026 14:06:35] Who currently has cluster-admin privileges?
-       Answered — 11s elapsed
+[75/88] [04-Apr-2026 15:04:10] Who currently has cluster-admin privileges?
+       Answered — 40s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Who currently has cluster-admin privileges?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-Cluster-admin privileges are assigned to the following entities:
-- **Group/system:masters**
-...... truncated ......
-...... truncated ......
-...... truncated ......
-- **ServiceAccount/cluster-access-manager-service-account**
-These entities have been granted the `cluster-admin` role, allowing them to manage the entire cluster.
+| ClusterRoleBinding Name                          | Role                                                                 | Subjects                                                                 |
+|--------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------|
+| admin-user                                       | cluster-admin                                                       | ...... truncated ......
+...... truncated ......                                     |
+| yunikorn-rbac-volume-scheduler                    | system:volume-scheduler                                             | ['ServiceAccount/yunikorn-admin']                                       |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[61/74] [30-Mar-2026 14:06:46] which pod across the cluster has autoscaling capability?
-       Answered — 6s elapsed
+[76/88] [04-Apr-2026 15:04:50] which pod across the cluster has autoscaling capability?
+       Answered — 11s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: which pod across the cluster has autoscaling capability?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The pods with autoscaling capability are:
-- **api-hpa** in namespace **cmlwb1**
-- **web-hpa** in namespace **cmlwb1**
-- **istio-ingressgateway** in namespace **istio-ingress**
-- **istiod** in namespace **istio-system**
-- **activator** in namespace **knative-serving**
-- **webhook** in namespace **knative-serving**
+| Namespace | HPA Name | Current | Desired | Min | Max | Status |
+|-----------|----------|---------|---------|-----|-----|--------|
+| cmlwb1 | api-hpa | 1 | 1 | 1 | 5 | OK |
+| cmlwb1 | web-hpa | 3 | 3 | 3 | 6 | OK |
+| istio-ingress | istio-ingressgateway | 1 | 1 | 1 | 5 | OK |
+| istio-system | istiod | 1 | 1 | 1 | 5 | OK |
+| knative-serving | activator | 1 | 1 | 1 | 20 | OK |
+| knative-serving | webhook | 1 | 1 | 1 | 5 | OK |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[62/74] [30-Mar-2026 14:06:52] Are there any failing CronJobs or Jobs that did not complete successfully?
-       Answered — 6s elapsed
+[77/88] [04-Apr-2026 15:05:01] Are there any failing CronJobs or Jobs that did not complete successfully?
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Are there any failing CronJobs or Jobs that did not complete successfully?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The tool results indicate that there are no failing CronJobs or Jobs that did not complete successfully. All listed CronJobs are either active or suspended, and there are no reported failures in the Jobs.
+Yes.
+There are no failing CronJobs or Jobs that did not complete successfully.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[63/74] [30-Mar-2026 14:06:58] Which pods have restarted more than 5 times in the last 24 hours?
-       Answered — 13s elapsed
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: Which pods have restarted more than 5 times in the last 24 hours?
-Answer:
-As no namespace was mentioned, I checked across all namespaces.
-| Namespace | Pod              | Phase  | Ready   | Restarts |
-|-----------|------------------|--------|---------|----------|
-| testme    | crash-bad-command| Running| 0/1     | 4782     |
-| testme    | crash-dependency | Running| 0/1     | 4783     |
-| testme    | crash-exit       | Running| 0/1     | 4756     |
-| testme    | crash-liveness   | Running| 0/1     | 7297     |
-| testme    | crash-oom        | Running| 0/1     | 4779     |
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-[64/74] [30-Mar-2026 14:07:11] Show image version of each pod in longhorn-system
-       Answered — 105s elapsed
+[78/88] [04-Apr-2026 15:05:06] Show image version of each pod in longhorn-system
+       Answered — 111s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show image version of each pod in longhorn-system
 Answer:
@@ -857,96 +1054,94 @@ I mapped the keyword in your question and scoped this check to the `longhorn-sys
 - `longhorn-system/csi-attacher-5f56765cb-5rbdn` [csi-attacher]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/csi-attacher:v4.9.0`
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
 - `longhorn-system/share-manager-pvc-7e1f6757-2ac1-4f75-a42b-dbec565a5a83` [share-manager]: `registry.ecs.internal/cloudera_thirdparty/hardened/longhornio/longhorn-share-manager:v1.8.2`
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[65/74] [30-Mar-2026 14:08:56] is coredns runnning properly?
-       Answered — 7s elapsed
+[79/88] [04-Apr-2026 15:06:57] is coredns runnning properly?
+       Answered — 5s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: is coredns runnning properly?
 Answer:
-CoreDNS is running properly. All CoreDNS pods are in the Running state with readiness 1/1, and there are no reported issues with DNS resolution tests.
+CoreDNS is running properly. All CoreDNS pods are in the Running state with readiness status 1/1, and there are no reported issues with DNS resolution tests.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[66/74] [30-Mar-2026 14:09:03] List all pv that consume more than 50% of the allocated disk capacity
-       Answered — 25s elapsed
+[80/88] [04-Apr-2026 15:07:03] List all pv that consume more than 50% of the allocated disk capacity
+       Answered — 24s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: List all pv that consume more than 50% of the allocated disk capacity
 Answer:
 ### ⚠️ Nearing or exceeding 50% capacity (3 PVCs)
 | Flag | Namespace / PVC | Usage | Used (GiB) | Total (GiB) | Free (GiB) |
 |---|---|---|---|---|---|
-| 🔴 | `cdp/logs` | **179.6%** | 35.91Gi (179.6%) | 20.0Gi | 0Gi (-79.6%) |
-| 🔴 | `cdp/cdp-release-prometheus-server` | **99.1%** | 19.82Gi (99.1%) | 20.0Gi | 0.18Gi (0.9%) |
+| 🔴 | `cdp/logs` | **180.1%** | 36.02Gi (180.1%) | 20.0Gi | 0Gi (-80.1%) |
+| 🔴 | `cdp/cdp-release-prometheus-server` | **97.4%** | 19.47Gi (97.4%) | 20.0Gi | 0.53Gi (2.6%) |
 | 🔴 | `infra-prometheus/prometheus-infra-prometheus-operator-prometheus-db-prometheus-infra-prometheus-operator-prometheus-0` | **96.1%** | 28.83Gi (96.1%) | 30.0Gi | 1.17Gi (3.9%) |
-### ✅ Within capacity (31 PVCs)
+### ✅ Within capacity (30 PVCs)
 | Flag | Namespace / PVC | Usage | Used (GiB) | Total (GiB) | Free (GiB) |
 |---|---|---|---|---|---|
 | 🟢 | `cmlwb1/persist-dir-secret-generator-0` | **47.4%** | 0.0Gi (47.4%) | 0.01Gi | 0.01Gi (52.6%) |
-| 🟢 | `dlee155-dcd569b3-monitoring-platform/monitoring-prometheus-server` | **17.4%** | 10.44Gi (17.4%) | 60.0Gi | 49.56Gi (82.6%) |
+| 🟢 | `dlee155-dcd569b3-monitoring-platform/monitoring-prometheus-server` | **18.7%** | 11.19Gi (18.7%) | 60.0Gi | 48.81Gi (81.3%) |
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-| 🟢 | `model-registryc62e4e6e-13a/model-registry-v2-55d8d65fd4-qmj9z-tmp` | **1.8%** | 8.82Gi (1.8%) | 500.0Gi | 491.18Gi (98.2%) |
 | 🟢 | `awx/postgres-13-awx-demo-postgres-13-0` | **1.0%** | 0.08Gi (1.0%) | 7.76Gi | 7.68Gi (99.0%) |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[67/74] [30-Mar-2026 14:09:28] Is there any pod struggle to start in the last 24 hours?
-       Answered — 18s elapsed
+[81/88] [04-Apr-2026 15:07:27] Is there any pod struggle to start in the last 24 hours?
+       Answered — 21s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Is there any pod struggle to start in the last 24 hours?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The pods struggling to start in the last 24 hours are:
-- `testme/crash-missing-config`: Phase: Pending, Ready: 0/1, Restarts: 0. Reason: Missing configmap "config-that-does-not-exist".
-- `testme/crash-bad-command`: Phase: Running, Ready: 0/1, Restarts: 4783. Reason: CrashLoopBackOff due to "not-a-real-command".
-- `testme/crash-dependency`: Phase: Running, Ready: 0/1, Restarts: 4784. Reason: CrashLoopBackOff due to "nonexistent-db".
-- `testme/crash-exit`: Phase: Running, Ready: 0/1, Restarts: 4757. Reason: CrashLoopBackOff due to "Error".
-- `testme/crash-liveness`: Phase: Running, Ready: 0/1, Restarts: 7299. Reason: CrashLoopBackOff due to "Error" and Liveness probe failure.
-- `testme/crash-oom`: Phase: Running, Ready: 0/1, Restarts: 4780. Reason: CrashLoopBackOff due to "OOMKilled".
+Yes, there are several pods struggling to start in the last 24 hours:
+- **testme/crash-missing-config**: The pod is in a **Pending** state due to a missing configmap (`config-that-does-not-exist`). It is waiting for the volume to be set up.
+- **testme/crash-bad-command**: The pod is in a **Running** state but the container is in a **CrashLoopBackOff** state due to a **StartError** caused by an invalid command (`not-a-real-command`).
+- **testme/crash-dependency**: The pod is in a **Running** state but the container is in a **CrashLoopBackOff** state due to a **dependency issue** (failed to connect to a non-existent database).
+- **testme/crash-exit**: The pod is in a **Running** state but the container is in a **CrashLoopBackOff** state due to an **Error** during startup.
+- **testme/crash-liveness**: The pod is in a **Running** state but the container is in a **CrashLoopBackOff** state due to a **liveness probe failure**.
+- **testme/crash-oom**: The pod is in a **Running** state but the container is in a **CrashLoopBackOff** state due to being **OOMKilled** (out of memory).
+These pods are experiencing issues that prevent them from starting properly or staying in a healthy state.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[68/74] [30-Mar-2026 14:09:46] list all pods that are not running
-       Answered — 14s elapsed
+[82/88] [04-Apr-2026 15:07:48] list all pods that are not running
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: list all pods that are not running
 Answer:
-As no namespace was mentioned, I checked across all namespaces.
-| Namespace | Pod                  | Phase  | Ready   | Restarts |
-|-----------|----------------------|--------|---------|----------|
-| testme    | crash-missing-config | Pending| 0/1     | 0        |
-| testme    | crash-bad-command    | Running| 0/1     | 4783     |
-| testme    | crash-dependency     | Running| 0/1     | 4784     |
-| testme    | crash-exit           | Running| 0/1     | 4757     |
-| testme    | crash-liveness       | Running| 0/1     | 7299     |
-| testme    | crash-oom            | Running| 0/1     | 4780     |
+Showing all Unhealthy / Non-Running Pods in all namespaces.
+| NAMESPACE | NAME | STATUS | READY | RESTARTS | REASON | CONDITIONS |
+|---|---|---|---|---|---|---|
+| `testme` | `crash-bad-command` | Running | 0/1 | 6196 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-dependency` | Running | 0/1 | 6197 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-exit` | Running | 0/1 | 6161 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-liveness` | Running | 0/1 | 9458 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+| `testme` | `crash-missing-config` | Pending | 0/1 | 0 | PodInitializing | PodReadyToStartContainers=False, Initialized=False, Ready=False, ContainersReady=False |
+| `testme` | `crash-oom` | Running | 0/1 | 6194 | CrashLoopBackOff | Ready=False, ContainersReady=False |
+6 unhealthy pod(s) found. Ask for details on a specific pod to see logs and events.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[69/74] [30-Mar-2026 14:10:00] Check all namespaces, which pvc is not bound?
-       Answered — 4s elapsed
+[83/88] [04-Apr-2026 15:07:56] Check all namespaces, which pvc is not bound?
+       Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Check all namespaces, which pvc is not bound?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-No PVCs are not bound in any namespace. All PVCs listed are in the Bound phase.
+There are no PVCs that are not bound across all namespaces. All PVCs listed are in the "Bound" phase.
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[70/74] [30-Mar-2026 14:10:04] Which pods have restarted more than 5 times in the last 24 hours?
-       Answered — 13s elapsed
+[84/88] [04-Apr-2026 15:08:04] Which pods have restarted more than 5 times in the last 24 hours?
+       Answered — 12s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which pods have restarted more than 5 times in the last 24 hours?
 Answer:
 As no namespace was mentioned, I checked across all namespaces.
-The pods that have restarted more than 5 times are:
-- `testme/crash-bad-command` with 4783 restarts
-- `testme/crash-dependency` with 4784 restarts
-- `testme/crash-exit` with 4757 restarts
-- `testme/crash-liveness` with 7299 restarts
-- `testme/crash-oom` with 4780 restarts
+testme/crash-bad-command (6196 restarts)  
+testme/crash-dependency (6198 restarts)  
+testme/crash-exit (6162 restarts)  
+testme/crash-liveness (9459 restarts)  
+testme/crash-oom (6194 restarts)
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[71/74] [30-Mar-2026 14:10:17] Show all labels for node ecs-w-03
+[85/88] [04-Apr-2026 15:08:16] Show all labels for node ecs-w-03
        Answered — 30s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show all labels for node ecs-w-03
@@ -955,11 +1150,11 @@ Answer:
   - beta.kubernetes.io/arch=amd64
 ...... truncated ......
 ...... truncated ......
-...... truncated ......
-  - rack=default
+  - run.ai/fake.gpu=true
+  - run.ai/simulated-gpu-node-pool=default
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[72/74] [30-Mar-2026 14:10:47] Which nodes are ready and schedulable?
+[86/88] [04-Apr-2026 15:08:46] Which nodes are ready and schedulable?
        Answered — 8s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Which nodes are ready and schedulable?
@@ -971,26 +1166,25 @@ Answer:
 | ecs-w-03.dlee155.cldr.example | worker | Ready | 32 | 131745540Ki | 2 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[73/74] [30-Mar-2026 14:10:55] Show cluster version
-       Answered — 7s elapsed
+[87/88] [04-Apr-2026 15:08:54] Show cluster version
+       Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Question: Show cluster version
 Answer:
-The Kubernetes cluster version is:  
 Major: 1, Minor: 32, GitVersion: v1.32.9+rke2r1, GitCommit: cea7087b31eb788b75934d769a28f058ab309318, BuildDate: 2025-09-10T21:19:22Z
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-[74/74] [30-Mar-2026 14:11:02] Which storage classes are available in the cluster?
+[88/88] [04-Apr-2026 15:09:00] What storage classes are available in the cluster?
        Answered — 6s elapsed
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Question: Which storage classes are available in the cluster?
+Question: What storage classes are available in the cluster?
 Answer:
-| NAME           | PROVISIONER         | RECLAIM POLICY | EXPANSION | DEFAULT |
-|----------------|---------------------|----------------|-----------|---------|
-| local-path     | rancher.io/local-path | Delete         | No        |         |
-| longhorn       | driver.longhorn.io  | Delete         | Yes       | Yes     |
-| longhorn-static| driver.longhorn.io  | Delete         | Yes       |         |
+| NAME         | PROVISIONER           | RECLAIM POLICY | EXPANSION | DEFAULT |
+|--------------|-----------------------|----------------|-----------|---------|
+| local-path   | rancher.io/local-path | Delete         | No        |         |
+| longhorn     | driver.longhorn.io    | Delete         | Yes       | Yes     |
+| longhorn-static | driver.longhorn.io  | Delete         | Yes       |         |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-  Results: 74 passed / 0 failed / 74 total
+  Results: 88 passed / 0 failed / 88 total
 
